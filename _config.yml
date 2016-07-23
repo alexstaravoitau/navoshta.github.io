@@ -7,7 +7,7 @@
 
 # Site Settings
 locale                   : "en"
-title                    : "Alex"
+title                    : "Blog"
 title_separator          : "-"
 name                     : "Alex Staravoitau"
 description              : "An amazing website."
@@ -63,10 +63,10 @@ google_ad_slot           :
 
 # Site Author
 author:
-  name             : "Your Name"
+  name             : "Alex Staravoitau"
   avatar           : "bio-photo.jpg"
-  bio              : "I am an amazing person."
-  location         : "Somewhere"
+  bio              : "I am a freelance software engineer currently concentrating primarily with iOS development and data science. Keen on astrophysics, music and good design."
+  location         : "London, UK"
   email            :
   uri              :
   bitbucket        :
@@ -75,15 +75,15 @@ author:
   flickr           :
   facebook         :
   foursquare       :
-  github           :
+  github           : http://github.com/navoshta
   google_plus      :
   keybase          :
   instagram        :
   lastfm           :
-  linkedin         :
+  linkedin         : https://uk.linkedin.com/in/alexstaravoitau
   pinterest        :
   soundcloud       :
-  stackoverflow    : # http://stackoverflow.com/users/123456/username
+  stackoverflow    : http://stackoverflow.com/users/300131/alex-staravoitau
   steam            :
   tumblr           :
   twitter          :
