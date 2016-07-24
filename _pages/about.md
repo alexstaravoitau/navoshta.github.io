@@ -1,5 +1,5 @@
 ---
-layout: post
+permalink: /about/
 title: "About Me"
 excerpt: ""
 tags: [about]
