@@ -6,9 +6,24 @@ author_profile: false
 ---
 
 {% include base_path %}
+{% assign author = site.author %}
 
-My name is Alex, and this is a blog about things I happen to work with. Mainly it's developing iOS apps and frameworks, UX and UI design, data mining and machine learning.
+Hey – I'm Alex Staravoitau, a full-stack software engineer with a surname you're gonna struggle to pronounce. I work as a freelance developer in London and mainly do **iOS development** these days. I am also highly keen on **data science** and **machine learning**, and this complicated hobby is taking most of my spare time. Not to mention I'm a huge fan of astrophysics, music and good design.
 
-## Who am I?
+My commercial experience dates back to 2008, I used to work in telecom, banking, media, hospitality, travel, healthcare, gambling and have done multiple projects related to information security. 
 
-<img src="{{ base_path }}/images/about-photo.jpg" alt="" class="image-left" style="width: 140px;" hspace="10" align="left"> I am a full-stack software engineer with commercial experience dating back to 2008, currently concentrating primarily with **iOS development** and **data science**. I used to work in telecom, banking, media, hospitality, travel, healthcare, gambling and have done multiple projects related to information security. Keen on astrophysics, music and good design.
+## About the site
+
+This is a blog about things I happen to work with. Mainly it's developing iOS apps and frameworks, UX and UI design, data mining and machine learning.
+
+## Links
+
+If you are interested in more things that I do, you may want to check out my profiles on other cool websites.
+
+[GitHub](https://github.com/{{ author.github }}){: .btn} [LinkedIn](https://www.linkedin.com/in/{{ author.linkedin }}){: .btn} [StackOverflow](https://www.stackoverflow.com/users/{{ author.stackoverflow }}){: .btn} [Kaggle](https://kaggle.com/{{ author.kaggle }}){: .btn} [Behance](https://www.behance.net/{{ author.behance }}){: .btn}
+
+## Contact
+
+If you have any questions — feel free to reach out!
+
+[Message Me](mailto:alex.starr.uk@gmail.com){: .btn .btn--info}
