@@ -10,4 +10,4 @@ author_profile: false
 
 Alex Staravoitau
 
-![image-left]({{ site.url }}{{ site.baseurl }}/images/about-photo.jpg =150x150){: .align-left} I am a freelance software engineer with commercial experience dating back to 2008, currently concentrating primarily with **iOS development** and **data science**. Keen on astrophysics, music and good design.
+<img src="{{ site.url }}{{ site.baseurl }}/images/filename.jpg" alt="" class="image-left" style="width: 150px;"> I am a freelance software engineer with commercial experience dating back to 2008, currently concentrating primarily with **iOS development** and **data science**. Keen on astrophysics, music and good design.
