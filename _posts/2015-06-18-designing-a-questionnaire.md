@@ -1,5 +1,5 @@
 ---
-title: 'Mobile app navigation: designing a questionnaire.'
+title: 'Mobile app navigation: designing a questionnaire'
 tags:
 - UI/UX
 ---
