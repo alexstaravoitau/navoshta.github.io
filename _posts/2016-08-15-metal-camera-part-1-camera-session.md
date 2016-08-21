@@ -168,7 +168,7 @@ Next time we are going to explore a way to grab those frames from a `CMSampleBuf
 This was the first part of **Metal Camera Tutorial** series, where we explore ways of achieving lowest-overhead access to hardware to grab camera frames, convert them to textures and render on screen in real time:
 
 * **Part 1: Getting raw camera data**
-* **Part 2: Converting sample buffer to a Metal texture**
+* <a target="_blank" href="/metal-camera-part-2-metal-texture">**Part 2: Converting sample buffer to a Metal texture**</a>
 * **Part 3: Rendering a Metal texture**
 * **Bonus: Running Metal project on iOS Simulator**
 
