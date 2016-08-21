@@ -9,7 +9,7 @@ There are a lot of apps nowadays that use iPhone and iPad cameras. Some even do 
 
 ## What is `AVCaptureSession`?
 
-`AVCaptureSession` is a class in `AVFoundation` framework — whenever you write any code for audio/video recording or playback, the chances are you will end up using some parts of `AVFoundation` (`AV` standing for "Audio/Video"). As Apple reference points out, you use an `AVCaptureSession` object to coordinate the flow of data from audio or video input devices to outputs. So it is supposed to be a pretty generic interface between something generating media data (for example, camera sensor) and something receiving it (say, your app).
+`AVCaptureSession` is a class in `AVFoundation` framework — whenever you write any code for audio/video recording or playback, the chances are you will end up using some parts of `AVFoundation` (AV standing for "Audio/Video"). As Apple reference points out, you use an `AVCaptureSession` object to coordinate the flow of data from audio or video input devices to outputs. So it is supposed to be a pretty generic interface between something generating media data (for example, camera sensor) and something receiving it (say, your app).
 
 ## What do I do with it again?
 
