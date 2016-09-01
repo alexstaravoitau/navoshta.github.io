@@ -5,7 +5,7 @@ tags:
 - Swift
 - Camera
 ---
-There are a lot of apps nowadays that use iPhone and iPad cameras. Some even do pretty performance wise badass things with it, like running each frame through a neural network or applying a realtime filter. Either way you may want to get as low as you can in terms of the level at which you interact with the device  hardware, be it getting data from a camera sensor or computations involving GPU — you still want to minimise the impact on device's limited computational resources.<!--more--> In this tutorial we will get raw camera frames data. If you are trying to achieve the lowest-overhead access to camera sensor, using a `AVCaptureSession` would be a really good start!
+A lot of apps nowadays use iPhone and iPad cameras. Some even do pretty badass things with it (performance wise), like running each frame through a neural network or applying a realtime filter. Either way you may want to get as low as you can in terms of the level at which you interact with the device  hardware, be it getting data from a camera sensor or computations involving GPU — you still want to minimise the impact on device's limited computational resources.<!--more--> In this tutorial we will get raw camera frames data. If you are trying to achieve the lowest-overhead access to camera sensor, using a `AVCaptureSession` would be a really good start!
 
 ## What is `AVCaptureSession`?
 
