@@ -112,4 +112,4 @@ Usage is as follows:
 
 You can now work with the Jupyter Notebook just the way you do locally. As per training data and such, I prefer to transfer it to the AWS instance using `wget`, although in case the data is too large you will need to configure the storage capacity of your AWS machine. In the AWS language this would be instance's attached *Volume* — a memory which is not wiped across instance launches.
 
-I hope this post was helpful and, hopefully, saved you some time. Let me know if you face any issues, or in case you know how to make the whole process even easier!
+I hope this post was helpful and, hopefully, saved you some time. Let me know if you face any issues, or in case you know how to make the whole process easier!
