@@ -1,10 +1,11 @@
 ---
-title: Running Jupyter Notebook with TensorFlow on AWS
+title: Running TensorFlow with Jupyter Notebook on AWS
 tags:
 - IPython
 - Jupyter Notebook
 - TensorFlow
 - AWS
+- Tutorial
 ---
 Google's open source TensorFlow is one of the most promising machine learning frameworks nowadays. Even though Google is said to use a slightly different version internally, and the current version of TensorFlow is somewhat behind its competitors performance wise, one can hardly argue that it has a lot of potential.<!--more--> So if you are into data science the chances are that you will at least give it a go sooner or later.
 
@@ -111,4 +112,4 @@ Usage is as follows:
 
 You can now work with the Jupyter Notebook just the way you do locally. As per training data and such, I prefer to transfer it to the AWS instance using `wget`, although in case the data is too large you will need to configure the storage capacity of your AWS machine. In the AWS language this would be instance's attached *Volume* — a memory which is not wiped across instance launches.
 
-I hope this post was helpful and, hopefully, saved you some time. Let me know if you face any issues, or in case you want to suggest how to make the whole process even easier.
+I hope this post was helpful and, hopefully, saved you some time. Let me know if you face any issues, or in case you know how to make the whole process even easier!
