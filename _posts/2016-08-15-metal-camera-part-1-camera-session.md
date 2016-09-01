@@ -5,11 +5,11 @@ tags:
 - Swift
 - Camera
 ---
-There are a lot of apps nowadays that use iPhone and iPad cameras. Some even do pretty performance wise badass things with it, like running each frame through a neural network or applying a realtime filter. Either way you may want to get as low as you can in terms of the level at which you interact with the device  hardware, be it getting data from a camera sensor or computations involving GPU — you still want to minimise the impact on device's limited computational resources.<!--more--> In this tutorial we will get raw camera frames data. If you are trying to achieve the lowest-overhead access to camera sensor, using a `AVCaptureSession` would be a really good start!
+A lot of apps nowadays use iPhone and iPad cameras. Some even do pretty badass things with it (performance wise), like running each frame through a neural network or applying a realtime filter. Either way you may want to get as low as you can in terms of the level at which you interact with the device  hardware, be it getting data from a camera sensor or computations involving GPU — you still want to minimise the impact on device's limited computational resources.<!--more--> In this tutorial we will get raw camera frames data. If you are trying to achieve the lowest-overhead access to camera sensor, using a `AVCaptureSession` would be a really good start!
 
 ## What is `AVCaptureSession`?
 
-`AVCaptureSession` is a class in `AVFoundation` framework — whenever you write any code for audio/video recording or playback, the chances are you will end up using some parts of `AVFoundation` (`AV` standing for "Audio/Video"). As Apple reference points out, you use an `AVCaptureSession` object to coordinate the flow of data from audio or video input devices to outputs. So it is supposed to be a pretty generic interface between something generating media data (for example, camera sensor) and something receiving it (say, your app).
+`AVCaptureSession` is a class in `AVFoundation` framework — whenever you write any code for audio/video recording or playback, the chances are you will end up using some parts of `AVFoundation` (AV standing for "Audio/Video"). As Apple reference points out, you use an `AVCaptureSession` object to coordinate the flow of data from audio or video input devices to outputs. So it is supposed to be a pretty generic interface between something generating media data (for example, camera sensor) and something receiving it (say, your app).
 
 ## What do I do with it again?
 
