@@ -45,7 +45,7 @@ Since things start turning `Metal` at this point, we will need a couple of varia
 
 ```swift
 /// Texture cache we will use for converting frame images to textures
-var textureCache: Unmanaged<CVMetalTextureCacheRef>?
+var textureCache: CVMetalTextureCache?
 
 /// `MTLDevice` we need to initialize texture cache
 var metalDevice = MTLCreateSystemDefaultDevice()
@@ -74,26 +74,26 @@ let height = CVPixelBufferGetHeight(imageBuffer)
 
 Now get an unmanaged reference to a `CVMetalTexture`. This is not `MTLTexture` yet, but we are getting there! 
 
-> You may have noticed that things get a bit `Unmanaged` at this point, as we are entering a world of Objective-C APIs in our purely Swift code. To get a better insight of why we use `Unmanaged` and to make sure you don't shoot yourself in the leg with it, you may want to read <a target="_blank" href="http://nshipster.com/unmanaged/">this great article</a>. 
+> Previously things were getting a bit `Unmanaged` at this point, as we were entering a world of Objective-C APIs in our purely Swift code. To get a better insight of why we use `Unmanaged` and to make sure you don't shoot yourself in the leg with it, you may want to read <a target="_blank" href="http://nshipster.com/unmanaged/">this great article</a>. 
+
+But ever since Swift 3 was introduced, `CoreVideo` APIs seemed to be updated, making the `Unmanaged` part redundant. It means that now you don't have to worry about specifying a `Unmanaged<CVMetalTextureRef>?` type — you can simply use `CVMetalTextureRef?`.
 
 ```swift
-var textureRef: Unmanaged<CVMetalTextureRef>?
+var imageTexture: CVMetalTexture?
 
-let result = CVMetalTextureCacheCreateTextureFromImage(kCFAllocatorDefault, textureCache.takeUnretainedValue(), imageBuffer, nil, pixelFormat, width, height, planeIndex, &textureRef)
+let result = CVMetalTextureCacheCreateTextureFromImage(kCFAllocatorDefault, textureCache.takeUnretainedValue(), imageBuffer, nil, pixelFormat, width, height, planeIndex, &imageTexture)
 ```
 
 Ok, almost there. Now we only need to grab the actual texture from the CVMetalTexture container and make sure to manually release the unwrapped optional texture reference.
 
 ```swift
-guard let
-    unwrappedTextureRef = textureRef,
-    texture = CVMetalTextureGetTexture(unwrappedTextureRef.takeUnretainedValue())
-    where result == kCVReturnSuccess
+guard
+    let unwrappedImageTexture = imageTexture,
+    let texture = CVMetalTextureGetTexture(unwrappedImageTexture),
+    result == kCVReturnSuccess
 else {
-    /// Handle an error. We failed to create texture from image.
+    throw MetalCameraSessionError.failedToCreateTextureFromImage
 }
-
-unwrappedTextureRef.release()
 
 /// We have our `MTLTexture` in the `texture` variable now.
 ```
