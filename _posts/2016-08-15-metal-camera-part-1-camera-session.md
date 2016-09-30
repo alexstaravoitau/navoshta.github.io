@@ -52,10 +52,10 @@ AVCaptureDevice.requestAccessForMediaType(AVMediaTypeVideo) {
 Now you need to get a `AVCaptureDevice` instance representing the camera. I would suggest adding a routine method for that.
 
 ```swift
-func deviceWithMediaType(mediaType: String, position: AVCaptureDevicePosition) -> AVCaptureDevice? {
-    guard let devices = AVCaptureDevice.devicesWithMediaType(mediaType) as? [AVCaptureDevice] else { return nil }
+func device(mediaType: String, position: AVCaptureDevicePosition) -> AVCaptureDevice? {
+    guard let devices = AVCaptureDevice.devices(withMediaType: mediaType) as? [AVCaptureDevice] else { return nil }
     
-    if let index = devices.indexOf({ $0.position == position }) {
+    if let index = devices.index(where: { $0.position == position }) {
         return devices[index]
     }
     
@@ -66,7 +66,7 @@ func deviceWithMediaType(mediaType: String, position: AVCaptureDevicePosition) -
 What this method does is simply gets an `Array` of devices of specified type and then filters out the one with requested `AVCaptureDevicePosition`. So now you can get a `AVCaptureDevice` instance representing the front camera!
 
 ```swift
-guard let inputDevice = deviceWithMediaType(AVMediaTypeVideo, position: .Front) else { 
+guard let inputDevice = device(mediaType: AVMediaTypeVideo, position: .front) else { 
 	/// Handle an error. We couldn't get hold of the requested hardware.
 	return 
 }
@@ -117,14 +117,14 @@ If you're worried about performance and try to squeeze every bit of the processo
 
 ```swift
 outputData.videoSettings = [
-    kCVPixelBufferPixelFormatTypeKey : Int(kCVPixelFormatType_420YpCbCr8BiPlanarVideoRange)
+    kCVPixelBufferPixelFormatTypeKey as AnyHashable : Int(kCVPixelFormatType_420YpCbCr8BiPlanarVideoRange)
 ]
 ```
 
 Now it's time to set the delegate that is going to receive each and every video frame. You will also need to specify a dispatch queue:
 
 ```swift
-let captureSessionQueue = dispatch_queue_create("CameraSessionQueue", DISPATCH_QUEUE_SERIAL)
+let captureSessionQueue = DispatchQueue(label: "CameraSessionQueue", attributes: [])
 outputData.setSampleBufferDelegate(self, queue: captureSessionQueue)
 ```
 
@@ -152,7 +152,7 @@ Now, if you have configured everything correctly, you should start receiving sam
 
 
 ```swift
-@objc func captureOutput(captureOutput: AVCaptureOutput!, didOutputSampleBuffer sampleBuffer: CMSampleBuffer!, fromConnection connection: AVCaptureConnection!) {
+@objc func captureOutput(_ captureOutput: AVCaptureOutput!, didOutputSampleBuffer sampleBuffer: CMSampleBuffer!, from connection: AVCaptureConnection!) {
 	/// Do more fancy stuff with sampleBuffer.
 }
 ```
