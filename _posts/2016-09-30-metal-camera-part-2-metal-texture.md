@@ -76,7 +76,7 @@ Now get an unmanaged reference to a `CVMetalTexture`. This is not `MTLTexture` y
 
 > Previously things were getting a bit `Unmanaged` at this point, as we were entering a world of Objective-C APIs in our purely Swift code. To get a better insight of why we use `Unmanaged` and to make sure you don't shoot yourself in the leg with it, you may want to read <a target="_blank" href="http://nshipster.com/unmanaged/">this great article</a>. 
 
-But ever since Swift 3 was introduced, `CoreVideo` APIs seemed to be updated, making the `Unmanaged` part redundant. It means that now you don't have to worry about specifying a `Unmanaged<CVMetalTextureRef>?` type — you can simply use `CVMetalTextureRef?`.
+> But ever since Swift 3 was introduced, `CoreVideo` APIs seemed to be updated, making the `Unmanaged` part redundant. It means that now you don't have to worry about specifying a `Unmanaged<CVMetalTextureRef>?` type — you can simply use `CVMetalTextureRef?`.
 
 ```swift
 var imageTexture: CVMetalTexture?
