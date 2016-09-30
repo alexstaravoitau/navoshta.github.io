@@ -91,7 +91,7 @@ catch {
 
 Now, we are going to configure a bunch of the capture session things in the next paragraphs, and we would like it to be all applied atomically. You can do that by wrapping the configuration into `beginConfiguration()`/`commitConfiguration()` calls:
 
-```
+```swift
 captureSession.beginConfiguration()
 
 guard captureSession.canAddInput(captureInput) else {
@@ -132,7 +132,7 @@ outputData.setSampleBufferDelegate(self, queue: captureSessionQueue)
 
 Finally, add your configured output to the session instance.
 
-```
+```swift
 guard captureSession.canAddOutput(outputData) else {
     /// Handle an error. We failed to add an output device.
 }
