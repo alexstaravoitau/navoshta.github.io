@@ -10,7 +10,7 @@ In the <a target="_blank" href="/metal-camera-part-1-camera-session/">first part
 
 ## What is `Metal`?
 
-`Metal` is a relatively new Apple graphics framework backed up by the iOS device's GPU. However it's not just graphics: GPUs recently got a whole new world of applications in numeric computations due to a rise of neural networks and other machine learning algorithms. That is why Apple has recently extended `Metal` APIs to cater for various machine learning applications as well, claiming to provide the lowest-overhead access to the GPU (as opposed to `OpenGL`), so the whole thing sounds very promising.
+`Metal` is a relatively new Apple graphics framework backed up by the iOS device's GPU. However it's not just graphics: GPUs recently got a whole new world of applications in numeric computations due to a rise of neural networks and other machine learning algorithms. That is why Apple has extended `Metal` APIs in iOS 10 SDK to cater for various machine learning applications as well, claiming to provide the lowest-overhead access to the GPU (as opposed to `OpenGL`), so the whole thing sounds very promising.
 
 ## What do I do with it again?
 
