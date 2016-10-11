@@ -5,7 +5,7 @@ tags:
 - Swift
 - Protocol
 ---
-Although protocols is not by any means a new thing, Swift specifically encourages the developers to use them over inheritance. Not that Objective-C didn't make use of them, but due to the dynamic nature of Objective-C Runtime one would be tempted to put chunks of common declarations in the superclass rather than a protocol.<!--more-->
+Although protocols are not by any means a new thing, Swift specifically encourages the developers to use it over inheritance. Not that Objective-C didn't make use of protocols, but due to the dynamic nature of Objective-C Runtime one would be tempted to put chunks of common declarations in a superclass instead.<!--more-->
 
 Swift is somewhat less forgiving in that sense, and developers (including me) tend to start realising that sometimes a protocol would be a better fit. There are still some contraversial use cases, one of them being: how do I declare a variable in Swift being of a specific class and conforming to a protocol? This is actually quite common: say, you expect a `var` to hold a reference to a `UIViewController` (so that you could do some UI presentation stuff with it) that should also conform to a protocol (so that it does some more stuff on top of that). For instance, here is the protocol:
 
