@@ -1,5 +1,5 @@
 ---
-title: Type of a class conforming to protocol
+title: Swift: Type of a class conforming to protocol
 tags:
 - iOS
 - Swift
