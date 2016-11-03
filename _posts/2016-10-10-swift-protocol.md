@@ -45,10 +45,10 @@ Now, since you probably only intend to use `Wibbling` with a `UIViewController`,
 
 ```swift
 // Default implementation returning `self` as `UIViewController`.
-extension UIPresentable {
+extension UIPresentable where Self: UIViewController  {
 
     var viewController: UIViewController {
-        return self as! UIViewController
+        return self
     }
 }
 ```
