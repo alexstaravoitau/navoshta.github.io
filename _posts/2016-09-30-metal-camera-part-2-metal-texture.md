@@ -10,7 +10,7 @@ In the <a target="_blank" href="/metal-camera-part-1-camera-session/">first part
 
 ## What is `Metal`?
 
-`Metal` is a relatively new Apple graphics framework backed up by the iOS device's GPU. However it's not just graphics: GPUs recetnly got a whole new world of applications in numeric computations due to a rise of neural networks and other machine learning algorithms. So Apple is very likely to extend `Metal` APIs to cater for various machine learning applications as well! Apple promises lowest-overhead access to the GPU (as opposed to `OpenGL`), so the whole thing sounds very promising.
+`Metal` is a relatively new Apple graphics framework backed up by the iOS device's GPU. However it's not just graphics: GPUs recently got a whole new world of applications in numeric computations due to a rise of neural networks and other machine learning algorithms. That is why Apple has extended `Metal` APIs in iOS 10 SDK to cater for various machine learning applications as well, claiming to provide the lowest-overhead access to the GPU (as opposed to `OpenGL`), so the whole thing sounds very promising.
 
 ## What do I do with it again?
 
@@ -45,7 +45,7 @@ Since things start turning `Metal` at this point, we will need a couple of varia
 
 ```swift
 /// Texture cache we will use for converting frame images to textures
-var textureCache: Unmanaged<CVMetalTextureCacheRef>?
+var textureCache: CVMetalTextureCache?
 
 /// `MTLDevice` we need to initialize texture cache
 var metalDevice = MTLCreateSystemDefaultDevice()
@@ -74,26 +74,26 @@ let height = CVPixelBufferGetHeight(imageBuffer)
 
 Now get an unmanaged reference to a `CVMetalTexture`. This is not `MTLTexture` yet, but we are getting there! 
 
-> You may have noticed that things get a bit `Unmanaged` at this point, as we are entering a world of Objective-C APIs in our purely Swift code. To get a better insight of why we use `Unmanaged` and to make sure you don't shoot yourself in the leg with it, you may want to read <a target="_blank" href="http://nshipster.com/unmanaged/">this great article</a>. 
+> Previously things were getting a bit `Unmanaged` at this point, as we were entering a world of Objective-C APIs in our purely Swift code. To get a better insight of why we use `Unmanaged` and to make sure you don't shoot yourself in the leg with it, you may want to read <a target="_blank" href="http://nshipster.com/unmanaged/">this great article</a>. 
+
+> But ever since Swift 3 was introduced, `CoreVideo` APIs seemed to be updated, making the `Unmanaged` part redundant. It means that now you don't have to worry about specifying a `Unmanaged<CVMetalTextureRef>?` type — you can simply use `CVMetalTextureRef?`.
 
 ```swift
-var textureRef: Unmanaged<CVMetalTextureRef>?
+var imageTexture: CVMetalTexture?
 
-let result = CVMetalTextureCacheCreateTextureFromImage(kCFAllocatorDefault, textureCache.takeUnretainedValue(), imageBuffer, nil, pixelFormat, width, height, planeIndex, &textureRef)
+let result = CVMetalTextureCacheCreateTextureFromImage(kCFAllocatorDefault, textureCache.takeUnretainedValue(), imageBuffer, nil, pixelFormat, width, height, planeIndex, &imageTexture)
 ```
 
 Ok, almost there. Now we only need to grab the actual texture from the CVMetalTexture container and make sure to manually release the unwrapped optional texture reference.
 
 ```swift
-guard let
-    unwrappedTextureRef = textureRef,
-    texture = CVMetalTextureGetTexture(unwrappedTextureRef.takeUnretainedValue())
-    where result == kCVReturnSuccess
+guard
+    let unwrappedImageTexture = imageTexture,
+    let texture = CVMetalTextureGetTexture(unwrappedImageTexture),
+    result == kCVReturnSuccess
 else {
-    /// Handle an error. We failed to create texture from image.
+    throw MetalCameraSessionError.failedToCreateTextureFromImage
 }
-
-unwrappedTextureRef.release()
 
 /// We have our `MTLTexture` in the `texture` variable now.
 ```
@@ -114,4 +114,15 @@ This was the second part of **Metal Camera Tutorial** series, where we explore w
 You can check out the <a target="_blank" href="https://github.com/navoshta/MetalRenderCamera">final project</a> from this **Metal Camera Tutorial** on GitHub.
 
 
+<!-- Place this tag where you want the button to render. -->
+<a class="github-button" href="https://github.com/navoshta" data-style="mega" data-count-href="/navoshta/followers" data-count-api="/users/navoshta#followers" data-count-aria-label="# followers on GitHub" aria-label="Follow @navoshta on GitHub">Follow @navoshta</a>
+<!-- Place this tag where you want the button to render. -->
+<a class="github-button" href="https://github.com/navoshta/MetalRenderCamera" data-icon="octicon-star" data-style="mega" data-count-href="/navoshta/MetalRenderCamera/stargazers" data-count-api="/repos/navoshta/MetalRenderCamera#stargazers_count" data-count-aria-label="# stargazers on GitHub" aria-label="Star navoshta/MetalRenderCamera on GitHub">Star</a>
+<!-- Place this tag where you want the button to render. -->
+<a class="github-button" href="https://github.com/navoshta/MetalRenderCamera/fork" data-icon="octicon-repo-forked" data-style="mega" data-count-href="/navoshta/MetalRenderCamera/network" data-count-api="/repos/navoshta/MetalRenderCamera#forks_count" data-count-aria-label="# forks on GitHub" aria-label="Fork navoshta/MetalRenderCamera on GitHub">Fork</a>
+<!-- Place this tag where you want the button to render. -->
+<a class="github-button" href="https://github.com/navoshta/MetalRenderCamera/archive/master.zip" data-icon="octicon-cloud-download" data-style="mega" aria-label="Download navoshta/MetalRenderCamera on GitHub">Download</a>
+
+<!-- Place this tag in your head or just before your close body tag. -->
+<script async defer src="https://buttons.github.io/buttons.js"></script>
 

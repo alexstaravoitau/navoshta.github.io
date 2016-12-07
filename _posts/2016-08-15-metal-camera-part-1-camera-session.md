@@ -52,10 +52,10 @@ AVCaptureDevice.requestAccessForMediaType(AVMediaTypeVideo) {
 Now you need to get a `AVCaptureDevice` instance representing the camera. I would suggest adding a routine method for that.
 
 ```swift
-func deviceWithMediaType(mediaType: String, position: AVCaptureDevicePosition) -> AVCaptureDevice? {
-    guard let devices = AVCaptureDevice.devicesWithMediaType(mediaType) as? [AVCaptureDevice] else { return nil }
+func device(mediaType: String, position: AVCaptureDevicePosition) -> AVCaptureDevice? {
+    guard let devices = AVCaptureDevice.devices(withMediaType: mediaType) as? [AVCaptureDevice] else { return nil }
     
-    if let index = devices.indexOf({ $0.position == position }) {
+    if let index = devices.index(where: { $0.position == position }) {
         return devices[index]
     }
     
@@ -66,7 +66,7 @@ func deviceWithMediaType(mediaType: String, position: AVCaptureDevicePosition) -
 What this method does is simply gets an `Array` of devices of specified type and then filters out the one with requested `AVCaptureDevicePosition`. So now you can get a `AVCaptureDevice` instance representing the front camera!
 
 ```swift
-guard let inputDevice = deviceWithMediaType(AVMediaTypeVideo, position: .Front) else { 
+guard let inputDevice = device(mediaType: AVMediaTypeVideo, position: .front) else { 
 	/// Handle an error. We couldn't get hold of the requested hardware.
 	return 
 }
@@ -91,7 +91,7 @@ catch {
 
 Now, we are going to configure a bunch of the capture session things in the next paragraphs, and we would like it to be all applied atomically. You can do that by wrapping the configuration into `beginConfiguration()`/`commitConfiguration()` calls:
 
-```
+```swift
 captureSession.beginConfiguration()
 
 guard captureSession.canAddInput(captureInput) else {
@@ -117,14 +117,14 @@ If you're worried about performance and try to squeeze every bit of the processo
 
 ```swift
 outputData.videoSettings = [
-    kCVPixelBufferPixelFormatTypeKey : Int(kCVPixelFormatType_420YpCbCr8BiPlanarVideoRange)
+    kCVPixelBufferPixelFormatTypeKey as AnyHashable : Int(kCVPixelFormatType_420YpCbCr8BiPlanarVideoRange)
 ]
 ```
 
 Now it's time to set the delegate that is going to receive each and every video frame. You will also need to specify a dispatch queue:
 
 ```swift
-let captureSessionQueue = dispatch_queue_create("CameraSessionQueue", DISPATCH_QUEUE_SERIAL)
+let captureSessionQueue = DispatchQueue(label: "CameraSessionQueue", attributes: [])
 outputData.setSampleBufferDelegate(self, queue: captureSessionQueue)
 ```
 
@@ -132,7 +132,7 @@ outputData.setSampleBufferDelegate(self, queue: captureSessionQueue)
 
 Finally, add your configured output to the session instance.
 
-```
+```swift
 guard captureSession.canAddOutput(outputData) else {
     /// Handle an error. We failed to add an output device.
 }
@@ -152,7 +152,7 @@ Now, if you have configured everything correctly, you should start receiving sam
 
 
 ```swift
-@objc func captureOutput(captureOutput: AVCaptureOutput!, didOutputSampleBuffer sampleBuffer: CMSampleBuffer!, fromConnection connection: AVCaptureConnection!) {
+@objc func captureOutput(_ captureOutput: AVCaptureOutput!, didOutputSampleBuffer sampleBuffer: CMSampleBuffer!, from connection: AVCaptureConnection!) {
 	/// Do more fancy stuff with sampleBuffer.
 }
 ```
@@ -174,4 +174,14 @@ This was the first part of **Metal Camera Tutorial** series, where we explore wa
 
 You can check out the <a target="_blank" href="https://github.com/navoshta/MetalRenderCamera">final project</a> from this **Metal Camera Tutorial** on GitHub.
 
+<!-- Place this tag where you want the button to render. -->
+<a class="github-button" href="https://github.com/navoshta" data-style="mega" data-count-href="/navoshta/followers" data-count-api="/users/navoshta#followers" data-count-aria-label="# followers on GitHub" aria-label="Follow @navoshta on GitHub">Follow @navoshta</a>
+<!-- Place this tag where you want the button to render. -->
+<a class="github-button" href="https://github.com/navoshta/MetalRenderCamera" data-icon="octicon-star" data-style="mega" data-count-href="/navoshta/MetalRenderCamera/stargazers" data-count-api="/repos/navoshta/MetalRenderCamera#stargazers_count" data-count-aria-label="# stargazers on GitHub" aria-label="Star navoshta/MetalRenderCamera on GitHub">Star</a>
+<!-- Place this tag where you want the button to render. -->
+<a class="github-button" href="https://github.com/navoshta/MetalRenderCamera/fork" data-icon="octicon-repo-forked" data-style="mega" data-count-href="/navoshta/MetalRenderCamera/network" data-count-api="/repos/navoshta/MetalRenderCamera#forks_count" data-count-aria-label="# forks on GitHub" aria-label="Fork navoshta/MetalRenderCamera on GitHub">Fork</a>
+<!-- Place this tag where you want the button to render. -->
+<a class="github-button" href="https://github.com/navoshta/MetalRenderCamera/archive/master.zip" data-icon="octicon-cloud-download" data-style="mega" aria-label="Download navoshta/MetalRenderCamera on GitHub">Download</a>
 
+<!-- Place this tag in your head or just before your close body tag. -->
+<script async defer src="https://buttons.github.io/buttons.js"></script>

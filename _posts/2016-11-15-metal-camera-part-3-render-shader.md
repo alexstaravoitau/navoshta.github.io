@@ -262,3 +262,15 @@ This was the final part of **Metal Camera Tutorial** series, where we explore wa
 * <a target="_blank" href="/metal-camera-bonus-running-simulator">**Bonus: Running Metal project on iOS Simulator**</a>
 
 You can check out the <a target="_blank" href="https://github.com/navoshta/MetalRenderCamera">final project</a> from this **Metal Camera Tutorial** on GitHub.
+
+<!-- Place this tag where you want the button to render. -->
+<a class="github-button" href="https://github.com/navoshta" data-style="mega" data-count-href="/navoshta/followers" data-count-api="/users/navoshta#followers" data-count-aria-label="# followers on GitHub" aria-label="Follow @navoshta on GitHub">Follow @navoshta</a>
+<!-- Place this tag where you want the button to render. -->
+<a class="github-button" href="https://github.com/navoshta/MetalRenderCamera" data-icon="octicon-star" data-style="mega" data-count-href="/navoshta/MetalRenderCamera/stargazers" data-count-api="/repos/navoshta/MetalRenderCamera#stargazers_count" data-count-aria-label="# stargazers on GitHub" aria-label="Star navoshta/MetalRenderCamera on GitHub">Star</a>
+<!-- Place this tag where you want the button to render. -->
+<a class="github-button" href="https://github.com/navoshta/MetalRenderCamera/fork" data-icon="octicon-repo-forked" data-style="mega" data-count-href="/navoshta/MetalRenderCamera/network" data-count-api="/repos/navoshta/MetalRenderCamera#forks_count" data-count-aria-label="# forks on GitHub" aria-label="Fork navoshta/MetalRenderCamera on GitHub">Fork</a>
+<!-- Place this tag where you want the button to render. -->
+<a class="github-button" href="https://github.com/navoshta/MetalRenderCamera/archive/master.zip" data-icon="octicon-cloud-download" data-style="mega" aria-label="Download navoshta/MetalRenderCamera on GitHub">Download</a>
+
+<!-- Place this tag in your head or just before your close body tag. -->
+<script async defer src="https://buttons.github.io/buttons.js"></script>
