@@ -30,6 +30,6 @@ You can, of course, get this theme [on GitHub](https://github.com/navoshta/Jupyt
 <!-- Place this tag in your head or just before your close body tag. -->
 <script async defer src="https://buttons.github.io/buttons.js"></script>
 
- You can find detailed installation instruction following [this link](https://github.com/nsonnad/base16-ipython-notebook). Although for me it was as easy as placing the `custom.css` file in the `~/.jupyter/custom` folder on both my macOS and Ubuntu machines.
+ You can find detailed installation instructions following [this link](https://github.com/nsonnad/base16-ipython-notebook). Although for me it was as easy as placing the `custom.css` file in the `~/.jupyter/custom` folder on both my macOS and Ubuntu machines.
 
 Final note: if you don't have Apple's `Menlo` font installed you may want to check out its open source alternative [`Meslo`](https://github.com/andreberg/Meslo-Font).
