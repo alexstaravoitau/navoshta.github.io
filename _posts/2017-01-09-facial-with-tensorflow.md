@@ -8,7 +8,7 @@ tags:
 - Variable scope
 - Saver
 ---
-This is a TensorFlow follow-along for an amazing [Deep Learning tutorial](http://danielnouri.org/notes/2014/12/17/using-convolutional-neural-nets-to-detect-facial-keypoints-tutorial/) by Daniel Nouri. Daniel describes ways of approaching a computer vision problem of detecting facial keypoints in an image using various deep learning techniques, while these techniques gradually build upon each other, demonstrating advantages and limitations of each. I highly recommend going through the steps if you are interested in the topic and prefer learning by example.<!--more--> 
+This is a TensorFlow follow-along for an amazing [Deep Learning tutorial](http://danielnouri.org/notes/2014/12/17/using-convolutional-neural-nets-to-detect-facial-keypoints-tutorial/) by Daniel Nouri. Daniel describes ways of approaching a computer vision problem of detecting facial keypoints in an image using various deep learning techniques, while these techniques gradually build upon each other, demonstrating advantages and limitations of each. <!--more--> I highly recommend going through the steps if you are interested in the topic and prefer learning by example.
 
 However, Daniel uses Lasagne as a machine learning framework, and I'm currently learning to use TensorFlow, so I thought I would publish my follow-along tutorial where I'm utilising the very same approach, but using TensorFlow for building models on each of the steps. Daniel is using a set of different models that tend to gradually get more complicated (and perform better), so I did the same and broke down the tutorial into three Jupyter notebooks:
 
