@@ -7,7 +7,7 @@
 
 # Site Settings
 locale                   : "en"
-title                    : "Posts"
+title                    : "Alex Staravoitau's Blog"
 title_separator          : "-"
 name                     : &name "Alex Staravoitau"
 description              : &description "Alex's amazing blog about tech and stuff."
