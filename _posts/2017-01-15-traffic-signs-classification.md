@@ -56,7 +56,7 @@ The images differ significantly in terms of contrast and brightness, so we will 
 
 The usual preprocessing in this case would include scaling of pixel values to `[0, 1]` (as currently they are in `[0, 255]` range), representing labels in a one-hot encoding and shuffling. Looking at the images, histogram equalization may be helpful as well. We will apply _localized_ histogram equalization, as it seems to improve feature extraction even further in our case. 
 
-I will only use the single channel in my model, e.g. grayscale images instead of color ones. As Pierre Sermanet and Yann LeCun mentioned in [their paper](http://yann.lecun.com/exdb/publis/pdf/sermanet-ijcnn-11.pdf){:target="_blank"}, using color channels didn't seem to improve things a lot, so I will only take the `Y` channel of the `YCbCr` representation of an image.
+I will only use a single channel in my model, e.g. grayscale images instead of color ones. As Pierre Sermanet and Yann LeCun mentioned in [their paper](http://yann.lecun.com/exdb/publis/pdf/sermanet-ijcnn-11.pdf){:target="_blank"}, using color channels didn't seem to improve things a lot, so I will only take `Y` channel of the `YCbCr` representation of an image.
 
 ```python
 import numpy as np
@@ -274,7 +274,7 @@ I decided to use a deep neural network classifier as a model, which was inspired
 
 ![image-center]({{ base_path }}/images/posts/traffic-signs-architecture.png_){: .align-center}
 
-As opposed to usual strict feed-forward CNNs I use **multi-scale features**, which means that convolutional layers' output is not only forwarded into the subsequent layer, but is also branched off and fed into the classifier (e.g. fully connected layer). Please mind that these branched off layers undergo additional max-pooling, so that all convolutions are proportionally subsampled before going into the classifier.
+As opposed to usual strict feed-forward CNNs I use **multi-scale features**, which means that convolutional layers' output is not only forwarded into subsequent layer, but is also branched off and fed into classifier (e.g. fully connected layer). Please mind that these branched off layers undergo additional max-pooling, so that all convolutions are proportionally subsampled before going into classifier.
 
 ### Regularization
 
@@ -290,9 +290,9 @@ I use the following regularization techniques to minimize overfitting to trainin
  Layer 4        FC             1024         0.5         50% of neurons
 ```
 
-* **L2 Regularization**. I ended up using **lambda = 0.0001** which seemed to perform best. Important point here is that L2 loss should only include weights of the fully connected layers, and normally it doesn't include the bias term. Intuition behind it being that bias term is not contributing to overfitting, as it is not adding any new degree of freedom to the model. 
+* **L2 Regularization**. I ended up using **lambda = 0.0001** which seemed to perform best. Important point here is that L2 loss should only include weights of the fully connected layers, and normally it doesn't include bias term. Intuition behind it being that bias term is not contributing to overfitting, as it is not adding any new degree of freedom to a model. 
 
-* **Early stopping**. I use early stopping with a patience of **100 epochs** to capture the last best-performing weights and roll back when the model starts overfitting the training data. I use validation set cross entropy loss as an early stopping metric, the intuition behind using it instead of accuracy is that if your model is *confident* about its predictions it should generalize better.
+* **Early stopping**. I use early stopping with a patience of **100 epochs** to capture the last best-performing weights and roll back when model starts overfitting training data. I use validation set cross entropy loss as an early stopping metric, intuition behind using it instead of accuracy is that if your model is *confident* about its predictions it should generalize better.
 
 ### Implementation
 
@@ -362,7 +362,7 @@ def pool(input, size):
 
 I am using Xavier initializer, which automatically determines the scale of initialization based on the layers' dimensions, hence there are less parameter we need to experiment with. 
 
-We can now encode the model, getting most of variable scopes, which makes the code easier to read and maintain. This method will perform a full model pass.
+We can now encode the model, getting most of variable scopes, which makes code easier to read and maintain. This method will perform a full model pass.
 
 ```python
 def model_pass(input, params, is_training):
@@ -435,15 +435,15 @@ I have generated two datasets for training my model using augmentation pipeline 
 * **Extended** dataset. This dataset simply contains **20x more data** than the original one — e.g. for each training example we generate 19 additional examples by jittering original image, with **augmentation intensity = 0.75**. 
 * **Balanced** dataset. This dataset is balanced across classes and has **20.000 examples** for each class. These 20k contain original training dataset, as well as jittered images from the original training set (with **augmentation intensity = 0.75**) to complete number of examples for each class to 20.000 images.
 
-**Disclaimer:** Training on **extended** dataset may not be the best idea, as some classes remain significantly less represented than the others there. Training the model with this dataset would make it biased towards predicting overrepresented classes. However, in our case we are trying to score highest accuracy on supplied test dataset, which (probably) follows the same classes distribution. So we are going to _cheat_ a bit and use this extended dataset for pre-training — this has proven to make the test accuracy higher (although hardly makes the model perform better "in the field"!).
+**Disclaimer:** Training on **extended** dataset may not be the best idea, as some classes remain significantly less represented than the others there. Training a model with this dataset would make it biased towards predicting overrepresented classes. However, in our case we are trying to score highest accuracy on supplied test dataset, which (probably) follows the same classes distribution. So we are going to _cheat_ a bit and use this extended dataset for pre-training — this has proven to make test set accuracy higher (although hardly makes a model perform better "in the field"!).
 {: .notice}
 
-I then use 25% of these augmented datasets for validation when training the model in 2 stages:
+I then use 25% of these augmented datasets for validation while training in 2 stages:
 
 * **Stage 1: Pre-training**. On the first stage I pre-train the model using **extended** training dataset with TensorFlow `AdamOptimizer` and learning rate set to **0.001**. It normally stops improving after ~180 epochs, which takes ~3.5 hours on my machine equipped with Nvidia GTX1080 GPU.
 * **Stage 2: Fine-tuning**. I then train the model using a **balanced** dataset with a decreased learning rate of **0.0001**.
 
-These two training stages could easily get you past 99% accuracy on the test. You can, however, improve model performance even further by re-generating **balanced** dataset with slightly decreased augmentation intensity and repeating 2nd fine-tuning stage a couple of times.
+These two training stages could easily get you past 99% accuracy on the test set. You can, however, improve model performance even further by re-generating **balanced** dataset with slightly decreased augmentation intensity and repeating 2nd fine-tuning stage a couple of times.
 
 ## Visualization
 
