@@ -264,7 +264,7 @@ Please note that we use `edge` mode when applying our transformations, to ensure
 
 ### Architecture
 
-I decided to use a deep neural network classifier as a model, which was inspired by [Daniel Nouri's tutorial](http://navoshta.com/facial-with-tensorflow/) and aforementioned [Pierre Sermanet / Yann LeCun paper](https://www.google.co.uk/url?sa=t&rct=j&q=&esrc=s&source=web&cd=1&cad=rja&uact=8&ved=0ahUKEwjB4PC6ibrRAhVLbxQKHVMmCxQQFggcMAA&url=http%3A%2F%2Fyann.lecun.com%2Fexdb%2Fpublis%2Fpdf%2Fsermanet-ijcnn-11.pdf&usg=AFQjCNEtvdz_vnI9tg1wF96UcjxVYwxdHw&sig2=_n55pvRLm-WlbCBkRYdE8A). It is fairly simple and has 4 layers: **3 convolutional layers** for feature extraction and **one fully connected layer** as a classifier.
+I decided to use a deep neural network classifier as a model, which was inspired by [Daniel Nouri's tutorial](http://navoshta.com/facial-with-tensorflow/) and aforementioned [Pierre Sermanet / Yann LeCun paper](http://yann.lecun.com/exdb/publis/pdf/sermanet-ijcnn-11.pdf). It is fairly simple and has 4 layers: **3 convolutional layers** for feature extraction and **one fully connected layer** as a classifier.
 
 ![image-center]({{ base_path }}/images/posts/traffic-signs-architecture.png_){: .align-center}
 
