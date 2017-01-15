@@ -17,7 +17,7 @@ I'm also assuming you already know a fair bit about neural networks and regulari
 
 ## Dataset
 
-The [German Traffic Sign Dataset](http://benchmark.ini.rub.de/?section=gtsrb&subsection=dataset){:target="_blank"} consists of **39,209 32×32 px color images** that we are supposed to use for training, and **12,630 images** that we will use for testing. Each image is a photo of a traffic sign belonging to one of 43 possible classes, e.g. traffic sign types.
+The [German Traffic Sign Dataset](http://benchmark.ini.rub.de/?section=gtsrb&subsection=dataset){:target="_blank"} consists of **39,209 32×32 px color images** that we are supposed to use for training, and **12,630 images** that we will use for testing. Each image is a photo of a traffic sign belonging to one of 43 classes, e.g. traffic sign types.
 
 ![image-center]({{ base_path }}/images/posts/HiojuukJimAAAAAElFTkSuQmCC.png_){: .align-center}
 Random dataset sample
