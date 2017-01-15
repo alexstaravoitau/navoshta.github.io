@@ -20,10 +20,16 @@ I'm also assuming you already know a fair bit about neural networks and regulari
 The [German Traffic Sign Dataset](http://benchmark.ini.rub.de/?section=gtsrb&subsection=dataset){:target="_blank"} consists of **39,209 32×32 px color images** that we are supposed to use for training, and **12,630 images** that we will use for testing. Each image is a photo of a traffic sign belonging to one of 43 possible classes, e.g. traffic sign types.
 
 ![image-center]({{ base_path }}/images/posts/HiojuukJimAAAAAElFTkSuQmCC.png_){: .align-center}
+Random dataset sample
+{: style="text-align: center;"}
+{: .small}
 
 Each image is a 32×32×3 array of pixel intensities, represented as `[0, 255]` integer values in RGB color space. Class of each image is encoded as an integer in a 0 to 42 range. Let's check if the training dataset is balanced across classes.
 
 ![image-center]({{ base_path }}/images/posts/yGIoVOF9s+D6SauJlGkmSVCsv00iSpFqZjEiSpFqZjEiSpFqZjEiSpFqZjEiSpFqZjEiSpFqZjEiSpFqZjEiSpFqZjEiSpFqZjEiSpFqZjEiSpFqZjEiSpFr9f+oLc6HSvr24AAAAAElFTkSuQmCC.png_){: .align-center}
+Dataset classes distribution
+{: style="text-align: center;"}
+{: .small}
 
 Apparently dataset is very unbalanced, and some classes are represented significantly better than the others. Let's now plot a bunch of random images for various classes to see what we are working with.
 
