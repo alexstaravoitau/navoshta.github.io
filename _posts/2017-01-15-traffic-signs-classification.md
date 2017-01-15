@@ -25,7 +25,7 @@ Each image is a 32×32×3 array of pixel intensities, represented as `[0, 255]` 
 
 ![image-center]({{ base_path }}/images/posts/yGIoVOF9s+D6SauJlGkmSVCsv00iSpFqZjEiSpFqZjEiSpFqZjEiSpFqZjEiSpFqZjEiSpFqZjEiSpFqZjEiSpFqZjEiSpFqZjEiSpFqZjEiSpFqZjEiSpFr9f+oLc6HSvr24AAAAAElFTkSuQmCC.png_){: .align-center}
 
-Looking at the plot dataset is very unbalanced, and some classes are represented significantly better than the others. Let's now plot a bunch of random images for various classes to see what we are working with.
+Apparently dataset is very unbalanced, and some classes are represented significantly better than the others. Let's now plot a bunch of random images for various classes to see what we are working with.
 
 ![image-center]({{ base_path }}/images/posts/wGGNjp6MlRqbwAAAABJRU5ErkJggg==.png_){: .align-center}
 Yield
@@ -438,6 +438,24 @@ I then train the model in 2 stages:
 * **Stage 2: Fine-tuning**. I then train the model using a **balanced** dataset with a decreased learning rate of **0.0001**.
 
 These two training stages could easily get you past 99% accuracy on the test. You can, however, improve model performance even further by re-generating **balanced** dataset with slightly decreased augmentation intensity and repeating 2nd *fine-tuning stage* a couple of times.
+
+## Visualization
+
+As an illustration of what a trained neural network looks like, let's plot weights of the first convolutional layer. First layer has dimensions of `5×5×1×32`, which means that it consists of **32 5×5 filters** — we can visualize them as 32 5×5 px grayscale images.
+
+<table border="">
+  <caption><b>5×5 convolutional filters of the first layer</b></caption>
+  <tr>
+    <td><img src="{{ base_path }}/images/posts/conv1_weights_raw.png_" alt="Raw"></td>
+    <td><img src="{{ base_path }}/images/posts/conv1_weights_interpolated.png_" alt="Interpolated"></td>
+  </tr>
+  <tr>
+    <td align="center">Raw</td>
+    <td align="center">Interpolated</td>
+  </tr>
+</table>
+
+We usually expect the first layer to contain filters that can detect very basic pixel patterns, like edges and lines. These basic filters are then used by subsequent layers as building bricks to construct detectors of more complicated patterns.
 
 ## Results
 
