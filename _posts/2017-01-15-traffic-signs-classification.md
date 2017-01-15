@@ -438,7 +438,7 @@ I have generated two datasets for training my model using augmentation pipeline 
 **Disclaimer:** Training on **extended** dataset may not be the best idea, as some classes remain significantly less represented than the others there. Training the model with this dataset would make it biased towards predicting overrepresented classes. However, in our case we are trying to score highest accuracy on supplied testing dataset, which (probably) follows the same classes distribution. So we are going to _cheat_ a bit and use this extended dataset for pre-training — this has proven to make the test accuracy higher (although hardly makes the model perform better "in the field"!).
 {: .notice}
 
-I then train the model in 2 stages:
+I then use 25% of these augmented datasets for validation when training the model in 2 stages:
 
 * **Stage 1: Pre-training**. On the first stage I pre-train the model using **extended** training dataset with TensorFlow `AdamOptimizer` and learning rate set to **0.001**. It normally stops improving after ~180 epochs, which takes ~3.5 hours on my machine equipped with Nvidia GTX1080 GPU.
 * **Stage 2: Fine-tuning**. I then train the model using a **balanced** dataset with a decreased learning rate of **0.0001**.
