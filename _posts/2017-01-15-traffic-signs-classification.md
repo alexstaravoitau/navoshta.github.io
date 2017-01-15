@@ -482,7 +482,7 @@ Predictions for a new type of sign
 {: style="text-align: center;"}
 {: .small}
 
-There was no **Road narrows on the left** class in the dataset, otherwise it would probably be classifier's top choice with even higher confidence. 
+To clarify, this **Elderly crossing** sign was not among those 43 classes this model was trained for, yet what we see here is a reasonable assumption that it looks a lot like **Road narrows on the right** sign. Ironically, classifier's second guess was that this **Elderly crossing** sign should be classified as **Children crossing**!
 
 In conclusion, according to different sources human performance on a similar task varies from 98.3% to 98.8%, therefore this model seems to outperform an average human. Which, I believe, is the ultimate goal of machine learning!
 
