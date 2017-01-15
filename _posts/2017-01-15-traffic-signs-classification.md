@@ -54,7 +54,7 @@ The images differ significantly in terms of contrast and brightness, so we will 
 
 ## Preprocessing
 
-The usual preprocessing in this case would include scaling of pixel values to `[0, 1]` (as currently they are in `[0, 255]` range), representing labels in a one-hot encoding and shuffling. Looking at the images, histogram equalization may be helpful as well. We will apply localized equalization, as it seems to improve feature extraction even further in our case. 
+The usual preprocessing in this case would include scaling of pixel values to `[0, 1]` (as currently they are in `[0, 255]` range), representing labels in a one-hot encoding and shuffling. Looking at the images, histogram equalization may be helpful as well. We will apply _localized_ histogram equalization, as it seems to improve feature extraction even further in our case. 
 
 I will only use the single channel in my model, e.g. grayscale images instead of color ones. As Pierre Sermanet and Yann LeCun mentioned in [their paper](http://yann.lecun.com/exdb/publis/pdf/sermanet-ijcnn-11.pdf){:target="_blank"}, using color channels didn't seem to improve things a lot, so I will only take the `Y` channel of the `YCbCr` representation of an image.
 
@@ -98,7 +98,7 @@ Preprocessed
 
 ## Augmentation
 
-Amount of data we have is not sufficient for the model to generalise well. It is also fairly unbalanced, and some classes are represented significantly worse than the others. But we can fix this with data augmentation!
+The amount of data we have is not sufficient for a model to generalise well. It is also fairly unbalanced, and some classes are represented to significantly lower extent than the others. But we will fix this with data augmentation!
 
 ### Flipping
 
