@@ -465,7 +465,7 @@ We usually expect the first layer to contain filters that can detect very basic 
 
 ## Results
 
-After a couple of fine-tuning training iterations this model scored **99.33% accuracy on the test set**, which is not too bad. As there was a total of 12,630 images that we used for testing, apparently there are **85 examples** that the model could not classify correctly — let's take a look at these bad boys!
+After a couple of fine-tuning training iterations this model scored **99.33% accuracy on the test set**, which is not too bad. As there was a total of 12,630 images that we used for testing, apparently there are **85 examples** that the model could not classify correctly — let's take a look at those bad boys!
 
 <table border="">
   <caption><b>Remaining 85 errors out of 12,630 samples of the test set</b></caption>
