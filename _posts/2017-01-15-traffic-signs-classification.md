@@ -1,6 +1,6 @@
 ---
-title: Traffic signs classification with a CNN in TensorFlow
-excerpt: "This is my attempt to tackle traffic signs classification problem with a deep neural network implemented in TensorFlow. Main highlights of this model would be data preprocessing, data augmentation, pre-training and skipping connections in the network."
+title: Traffic signs classification with a convolutional network
+excerpt: "This is my attempt to tackle traffic signs classification problem with a convolutional neural network implemented in TensorFlow. Main highlights of this model would be data preprocessing, data augmentation, pre-training and skipping connections in the network."
 tags:
 - TensorFlow
 - Computer vision
