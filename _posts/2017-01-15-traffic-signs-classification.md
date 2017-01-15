@@ -372,7 +372,7 @@ def model_pass(input, params, is_training):
     Parameters
     ----------
     input         : Tensor
-                    NumPy array containing a batch of examples.
+                    Batch of examples.
     params        : Parameters
                     Structure (`namedtuple`) containing model parameters.
     is_training   : Tensor of type tf.bool
