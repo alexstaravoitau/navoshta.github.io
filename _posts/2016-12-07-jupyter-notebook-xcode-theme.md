@@ -14,7 +14,7 @@ I'm not a huge fan of dark schemes and wanted to have some familiarity with Xcod
 
 Without further ado, this is what it looks like. I was pretty pleased with the result and have been using it ever since (e.g. for a couple of months now).
 
- ![image-center]({{ base_path }}/images/posts/jupyter-xcode-screenshot.png_){: .align-center}    
+![image-center]({{ base_path }}/images/posts/jupyter-xcode-screenshot.png_){: .align-center}
 
 You can, of course, get this theme [on GitHub](https://github.com/navoshta/Jupyter-Notebook-Theme):
 
