@@ -455,7 +455,7 @@ As an illustration of what a trained neural network looks like, let's plot weigh
   </tr>
 </table>
 
-We usually expect the first layer to contain filters that can detect very basic pixel patterns, like edges and lines. These basic filters are then used by subsequent layers as building bricks to construct detectors of more complicated patterns.
+We usually expect the first layer to contain filters that can detect very basic pixel patterns, like edges and lines. These basic filters are then used by subsequent layers as building bricks to construct detectors of more complicated patterns and figures.
 
 ## Results
 
