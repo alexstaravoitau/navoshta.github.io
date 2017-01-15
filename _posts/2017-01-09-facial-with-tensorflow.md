@@ -88,7 +88,8 @@ with graph.as_default():
 	...
 ```
 
-> Strictly speaking we didn't have to do that, as there is always a default graph and we could just use it. But where is fun in that? 
+Strictly speaking we didn't have to do that, as there is always a default graph and we could just use it. But where is fun in that? 
+{: .notice}
 
 Whatever comes in `with graph.as_default():` block defines our graph: all of the graph variables and their relations.
 
@@ -163,13 +164,15 @@ print(" Test score: %.3f (loss = %.8f)" % (np.sqrt(test_loss) * 48.0, test_loss)
 
 Since this operation would be performed on GPU by default (if you're running a GPU version of TensorFlow), you may bump into your GPU's memory limitations, therefore I'm suggesting batching your testing data as well.
 
-> I'm still using a tiny bit of Lasagne here, more specifically its `BatchIterator`. Further in tutorial Daniel uses this `BatchIterator` for data augmentation and it fits perfectly into the workflow. Also, as far as I'm aware TensorFlow lacks a similar plug-and-play component for iterating over data in batches, and one would have to define their own `tf.train.Example` type and  setup a pipeline for `tf.TFRecordReader`, feeding it to the model with a `tf.train.QueueRunner`. Although this seems like a bucket of joy, I thought I would go with a plain vanilla `BatchIterator`, and concentrate on building a model instead. Data feeding in TensorFlow seems to be a broad topic, and would make a good article on its own!
+I'm still using a tiny bit of Lasagne here, more specifically its `BatchIterator`. Further in tutorial Daniel uses this `BatchIterator` for data augmentation and it fits perfectly into the workflow. Also, as far as I'm aware TensorFlow lacks a similar plug-and-play component for iterating over data in batches, and one would have to define their own `tf.train.Example` type and  setup a pipeline for `tf.TFRecordReader`, feeding it to the model with a `tf.train.QueueRunner`. Although this seems like a bucket of joy, I thought I would go with a plain vanilla `BatchIterator`, and concentrate on building a model instead. Data feeding in TensorFlow seems to be a broad topic, and would make a good article on its own!
+{: .notice}
 
 As you see we only supply `tf_x_batch` value in the `feed_dict`, since we only evaluate `predictions` variable here, and its path in the graph does not involve `tf_y_batch` — we are not calculating `loss` as a part of this computation after all.
 
 One of the neat Lasagne features is keeping track of training history by logging validation and training losses. As far as I'm aware TensorFlow doesn't do that for you, so we will have to come up with some other solution. 
 
-> One might be tempted to use `tf.train.SummaryWriter`s and visualise data using `TensorBoard`, and actually that's exactly what I did at first. I even managed to plot training and validation losses on the same graph and overcome a couple of other issues, but in the end `tf.train.SummaryWriter` seemed to slow down training process quite a bit. I'm not sure if it was due to me not using it correctly, or it's just the way it works, but I got much better results in terms of speed using simple arrays, saving them to disk and plotting losses with `matplotlib`. 
+One might be tempted to use `tf.train.SummaryWriter`s and visualise data using `TensorBoard`, and actually that's exactly what I did at first. I even managed to plot training and validation losses on the same graph and overcome a couple of other issues, but in the end `tf.train.SummaryWriter` seemed to slow down training process quite a bit. I'm not sure if it was due to me not using it correctly, or it's just the way it works, but I got much better results in terms of speed using simple arrays, saving them to disk and plotting losses with `matplotlib`. 
+{: .notice}
 
 First let's refactor out part where we evaluate model on the testing dataset into a function. We're going to use it quite a lot, as the plan is to periodically get validation and training datasets predictions during training and logging those losses:
 
@@ -266,7 +269,8 @@ pyplot.yscale("log")
 pyplot.show()
 ```
 
-> You may want to only log losses every, say, 5 or 10 epochs, as evaluating on the whole training set does take a while. However, you may need validation loss later on in order to implement early stopping.
+You may want to only log losses every, say, 5 or 10 epochs, as evaluating on the whole training set does take a while. However, you may need validation loss later on in order to implement early stopping.
+{: .notice}
 
 ## Second model: convolutions.
 
