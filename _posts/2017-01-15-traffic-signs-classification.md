@@ -435,7 +435,7 @@ I have generated two datasets for training my model using augmentation pipeline 
 * **Extended** dataset. This dataset simply contains **20x more data** than the original one — e.g. for each training example we generate 19 additional examples by jittering original image, with **augmentation intensity = 0.75**. 
 * **Balanced** dataset. This dataset is balanced across classes and has **20.000 examples** for each class. These 20k contain original training dataset, as well as jittered images from the original training set (with **augmentation intensity = 0.75**) to complete number of examples for each class to 20.000 images.
 
-**Disclaimer:** Training on **extended** dataset may not be the best idea, as some classes remain significantly less represented than the others there. Training the model with this dataset would make it biased towards predicting overrepresented classes. However, in our case we are trying to score highest accuracy on supplied testing dataset, which (probably) follows the same classes distribution. So we are going to _cheat_ a bit and use this extended dataset for pre-training — this has proven to make the test accuracy higher (although hardly makes the model perform better "in the field"!).
+**Disclaimer:** Training on **extended** dataset may not be the best idea, as some classes remain significantly less represented than the others there. Training the model with this dataset would make it biased towards predicting overrepresented classes. However, in our case we are trying to score highest accuracy on supplied test dataset, which (probably) follows the same classes distribution. So we are going to _cheat_ a bit and use this extended dataset for pre-training — this has proven to make the test accuracy higher (although hardly makes the model perform better "in the field"!).
 {: .notice}
 
 I then use 25% of these augmented datasets for validation when training the model in 2 stages:
@@ -465,7 +465,7 @@ We usually expect the first layer to contain filters that can detect very basic 
 
 ## Results
 
-The highest accuracy I managed to score on the provided testing set was **99.33%**, which is not too bad. As there was a total of 12,630 images that we used for testing, apparently there are **85 examples** that the model could not classify correctly — let's take a look at these bad boys!
+After a couple of fine-tuning training iterations this model scored **99.33% accuracy on the test set**, which is not too bad. As there was a total of 12,630 images that we used for testing, apparently there are **85 examples** that the model could not classify correctly — let's take a look at these bad boys!
 
 <table border="">
   <caption><b>Remaining 85 errors out of 12,630 samples of the test set</b></caption>
