@@ -11,13 +11,13 @@ tags:
 ---
 {% include toc title="Contents" icon="none" %}
 
-This is my attempt to tackle traffic signs classification problem with a deep neural network implemented in TensorFlow. Main highlights of this solution would be data preprocessing, data augmentation, transfer learning and skipping connections in the network.<!--more--> This is also one of the first models I had a chance to build entirely from scratch, so I was pretty excited about it! Classification of German traffic signs is one of the assignments in Udacity Self-Driving Car Nanodegree program, however the dataset is publicly [available here](http://benchmark.ini.rub.de/?section=gtsrb&subsection=dataset), and here is a [Jupyter notebook with the final solution](https://github.com/navoshta/traffic-signs/blob/master/Traffic_Signs_Recognition.ipynb) I am describing in this tutorial. 
+This is my attempt to tackle traffic signs classification problem with a deep neural network implemented in TensorFlow. Main highlights of this solution would be data preprocessing, data augmentation, transfer learning and skipping connections in the network.<!--more--> This is also one of the first models I had a chance to build entirely from scratch, so I was pretty excited about it! Classification of German traffic signs is one of the assignments in Udacity Self-Driving Car Nanodegree program, however the dataset is publicly [available here](http://benchmark.ini.rub.de/?section=gtsrb&subsection=dataset){:target="_blank"}, and here is a [Jupyter notebook with the final solution](https://github.com/navoshta/traffic-signs/blob/master/Traffic_Signs_Recognition.ipynb){:target="_blank"} I am describing in this tutorial. 
 
-I'm also assuming you already know a fair bit about neural networks and regularization. In case you are not familiar with TensorFlow, make sure to check out [my recent post](http://navoshta.com/facial-with-tensorflow/) about its core concepts.
+I'm also assuming you already know a fair bit about neural networks and regularization. In case you are not familiar with TensorFlow, make sure to check out [my recent post](http://navoshta.com/facial-with-tensorflow/){:target="_blank"} about its core concepts.
 
 ## Dataset
 
-The [German Traffic Sign Dataset](http://benchmark.ini.rub.de/?section=gtsrb&subsection=dataset) consists of **39,209 32×32 px color images** that we are supposed to use for training, and **12,630 images** that we will use for testing. Each image is a photo of a traffic sign belonging to one of 43 possible classes, e.g. traffic sign types.
+The [German Traffic Sign Dataset](http://benchmark.ini.rub.de/?section=gtsrb&subsection=dataset){:target="_blank"} consists of **39,209 32×32 px color images** that we are supposed to use for training, and **12,630 images** that we will use for testing. Each image is a photo of a traffic sign belonging to one of 43 possible classes, e.g. traffic sign types.
 
 ![image-center]({{ base_path }}/images/posts/HiojuukJimAAAAAElFTkSuQmCC.png_){: .align-center}
 
@@ -50,7 +50,7 @@ The images differ significantly in terms of contrast and brightness, so we will 
 
 The usual preprocessing in this case would include scaling of pixel values to `[0, 1]` (as currently they are in `[0, 255]` range), representing labels in a one-hot encoding and shuffling. Looking at the images, histogram equalization may be helpful as well. We will apply localized equalization, as it seems to improve feature extraction even further in our case. 
 
-I will only use the single channel in my model, e.g. grayscale images instead of color ones. As Pierre Sermanet and Yann LeCun mentioned in [their paper](https://www.google.co.uk/url?sa=t&rct=j&q=&esrc=s&source=web&cd=1&cad=rja&uact=8&ved=0ahUKEwjB4PC6ibrRAhVLbxQKHVMmCxQQFggcMAA&url=http%3A%2F%2Fyann.lecun.com%2Fexdb%2Fpublis%2Fpdf%2Fsermanet-ijcnn-11.pdf&usg=AFQjCNEtvdz_vnI9tg1wF96UcjxVYwxdHw&sig2=_n55pvRLm-WlbCBkRYdE8A), using color channels didn't seem to improve things a lot, so I will only take the `Y` channel of the `YCbCr` representation of an image.
+I will only use the single channel in my model, e.g. grayscale images instead of color ones. As Pierre Sermanet and Yann LeCun mentioned in [their paper](http://yann.lecun.com/exdb/publis/pdf/sermanet-ijcnn-11.pdf){:target="_blank"}, using color channels didn't seem to improve things a lot, so I will only take the `Y` channel of the `YCbCr` representation of an image.
 
 ```python
 import numpy as np
@@ -264,7 +264,7 @@ Please note that we use `edge` mode when applying our transformations, to ensure
 
 ### Architecture
 
-I decided to use a deep neural network classifier as a model, which was inspired by [Daniel Nouri's tutorial](http://navoshta.com/facial-with-tensorflow/) and aforementioned [Pierre Sermanet / Yann LeCun paper](http://yann.lecun.com/exdb/publis/pdf/sermanet-ijcnn-11.pdf). It is fairly simple and has 4 layers: **3 convolutional layers** for feature extraction and **one fully connected layer** as a classifier.
+I decided to use a deep neural network classifier as a model, which was inspired by [Daniel Nouri's tutorial](http://navoshta.com/facial-with-tensorflow/){:target="_blank"} and aforementioned [Pierre Sermanet / Yann LeCun paper](http://yann.lecun.com/exdb/publis/pdf/sermanet-ijcnn-11.pdf){:target="_blank"}. It is fairly simple and has 4 layers: **3 convolutional layers** for feature extraction and **one fully connected layer** as a classifier.
 
 ![image-center]({{ base_path }}/images/posts/traffic-signs-architecture.png_){: .align-center}
 
@@ -419,7 +419,7 @@ def model_pass(input, params, is_training):
 
 Note that we collect all branched off convolutional layers' output, flatten and concatenate them before passing over to classifier.
 
-If you have questions about TensorFlow implementation, make sure to check out [my TensorFlow post](http://navoshta.com/facial-with-tensorflow/) about variable scopes, saving and restoring sessions, implementing dropout and other interesting things!
+If you have questions about TensorFlow implementation, make sure to check out [my TensorFlow post](http://navoshta.com/facial-with-tensorflow/){:target="_blank"} about variable scopes, saving and restoring sessions, implementing dropout and other interesting things!
 {: .notice}
 
 ## Training
