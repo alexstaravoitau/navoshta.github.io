@@ -1,6 +1,9 @@
 ---
 title: Traffic signs classification with a convolutional network
-excerpt: "This is my attempt to tackle traffic signs classification problem with a convolutional neural network implemented in TensorFlow. Main highlights of this model would be data preprocessing, data augmentation, pre-training and skipping connections in the network."
+header:
+  overlay_image: posts/traffic-signs-classification-bg.jpg
+  overlay_filter: 0.5
+excerpt: "This is my attempt to tackle traffic signs classification problem with a convolutional neural network implemented in TensorFlow. The highlights of this solution would be data preprocessing, data augmentation, pre-training and skipping connections in the network."
 tags:
 - TensorFlow
 - Computer vision
@@ -11,9 +14,9 @@ tags:
 ---
 {% include toc title="Contents" icon="none" %}
 
-This is my attempt to tackle traffic signs classification problem with a convolutional neural network implemented in TensorFlow. Main highlights of this solution would be data preprocessing, data augmentation, transfer learning and skipping connections in the network.<!--more--> This is also one of the first models I had a chance to build entirely from scratch, so I was pretty excited about it! Classification of German traffic signs is one of the assignments in Udacity Self-Driving Car Nanodegree program, however the dataset is publicly [available here](http://benchmark.ini.rub.de/?section=gtsrb&subsection=dataset){:target="_blank"}, and here is a [Jupyter notebook with the final solution](https://github.com/navoshta/traffic-signs/blob/master/Traffic_Signs_Recognition.ipynb){:target="_blank"} I am describing in this tutorial. 
+Classification of German traffic signs is one of the assignments in Udacity Self-Driving Car Nanodegree program, however the dataset is publicly [available here](http://benchmark.ini.rub.de/?section=gtsrb&subsection=dataset){:target="_blank"}, and here is a [Jupyter notebook with the final solution](https://github.com/navoshta/traffic-signs/blob/master/Traffic_Signs_Recognition.ipynb){:target="_blank"} I am describing in this tutorial. This is also one of the first models I had a chance to build entirely from scratch, so I was pretty excited about it! 
 
-I'm also assuming you already know a fair bit about neural networks and regularization. In case you are not familiar with TensorFlow, make sure to check out [my recent post](http://navoshta.com/facial-with-tensorflow/){:target="_blank"} about its core concepts.
+I'm assuming you already know a fair bit about neural networks and regularization, as I won't go into too much detail about their background and how they work. I am using **TensorFlow** as a ML framework and a couple of dependancies like `numpy`, `matplotlib` and `scikit-image`. In case you are not familiar with TensorFlow, make sure to check out [my recent post](http://navoshta.com/facial-with-tensorflow/){:target="_blank"} about its core concepts. If you would like to follow along, you may as well need a machine with a CUDA-capable GPU.
 
 ## Dataset
 
