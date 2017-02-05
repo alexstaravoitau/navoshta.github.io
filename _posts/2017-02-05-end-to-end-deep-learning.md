@@ -14,9 +14,9 @@ tags:
 ---
 {% include toc title="Contents" icon="none" %}
 
-I'm assuming you already know a fair bit about neural networks and regularization, as I won't go into too much detail about their background and how they work. I am using **Keras** with TensorFlow background as a ML framework and a couple of dependancies like `numpy`, `pandas` and `scikit-image`. You may want to check out [code of the final solution](https://github.com/navoshta/behavioral-cloning){:target="_blank"} I am describing in this tutorial. Although keep in mind that if you would like to follow along, you may as well need a machine with a CUDA-capable GPU.
+I'm assuming you already know a fair bit about neural networks and regularization, as I won't go into too much detail about their background and how they work. I am using **Keras** with TensorFlow backend as a ML framework and a couple of dependancies like `numpy`, `pandas` and `scikit-image`. You may want to check out [code of the final solution](https://github.com/navoshta/behavioral-cloning){:target="_blank"} I am describing in this tutorial, however keep in mind that if you would like to follow along, you may as well need a machine with a CUDA-capable GPU.
 
-Training a model to drive a car in a simulator is one of the assignments in Udacity Self-Driving Car Nanodegree program, however the concepts described here should be comprehensible even without such context. 
+Training a model to drive a car in a simulator is one of the assignments in **Udacity Self-Driving Car Nanodegree** program, however the concepts described here should be comprehensible even without such context. 
 {: .notice}
 
 ## Dataset
@@ -27,11 +27,11 @@ The provided driving simulator had two different tracks. One of them was used fo
 
 The driving simulator would save frames from three front-facing "cameras", recording data from the car's point of view; as well as various driving statistics like throttle, speed and steering angle. We are going to use camera data as model input and expect it to predict the steering angle in the `[-1, 1]` range.
 
-I have collected a dataset containing approximately **1 hour worth of driving data** around track 1. This would contain both driving in _"smooth"_ mode (staying right in the middle of the road for the whole lap), and _"recovery"_ mode (letting the car drive off center and then interfering to steer it back in the middle). 
+I have collected a dataset containing approximately **1 hour worth of driving data** around one of the given tracks. This would contain both driving in _"smooth"_ mode (staying right in the middle of the road for the whole lap), and _"recovery"_ mode (letting the car drive off center and then interfering to steer it back in the middle). 
 
 ### Balancing dataset
 
-Just as one would expect, resulting dataset was extremely unbalanced and had a lot of examples with steering angles close to `0`. So I applied a designated random sampling which ensured that the data is as balanced across steering angles as possible. This process included splitting steering angles into `n` bins and using at most `200` frames for each bin:
+Just as one would expect, resulting dataset was extremely unbalanced and had a lot of examples with steering angles close to `0` (e.g. when the wheel is "at rest" and not steering while driving in a straight line). So I applied a designated random sampling which ensured that the data is as balanced across steering angles as possible. This process included splitting steering angles into `n` bins and using at most `200` frames for each bin:
 
 ```python
 df = read_csv('data/driving_log.csv')
