@@ -118,7 +118,7 @@ Augmented and preprocessed frames
 {: style="text-align: center;"}
 {: .small}
 
-Augmentation pipeline is applied in [`data.py`](https://github.com/navoshta/behavioral-cloning/blob/master/data.py) using a Keras generator, which lets us do it in real-time on CPU while GPU is busy backpropagating!
+Augmentation pipeline is applied in [`data.py`](https://github.com/navoshta/behavioral-cloning/blob/master/data.py){:target="_blank"} using a Keras generator, which lets us do it in real-time on CPU while GPU is busy backpropagating!
 
 ## Model 
 
@@ -151,7 +151,7 @@ model.add(core.Dense(20, activation='relu'))
 model.add(core.Dense(1))
 ``` 
 
-I added dropout on 2 out of 3 dense layers to prevent overfitting, and the model proved to generalise quite well. The model was trained using **Adam optimiser** with a **learning rate = `1e-04`** and **mean squared error** as a loss function. I used 20% of the training data for validation (which means that we only used **6,158 out of 7,698 examples** for training), and the model seems to perform quite well after training for **~20 epochs** — you can find the code related to training in [`model.py`](https://github.com/navoshta/behavioral-cloning/blob/master/model.py).
+I added dropout on 2 out of 3 dense layers to prevent overfitting, and the model proved to generalise quite well. The model was trained using **Adam optimiser** with a **learning rate = `1e-04`** and **mean squared error** as a loss function. I used 20% of the training data for validation (which means that we only used **6,158 out of 7,698 examples** for training), and the model seems to perform quite well after training for **~20 epochs** — you can find the code related to training in [`model.py`](https://github.com/navoshta/behavioral-cloning/blob/master/model.py){:target="_blank"}.
 
 ## Results
 
