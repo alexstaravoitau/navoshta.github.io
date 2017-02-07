@@ -32,7 +32,7 @@ Luckily, there is already <a target="_blank" href="http://max-likelihood.com/201
 
 Log in and go to the <a target="_blank" href="http://console.aws.amazon.com">AWS Console</a>. Select *Security Groups*  in the side panel and choose the group you have added while following the tutorial (**my-sg** one). Now, select *Inbound* and click *Edit*, you can now add another custom TCP rule for port 8888. It should look like that:
 
-![image-center]({{ base_path }}/images/posts/aws-tensorflow-sg.png_){: .align-center}    
+![image-center]({{ base_path }}/images/posts/aws-tensorflow/aws-tensorflow-sg.png){: .align-center}    
 
 ### Configure Notebook
 

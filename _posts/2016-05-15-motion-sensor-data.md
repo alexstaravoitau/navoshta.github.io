@@ -40,7 +40,7 @@ You check if the accelerometer is available, configure update interval and provi
 
 I've created a simple app that demonstrates the live data we receive from the device sensors. It's very simple and is written purely in Swift, using the very same code snippet I've shown earlier. It grabs data from each sensor and puts it in a static `UITableView` prototyped in a storyboard.
 
-![image-center]({{ base_path }}/images/posts/device-sensors-storyboard.png_){: .align-center}    
+![image-center]({{ base_path }}/images/posts/device-sensors/device-sensors-storyboard.png){: .align-center}    
 
 You can check out the app demonstrating device motion sensors <a target="_blank" href="https://github.com/navoshta/MotionSensorData">on GitHub</a>. Additionally it highlights each cell's background, indicating delta updates of the sensor values in real time. Feel free to play with it and let me know what you think!
 

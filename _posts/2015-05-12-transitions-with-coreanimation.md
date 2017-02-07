@@ -16,12 +16,12 @@ I have come across an interesting UX use case on **medium.com** recently: <a tar
 The one I particularly had in mind was the animation for revealing the user photo on this particular screen.
 {: style="text-align: justify;"} 
   
-![image-center]({{ base_path }}/images/posts/1431447305642__img.gif_){: .align-center}  
+![image-center]({{ base_path }}/images/posts/transitions-with-coreanimation/1431447305642__img.gif){: .align-center}  
 
 Luckily, I already had an app for that — <a target="_blank" href="https://github.com/navoshta/MyCV">MyCV app</a>, a small project I had developed as a demo of my cv. Long story short, that's what we're trying to achieve here (in slow motion).
 {: style="text-align: justify;"} 
  
-<img src="{{ base_path }}/images/posts/1431447440480__img.gif_" alt="" style="width: 300px;" hspace="10" align="left"> As you see, the animation consists of two parts: drawing the circle outline for the image, and revealing the image itself. Note, that the image is not being resized during this uncovering part, but is rather masked with an expanding... Eh... Mask. Also, to make it look astonishingly cool the exposing part of the animation is not instantiated right away. It's silently waiting for a half of the circle to be drawn, and only then the revealing kicks in. It's like exactly as the user starts wondering what this whole circle ring is about — *BOOM!* — the image pops up, and suddenly it all becomes clear. Minds blown.
+<img src="{{ base_path }}/images/posts/transitions-with-coreanimation/1431447440480__img.gif" alt="" style="width: 300px;" hspace="10" align="left"> As you see, the animation consists of two parts: drawing the circle outline for the image, and revealing the image itself. Note, that the image is not being resized during this uncovering part, but is rather masked with an expanding... Eh... Mask. Also, to make it look astonishingly cool the exposing part of the animation is not instantiated right away. It's silently waiting for a half of the circle to be drawn, and only then the revealing kicks in. It's like exactly as the user starts wondering what this whole circle ring is about — *BOOM!* — the image pops up, and suddenly it all becomes clear. Minds blown.
 {: style="text-align: justify;"} 
 
 To keep it simple, let's make some assumptions. Assumption one: you have an Xcode project and you're more or less familiar with a regular structure of one. Yes, we're not messing around here. Assumption two: the code you're about to step into can be placed into a `UIViewController` or `UIView`, whichever you prefer. Just make sure you have two properties that you can access.
@@ -32,7 +32,7 @@ To keep it simple, let's make some assumptions. Assumption one: you have an Xcod
 @property (nonatomic, weak) IBOutlet UIView *imageToReveal;
 ```
 
-<img src="{{ base_path }}/images/posts/1431451351453__img.png_" alt="" style="width: 300px;" hspace="10" align="left"> Where `imageToReveal` is a subview of the `viewToDrawOn`. To make it clear, the `viewToDrawOn` is the one we're going to draw on, and the `imageToReveal` is the one we'll be revealing. You never would've guessed, would you? They're Interface Builder outlets here, since I've set them up in the storyboard. This is also the reason why they're `weak` properties: you don't need strong references to something that will automatically end up in the view hierarchy anyway. You can see on the picture to the left how the views should relate.
+<img src="{{ base_path }}/images/posts/transitions-with-coreanimation/1431451351453__img.png" alt="" style="width: 300px;" hspace="10" align="left"> Where `imageToReveal` is a subview of the `viewToDrawOn`. To make it clear, the `viewToDrawOn` is the one we're going to draw on, and the `imageToReveal` is the one we'll be revealing. You never would've guessed, would you? They're Interface Builder outlets here, since I've set them up in the storyboard. This is also the reason why they're `weak` properties: you don't need strong references to something that will automatically end up in the view hierarchy anyway. You can see on the picture to the left how the views should relate.
 {: style="text-align: justify;"} 
 
 Please, also mind, that the `imageToReveal` should be hidden initially. I did it in the storyboard, since the less code we have — the easier it is to get one's head around it.
@@ -130,7 +130,7 @@ For those wondering why I didn't put these `CABasicAnimation` objects into a `CA
 
 So, this is it, you should get something similar to this.
   
-![image-center]({{ site.url }}{{ site.baseurl }}/images/posts/1431455709023_fast.gif_){: .align-center}  
+![image-center]({{ site.url }}{{ site.baseurl }}/images/posts/transitions-with-coreanimation/1431455709023_fast.gif){: .align-center}  
 
 You can download the completed project from <a target="_blank" href="https://github.com/navoshta/RevealImageDemo">here</a>. I have also used this code in my <a target="_blank" href="https://github.com/navoshta/MyCV">MyCV application</a> alongside with a couple of other animations I found particularly relevant. Thank you for getting through all this swearing and poor jokes, now feel free to comment and share!
 {: style="text-align: justify;"} 

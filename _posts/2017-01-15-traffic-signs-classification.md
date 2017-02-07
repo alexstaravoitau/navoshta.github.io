@@ -1,7 +1,7 @@
 ---
 title: Traffic signs classification with a convolutional network
 header:
-  overlay_image: images/posts/traffic-signs-classification-bg.jpg
+  overlay_image: images/posts/traffic-signs-classification/bg.jpg
   overlay_filter: 0.5
 excerpt: "This is my attempt to tackle traffic signs classification problem with a convolutional neural network implemented in TensorFlow (reaching **99.33%** accuracy). The highlights of this solution would be data preprocessing, data augmentation, pre-training and skipping connections in the network."
 tags:
@@ -23,33 +23,33 @@ I'm assuming you already know a fair bit about neural networks and regularizatio
 
 The [German Traffic Sign Dataset](http://benchmark.ini.rub.de/?section=gtsrb&subsection=dataset){:target="_blank"} consists of **39,209 32×32 px color images** that we are supposed to use for training, and **12,630 images** that we will use for testing. Each image is a photo of a traffic sign belonging to one of 43 classes, e.g. traffic sign types.
 
-![image-center]({{ base_path }}/images/posts/HiojuukJimAAAAAElFTkSuQmCC.png_){: .align-center}
+![image-center]({{ base_path }}/images/posts/traffic-signs-classification/HiojuukJimAAAAAElFTkSuQmCC.png){: .align-center}
 Random dataset sample
 {: style="text-align: center;"}
 {: .small}
 
 Each image is a 32×32×3 array of pixel intensities, represented as `[0, 255]` integer values in RGB color space. Class of each image is encoded as an integer in a 0 to 42 range. Let's check if the training dataset is balanced across classes.
 
-![image-center]({{ base_path }}/images/posts/yGIoVOF9s+D6SauJlGkmSVCsv00iSpFqZjEiSpFqZjEiSpFqZjEiSpFqZjEiSpFqZjEiSpFqZjEiSpFqZjEiSpFqZjEiSpFqZjEiSpFqZjEiSpFqZjEiSpFr9f+oLc6HSvr24AAAAAElFTkSuQmCC.png_){: .align-center}
+![image-center]({{ base_path }}/images/posts/traffic-signs-classification/yGIoVOF9s+D6SauJlGkmSVCsv00iSpFqZjEiSpFqZjEiSpFqZjEiSpFqZjEiSpFqZjEiSpFqZjEiSpFqZjEiSpFqZjEiSpFqZjEiSpFqZjEiSpFqZjEiSpFr9f+oLc6HSvr24AAAAAElFTkSuQmCC.png){: .align-center}
 Dataset classes distribution
 {: style="text-align: center;"}
 {: .small}
 
 Apparently dataset is very unbalanced, and some classes are represented significantly better than the others. Let's now plot a bunch of random images for various classes to see what we are working with.
 
-![image-center]({{ base_path }}/images/posts/wGGNjp6MlRqbwAAAABJRU5ErkJggg==.png_){: .align-center}
+![image-center]({{ base_path }}/images/posts/traffic-signs-classification/wGGNjp6MlRqbwAAAABJRU5ErkJggg==.png){: .align-center}
 Yield
 {: style="text-align: center;"}
 {: .small}
-![image-center]({{ base_path }}/images/posts/CxM7UvcMAPAAAAAElFTkSuQmCC.png_){: .align-center}
+![image-center]({{ base_path }}/images/posts/traffic-signs-classification/CxM7UvcMAPAAAAAElFTkSuQmCC.png){: .align-center}
 No entry
 {: style="text-align: center;"}
 {: .small}
-![image-center]({{ base_path }}/images/posts/lPr0ICbgAAAABJRU5ErkJggg==.png_){: .align-center}
+![image-center]({{ base_path }}/images/posts/traffic-signs-classification/lPr0ICbgAAAABJRU5ErkJggg==.png){: .align-center}
 General caution
 {: style="text-align: center;"}
 {: .small}
-![image-center]({{ base_path }}/images/posts/wetDaG2jcBk+gAAAABJRU5ErkJggg==.png_){: .align-center}
+![image-center]({{ base_path }}/images/posts/traffic-signs-classification/wetDaG2jcBk+gAAAABJRU5ErkJggg==.png){: .align-center}
 Roundabout mandatory
 {: style="text-align: center;"}
 {: .small}
@@ -90,12 +90,12 @@ def preprocess_dataset(X, y = None):
 
 This is what original and preprocessed images look like:
 
-![image-center]({{ base_path }}/images/posts/vDGPI83pXTxsYM+yVh7kid5kid5kid5kid5kn8z8jdH5T3JkzzJkzzJkzzJkzzJ71yejLUneZIneZIneZIneZLfY3ky1p7kSZ7kSZ7kSZ7kSX6P5clYe5IneZIneZIneZIn+T2WJ2PtSZ7kSZ7kSZ7kSZ7k91iejLUneZIneZIneZIneZLfY3ky1p7kSZ7kSZ7kSZ7kSX6P5f8DZc6ez8Sy66QAAAAASUVORK5CYII=.png_){: .align-center}
+![image-center]({{ base_path }}/images/posts/traffic-signs-classification/vDGPI83pXTxsYM+yVh7kid5kid5kid5kid5kn8z8jdH5T3JkzzJkzzJkzzJkzzJ71yejLUneZIneZIneZIneZLfY3ky1p7kSZ7kSZ7kSZ7kSX6P5clYe5IneZIneZIneZIn+T2WJ2PtSZ7kSZ7kSZ7kSZ7k91iejLUneZIneZIneZIneZLfY3ky1p7kSZ7kSZ7kSZ7kSX6P5f8DZc6ez8Sy66QAAAAASUVORK5CYII=.png){: .align-center}
 Original
 {: style="text-align: center;"}
 {: .small}
 
-![image-center]({{ base_path }}/images/posts/fH5+9Nur3T2bA57T7e90qHNf0r6UWfH3rOyxmHv6bZXOns2m73D4XB8iwYd01kLBAKBQCAQCPw3OL7SPBAIBAKBQCDw3RHOWiAQCAQCgcAJRjhrgUAgEAgEAicY4awFAoFAIBAInGCEsxYIBAKBQCBwghHOWiAQCAQCgcAJRjhrgUAgEAgEAicYfwF7KOG348bCvwAAAABJRU5ErkJggg==.png_){: .align-center}
+![image-center]({{ base_path }}/images/posts/traffic-signs-classification/fH5+9Nur3T2bA57T7e90qHNf0r6UWfH3rOyxmHv6bZXOns2m73D4XB8iwYd01kLBAKBQCAQCPw3OL7SPBAIBAKBQCDw3RHOWiAQCAQCgcAJRjhrgUAgEAgEAicY4awFAoFAIBAInGCEsxYIBAKBQCBwghHOWiAQCAQCgcAJRjhrgUAgEAgEAicYfwF7KOG348bCvwAAAABJRU5ErkJggg==.png){: .align-center}
 Preprocessed
 {: style="text-align: center;"}
 {: .small}
@@ -109,28 +109,28 @@ The amount of data we have is not sufficient for a model to generalise well. It 
 First, we are going to apply a couple of tricks to extend our data by _flipping_. You might have noticed that some traffic signs are invariant to horizontal and/or vertical flipping, which basically means that we can flip an image and it should still be classified as belonging to the same class.
 
 <figure class="align-center" style="width: 500px" >
-  <img src="{{ base_path }}/images/posts/aug_flip_h.png_" alt="">
+  <img src="{{ base_path }}/images/posts/traffic-signs-classification/aug_flip_h.png" alt="">
 </figure>
 <figure class="align-center" style="width: 500px" >
-  <img src="{{ base_path }}/images/posts/aug_flip_v.png_" alt="">
+  <img src="{{ base_path }}/images/posts/traffic-signs-classification/aug_flip_v.png" alt="">
 </figure>
 
 Some signs can be flipped either way — like **Priority Road** or **No Entry** signs.
 
 <figure class="align-center" style="width: 500px" >
-  <img src="{{ base_path }}/images/posts/aug_flip_hv.png_" alt="">
+  <img src="{{ base_path }}/images/posts/traffic-signs-classification/aug_flip_hv.png" alt="">
 </figure>
 
 Other signs are *180° rotation invariant*, and to rotate them 180° we will simply first flip them horizontally, and then vertically.
 
 <figure class="align-center" style="width: 500px" >
-  <img src="{{ base_path }}/images/posts/aug_flip_h+v.png_" alt="">
+  <img src="{{ base_path }}/images/posts/traffic-signs-classification/aug_flip_h+v.png" alt="">
 </figure>
 
 Finally there are signs that can be flipped, and should then be classified as a sign of some other class. This is still useful, as we can use data of these classes to extend their counterparts.
 
 <figure class="align-center" style="width: 500px" >
-  <img src="{{ base_path }}/images/posts/aug_flip_hx.png_" alt="">
+  <img src="{{ base_path }}/images/posts/traffic-signs-classification/aug_flip_hx.png" alt="">
   Turn left                                               Turn right
 </figure>
 
@@ -249,24 +249,24 @@ Please note that we use `edge` mode when applying our transformations, to ensure
     <td align="center"><b>Augmented (intensity = 0.75)</b></td>
   </tr>
   <tr>
-    <td><img src="{{ base_path }}/images/posts/aug_example_orig_1.png_" alt="Original"></td>
-    <td><img src="{{ base_path }}/images/posts/aug_example_aug_1.png_" alt="Augmented"></td>
+    <td><img src="{{ base_path }}/images/posts/traffic-signs-classification/aug_example_orig_1.png" alt="Original"></td>
+    <td><img src="{{ base_path }}/images/posts/traffic-signs-classification/aug_example_aug_1.png" alt="Augmented"></td>
   </tr>
   <tr>
-    <td><img src="{{ base_path }}/images/posts/aug_example_orig_2.png_" alt="Original"></td>
-    <td><img src="{{ base_path }}/images/posts/aug_example_aug_2.png_" alt="Augmented"></td>
+    <td><img src="{{ base_path }}/images/posts/traffic-signs-classification/aug_example_orig_2.png" alt="Original"></td>
+    <td><img src="{{ base_path }}/images/posts/traffic-signs-classification/aug_example_aug_2.png" alt="Augmented"></td>
   </tr>
   <tr>
-    <td><img src="{{ base_path }}/images/posts/aug_example_orig_3.png_" alt="Original"></td>
-    <td><img src="{{ base_path }}/images/posts/aug_example_aug_3.png_" alt="Augmented"></td>
+    <td><img src="{{ base_path }}/images/posts/traffic-signs-classification/aug_example_orig_3.png" alt="Original"></td>
+    <td><img src="{{ base_path }}/images/posts/traffic-signs-classification/aug_example_aug_3.png" alt="Augmented"></td>
   </tr>
   <tr>
-    <td><img src="{{ base_path }}/images/posts/aug_example_orig_4.png_" alt="Original"></td>
-    <td><img src="{{ base_path }}/images/posts/aug_example_aug_4.png_" alt="Augmented"></td>
+    <td><img src="{{ base_path }}/images/posts/traffic-signs-classification/aug_example_orig_4.png" alt="Original"></td>
+    <td><img src="{{ base_path }}/images/posts/traffic-signs-classification/aug_example_aug_4.png" alt="Augmented"></td>
   </tr>
   <tr>
-    <td><img src="{{ base_path }}/images/posts/aug_example_orig_5.png_" alt="Original"></td>
-    <td><img src="{{ base_path }}/images/posts/aug_example_aug_5.png_" alt="Augmented"></td>
+    <td><img src="{{ base_path }}/images/posts/traffic-signs-classification/aug_example_orig_5.png" alt="Original"></td>
+    <td><img src="{{ base_path }}/images/posts/traffic-signs-classification/aug_example_aug_5.png" alt="Augmented"></td>
   </tr>
 </table>
 
@@ -276,7 +276,7 @@ Please note that we use `edge` mode when applying our transformations, to ensure
 
 I decided to use a deep neural network classifier as a model, which was inspired by [Daniel Nouri's tutorial](http://navoshta.com/facial-with-tensorflow/){:target="_blank"} and aforementioned [Pierre Sermanet / Yann LeCun paper](http://yann.lecun.com/exdb/publis/pdf/sermanet-ijcnn-11.pdf){:target="_blank"}. It is fairly simple and has 4 layers: **3 convolutional layers** for feature extraction and **one fully connected layer** as a classifier.
 
-![image-center]({{ base_path }}/images/posts/traffic-signs-architecture.png_){: .align-center}
+![image-center]({{ base_path }}/images/posts/traffic-signs-classification/traffic-signs-architecture.png){: .align-center}
 
 As opposed to usual strict feed-forward CNNs I use **multi-scale features**, which means that convolutional layers' output is not only forwarded into subsequent layer, but is also branched off and fed into classifier (e.g. fully connected layer). Please mind that these branched off layers undergo additional max-pooling, so that all convolutions are proportionally subsampled before going into classifier.
 
@@ -456,8 +456,8 @@ As an illustration of what a trained neural network looks like, let's plot weigh
 <table border="">
   <caption><b>5×5 convolutional filters of the first layer</b></caption>
   <tr>
-    <td><img src="{{ base_path }}/images/posts/conv1_weights_raw.png_" alt="Raw"></td>
-    <td><img src="{{ base_path }}/images/posts/conv1_weights_interpolated.png_" alt="Interpolated"></td>
+    <td><img src="{{ base_path }}/images/posts/traffic-signs-classification/conv1_weights_raw.png" alt="Raw"></td>
+    <td><img src="{{ base_path }}/images/posts/traffic-signs-classification/conv1_weights_interpolated.png" alt="Interpolated"></td>
   </tr>
   <tr>
     <td align="center">Raw</td>
@@ -474,8 +474,8 @@ After a couple of fine-tuning training iterations this model scored **99.33% acc
 <table border="">
   <caption><b>Remaining 85 errors out of 12,630 samples of the test set</b></caption>
   <tr>
-    <td><img src="{{ base_path }}/images/posts/8DKqcJ3Ir9U8IAAAAASUVORK5CYII=.png_" alt="Original"></td>
-    <td><img src="{{ base_path }}/images/posts/L+aiejvF2sYAAAAASUVORK5CYII=.png_" alt="Preprocessed"></td>
+    <td><img src="{{ base_path }}/images/posts/traffic-signs-classification/8DKqcJ3Ir9U8IAAAAASUVORK5CYII=.png" alt="Original"></td>
+    <td><img src="{{ base_path }}/images/posts/traffic-signs-classification/L+aiejvF2sYAAAAASUVORK5CYII=.png" alt="Preprocessed"></td>
   </tr>
   <tr>
     <td align="center">Original</td>
@@ -487,7 +487,7 @@ Signs on most of the images either have artefacts like shadows or obstructing ob
 
 Finally, this model provides mildly interesting predictions for types of signs it wasn't trained for.
 
-![image-center]({{ base_path }}/images/posts/elderly_sign_prediction.png_){: .align-center}
+![image-center]({{ base_path }}/images/posts/traffic-signs-classification/elderly_sign_prediction.png){: .align-center}
 Predictions for a new type of sign
 {: style="text-align: center;"}
 {: .small}

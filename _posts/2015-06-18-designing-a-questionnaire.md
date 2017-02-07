@@ -10,7 +10,7 @@ crosspost_to_medium: true
 There are quite a few potential scenarios where you may want your user to go through a set of questions, take a test or simply provide feedback. I hope this post will give you a useful example of interacting with the user on a mobile device, and will inspire you to design something straightforward and clear next time you face a similar challenge. <!--more--> I've tried to make it clear to the user and to avoid any frustration when dealing with questionnaires on a phone. Just look how happy this hand on the photo is!
 {: style="text-align: justify;"} 
 
-![image-center]({{ base_path }}/images/posts/1431538142379__img.png_){: .align-center}    
+![image-center]({{ base_path }}/images/posts/designing-a-questionnaire/1431538142379__img.png){: .align-center}    
 
 A few months back I was to design a couple of screens of an iOS app for a company working in healthcare. The main purpose of those screens was to make an assessment on a patient — or, more specifically, a dementia assessment. Now, this part not being particularly funny, what you usually do is make the patient answer a number of questions, such as who is the current president of the Republic of Belarus, which year is it and so on. Some questions might be linked to one another, some might come up depending on the patient's answers to the previous ones. The nurse or doctor needs to record the answers and, if the software is smart enough, it'll immediately show if the patient needs some special care or treatment.
 {: style="text-align: justify;"} 
@@ -22,7 +22,7 @@ Now, take a look at this weirdly distorted iPhone: every step of the assessment
 {: style="text-align: justify;"} 
 
 <figure class="align-left" style="width: 300px" >
-  <img src="{{ base_path }}/images/posts/1431539982649_distorted_phone.png_" alt="">
+  <img src="{{ base_path }}/images/posts/designing-a-questionnaire/1431539982649_distorted_phone.png" alt="">
 </figure> 
 
 These both elements can and should be modified as the user makes some progress in the test, AND as he or she provides answers on the current step. For instance, the current question is "What year is it?". Now, if the patient gives the correct answer, there is still a long road ahead of him to convince the doctor that he is actually fine or to give the patient a chance to prove he is not. If the answer is wrong, it will clearly indicate that the patient is not feeling well, and there might be just another question or two to make a final decision. 
@@ -46,7 +46,7 @@ There were three question types that I had in mind: a yes/no question, a questio
 ## Yes/no
   
 <figure class="align-center" style="width: 600px" >
-  <img src="{{ base_path }}/images/posts/1431541890165__img.png_" alt="">
+  <img src="{{ base_path }}/images/posts/designing-a-questionnaire/1431541890165__img.png" alt="">
 </figure> 
 See? This is exactly what I was talking about. The "Next" button title changes as the user provides an answer and is NOT taking the user to the next step automatically. It lets him have a look, make sure he's on the right route and only then move forward.
 {: style="text-align: justify;"} 
@@ -54,7 +54,7 @@ See? This is exactly what I was talking about. The "Next" button title changes 
 ## Multiple choice
 
 <figure class="align-center" style="width: 600px" >
-  <img src="{{ base_path }}/images/posts/1431541930149__img.png_" alt="">
+  <img src="{{ base_path }}/images/posts/designing-a-questionnaire/1431541930149__img.png" alt="">
 </figure>
 If there is a set of options, you may want to present it as a scrollable list. Yes, the original question should be always visible to the user — some users have really short memory, so we should not rely on them remembering what the question was as they scroll to the very bottom of the list. In some cases, like this one, the selected options should really stand out, so that as you browse through the ones you've selected, you can clearly read them one by one, not confusing with those that are not selected.
 {: style="text-align: justify;"} 
@@ -64,13 +64,13 @@ So, **the third rule** is: **make the current selection clear**.
 ## Single selection
 
 <figure class="align-center" style="width: 600px" >
-  <img src="{{ base_path }}/images/posts/1431541992019__img.png_" alt="">
+  <img src="{{ base_path }}/images/posts/designing-a-questionnaire/1431541992019__img.png" alt="">
 </figure> 
 The description of each option should be short. If one of them needs a more detailed explanation — show it separately on demand, for example, presenting a modal view if the user taps "more info" button. Well, actually, there should be some balance in that — if your app is supposed to be used on a daily basis (like this one), your users will eventually memorise the meaning of each option and won't need the full description. And they won't spend half of the day scrolling through long and detailed titles when looking for the answer they need. If, on the other hand, you don't expect your users to come back to this questionnaire ever again — well, in this case you might want to put a bit more details in the item title. But tread lightly.
 {: style="text-align: justify;"} 
 
 <figure class="align-left" style="width: 300px">
-  <img src="{{ base_path }}/images/posts/1431540659386_buttons_states.png_" alt="Three button states: enabled, selected, disabled.">
+  <img src="{{ base_path }}/images/posts/designing-a-questionnaire/1431540659386_buttons_states.png" alt="Three button states: enabled, selected, disabled.">
   <figcaption>Three button states: enabled, selected, disabled.</figcaption>
 </figure> 
 
