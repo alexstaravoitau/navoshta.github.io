@@ -1,7 +1,7 @@
 ---
 title: Traffic signs classification with a convolutional network
 header:
-  overlay_image: posts/traffic-signs-classification-bg.jpg
+  overlay_image: images/posts/traffic-signs-classification-bg.jpg
   overlay_filter: 0.5
 excerpt: "This is my attempt to tackle traffic signs classification problem with a convolutional neural network implemented in TensorFlow (reaching **99.33%** accuracy). The highlights of this solution would be data preprocessing, data augmentation, pre-training and skipping connections in the network."
 tags:

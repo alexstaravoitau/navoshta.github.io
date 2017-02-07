@@ -1,7 +1,7 @@
 ---
 title: End-to-end learning for self-driving cars
 header:
-  overlay_image: posts/end-to-end-deep-learning/bg.jpg
+  overlay_image: images/posts/end-to-end-deep-learning/bg.jpg
   overlay_filter: 0.5
 excerpt: "The goal of this project was to train a end-to-end deep learning model that would let a car drive itself around the track in a driving simulator. The approach I took was based on a paper by Nvidia research team with a significantly simplified architecture that was optimised for this specific project."
 tags:
