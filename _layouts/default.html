@@ -1,8 +1,5 @@
 ---
-layout: compress
 ---
-
-{% include base_path %}
 
 <!doctype html>
 <html lang="{{ site.locale | slice: 0,2 | default: "en" }}" class="no-js">
@@ -11,7 +8,7 @@ layout: compress
     {% include head/custom.html %}
   </head>
 
-  <body>
+  <body class="layout--{{ page.layout | default: layout.layout }}{% if page.classes or layout.classes %}{{ page.classes | default: layout.classes | join: ' ' | prepend: ' ' }}{% endif %}">
 
     {% include browser-upgrade.html %}
     {% include masthead.html %}
