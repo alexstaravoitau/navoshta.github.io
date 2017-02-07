@@ -3,6 +3,7 @@ title: Jupyter Notebook Xcode theme
 tags:
 - Jupyter Notebook
 - Xcode
+crosspost_to_medium: true
 ---
 So one Saturday I got particularly bored and thought I should configure my Jupyter Notebook a bit. <!--more--> What I wanted to achieve:
 

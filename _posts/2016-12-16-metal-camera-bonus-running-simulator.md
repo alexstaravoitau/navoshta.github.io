@@ -5,6 +5,7 @@ tags:
 - Swift
 - Metal
 - Unit Tests
+crosspost_to_medium: true
 ---
 In the Metal Camera Tutorial series we have created a simple app that renders camera frames on screen in real time. However, this app uses `Metal` framework, which is not available on iOS Simulator. Basically, your app won't even build if you select simulator as a build device, which is a shame in case you want to add unit tests for example, being able to run them without actual device connected to your machine. <!--more--> 
 

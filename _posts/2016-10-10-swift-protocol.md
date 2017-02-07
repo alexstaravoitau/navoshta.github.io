@@ -4,6 +4,7 @@ tags:
 - iOS
 - Swift
 - Protocol
+crosspost_to_medium: true
 ---
 Although protocols are not by any means a new thing, Swift specifically encourages the developers to use it over inheritance. Not that Objective-C didn't make use of protocols, but due to the dynamic nature of Objective-C Runtime one would be tempted to put chunks of common declarations in a superclass instead.<!--more-->
 

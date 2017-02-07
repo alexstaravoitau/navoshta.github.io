@@ -4,6 +4,7 @@ tags:
 - iOS
 - Swift
 - Metal
+crosspost_to_medium: true
 ---
 In the <a target="_blank" href="/metal-camera-part-2-metal-texture">second part</a> of the Metal Camera Tutorial series we managed to convert frame data to a `Metal` texture. Now we are going to render it on screen with the help of a very simple `Metal` shader. <!--more-->
 

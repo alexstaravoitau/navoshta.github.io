@@ -4,6 +4,7 @@ tags:
 - iOS
 - Swift
 - CMMotionManager
+crosspost_to_medium: true
 ---
 Apple mobile devices have so many capabilities nowadays, that it is not always obvious where this or that functionality is coming from. Have you ever thought of how the Google Cardboard VR apps work? The answer is — they all use device motion sensors, be it an Android or iOS device. <!--more-->
 

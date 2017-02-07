@@ -11,6 +11,7 @@ tags:
 - CNN
 - Classification
 - Traffic signs
+crosspost_to_medium: true
 ---
 {% include toc title="Contents" icon="none" %}
 

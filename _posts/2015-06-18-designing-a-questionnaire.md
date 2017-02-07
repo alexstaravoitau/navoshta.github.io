@@ -2,6 +2,7 @@
 title: 'Mobile app navigation: designing a questionnaire'
 tags:
 - UI/UX
+crosspost_to_medium: true
 ---
 
 {% include base_path %}

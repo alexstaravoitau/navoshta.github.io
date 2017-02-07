@@ -5,6 +5,7 @@ tags:
 - Objective-C
 - UI/UX
 - CoreAnimation
+crosspost_to_medium: true
 ---
 
 {% include base_path %}
