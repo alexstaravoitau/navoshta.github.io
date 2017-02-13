@@ -110,7 +110,7 @@ This was the second part of **Metal Camera Tutorial** series, where we explore w
 * <a target="_blank" href="/metal-camera-part-1-camera-session">**Part 1: Getting raw camera data**</a>
 * **Part 2: Converting sample buffer to a Metal texture**
 * <a target="_blank" href="/metal-camera-part-3-render-shader">**Part 3: Rendering a Metal texture**</a>
-* <a target="_blank" href="/metal-camera-bonus-running-simulator">**Bonus: Running Metal project on iOS Simulator**</a>
+* <a target="_blank" href="/metal-camera-bonus-running-simulator">**Bonus: Running Metal project in iOS Simulator**</a>
 
 You can check out the <a target="_blank" href="https://github.com/navoshta/MetalRenderCamera">final project</a> from this **Metal Camera Tutorial** on GitHub.
 
