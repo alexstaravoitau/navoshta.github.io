@@ -24,7 +24,7 @@ You can do quite a lot of stuff with it! As I mentioned before, `Metal` is a ver
 	- **Create command encoder** that will let you specify shader functions context, like provide input and output for each.
 	- **Commit the commands** to schedule the buffer for execution.
 
-## Just give me the code man.
+## Give me the code!
 
 Ok, let's start with configuring our view controller.
 

@@ -22,7 +22,7 @@ The workflow is pretty straightforward, and basically consists of the following 
 * **Add output to session**. In our case it's going to be a `AVCaptureVideoDataOutput` instance that you need to configure with the format you want your data in.
 * **Start the session** and off you go. The data should be streaming now.
 
-## Just give me the code man.
+## Give me the code!
 
 There is a bit more to each of those steps of course, so let's step into more detail.
 

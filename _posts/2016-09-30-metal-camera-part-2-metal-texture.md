@@ -20,7 +20,7 @@ Anyway, for now let's stick with the graphics side of `Metal`, and try to conver
 * **Get each frame data**. We are going to grab it from `CMSampleBuffer`.
 * **Convert frame to a `Metal` texture**. `Metal` has its own class for textures — `MTLTexture`.
 
-## Just give me the code man.
+## Give me the code!
 
 Ok, let's start with getting frame's data.
 
