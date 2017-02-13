@@ -73,8 +73,8 @@ With those compilation time checks you clearly won't get your app running normal
 This was the bonus part of **Metal Camera Tutorial** series, where we explore ways of achieving lowest-overhead access to hardware to grab camera frames, convert them to textures and render on screen in real time:
 
 * <a target="_blank" href="/metal-camera-part-1-camera-session/">**Part 1: Getting raw camera data**</a>
-* <a target="_blank" href="">**Part 2: Converting sample buffer to a Metal texture**</a>
-* <a target="_blank" href="">**Part 3: Rendering a Metal texture**</a>
+* <a target="_blank" href="/metal-camera-part-2-metal-texture">**Part 2: Converting sample buffer to a Metal texture**</a>
+* <a target="_blank" href="/metal-camera-part-3-render-shader">**Part 3: Rendering a Metal texture**</a>
 * **Bonus: Running Metal project in iOS Simulator**
 
 You can check out the <a target="_blank" href="https://github.com/navoshta/MetalRenderCamera">final project</a> from this **Metal Camera Tutorial** on GitHub.
