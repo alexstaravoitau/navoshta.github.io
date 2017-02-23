@@ -1,5 +1,9 @@
 # main links
 main:
+  - title: "Machine Learning"
+    url: /ml/
+  - title: "iOS Development"
+    url: /ios/
   - title: "About"
     url: /about/
 
