@@ -6,6 +6,9 @@ tags:
 - Metal
 - Unit Tests
 crosspost_to_medium: true
+author_profile: false
+sidebar:
+    nav: metal-camera-tutorial
 ---
 In the Metal Camera Tutorial series we have created a simple app that renders camera frames on screen in real time. However, this app uses `Metal` framework, which is not available in iOS Simulator. Basically, your app won't even build if you select simulator as a build device, which is a shame in case you want to add unit tests for example, being able to run them without actual device connected to your machine. <!--more--> 
 
@@ -72,7 +75,7 @@ With those compilation time checks you clearly won't get your app running normal
 
 This was the bonus part of **Metal Camera Tutorial** series, where we explore ways of achieving lowest-overhead access to hardware to grab camera frames, convert them to textures and render on screen in real time:
 
-* <a target="_blank" href="/metal-camera-part-1-camera-session/">**Part 1: Getting raw camera data**</a>
+* <a target="_blank" href="/metal-camera-part-1-camera-session">**Part 1: Getting raw camera data**</a>
 * <a target="_blank" href="/metal-camera-part-2-metal-texture">**Part 2: Converting sample buffer to a Metal texture**</a>
 * <a target="_blank" href="/metal-camera-part-3-render-shader">**Part 3: Rendering a Metal texture**</a>
 * **Bonus: Running Metal project in iOS Simulator**

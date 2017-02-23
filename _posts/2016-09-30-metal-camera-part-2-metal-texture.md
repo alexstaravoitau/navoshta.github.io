@@ -6,6 +6,9 @@ tags:
 - Camera
 - Metal
 crosspost_to_medium: true
+author_profile: false
+sidebar:
+    nav: metal-camera-tutorial
 ---
 In the <a target="_blank" href="/metal-camera-part-1-camera-session/">first part</a> of Metal Camera Tutorial series we managed to fire up a session that would continuously send us frames from device's camera via a delegate callback. Now, this is already pretty exciting, but we need to get hold of actual textures to do something useful with it — and we are going to use `Metal` for that. <!--more-->
 

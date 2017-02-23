@@ -2,3 +2,15 @@
 main:
   - title: "About"
     url: /about/
+
+metal-camera-tutorial:
+  - title: "Metal Camera Tutorial"
+    children:
+      - title: "1. Getting raw camera data"
+        url: /metal-camera-part-1-camera-session
+      - title: "2. Working with sample buffer"
+        url: /metal-camera-part-2-metal-texture
+      - title: "3. Rendering a Metal texture"
+        url: /metal-camera-part-3-render-shader
+      - title: "Bonus: Running in iOS Simulator"
+        url: /metal-camera-bonus-running-simulator
