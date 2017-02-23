@@ -7,6 +7,7 @@ tags:
 - CNN
 - Variable scope
 - Saver
+- ML
 crosspost_to_medium: true
 ---
 This is a TensorFlow follow-along for an amazing [Deep Learning tutorial](http://danielnouri.org/notes/2014/12/17/using-convolutional-neural-nets-to-detect-facial-keypoints-tutorial/) by Daniel Nouri. Daniel describes ways of approaching a computer vision problem of detecting facial keypoints in an image using various deep learning techniques, while these techniques gradually build upon each other, demonstrating advantages and limitations of each. <!--more--> I highly recommend going through the steps if you are interested in the topic and prefer learning by example.
