@@ -5,13 +5,12 @@ header:
   overlay_filter: 0.5
 excerpt: "This is my attempt to tackle traffic signs classification problem with a convolutional neural network implemented in TensorFlow (reaching **99.33%** accuracy). The highlights of this solution would be data preprocessing, data augmentation, pre-training and skipping connections in the network."
 tags:
+- Python
 - TensorFlow
 - Computer vision
-- Deep learning
+- ML
 - CNN
 - Classification
-- Traffic signs
-- ML
 crosspost_to_medium: true
 ---
 {% include toc title="Contents" icon="none" %}

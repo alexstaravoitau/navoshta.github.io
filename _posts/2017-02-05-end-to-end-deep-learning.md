@@ -5,13 +5,12 @@ header:
   overlay_filter: 0.5
 excerpt: "The goal of this project was to train a end-to-end deep learning model that would let a car drive itself around the track in a driving simulator. The approach I took was based on a paper by Nvidia research team with a significantly simplified architecture that was optimised for this specific project."
 tags:
+- Python
 - Keras
 - Computer vision
-- Deep learning
-- CNN
-- Autonomous driving
-- Behavioral cloning
 - ML
+- CNN
+- Regression
 crosspost_to_medium: true
 ---
 {% include toc title="Contents" icon="none" %}

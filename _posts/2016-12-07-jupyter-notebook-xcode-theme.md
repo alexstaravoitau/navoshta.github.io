@@ -2,7 +2,6 @@
 title: Jupyter Notebook Xcode theme
 tags:
 - Jupyter Notebook
-- Xcode
 - ML
 crosspost_to_medium: true
 ---

@@ -4,7 +4,6 @@ tags:
 - iOS
 - Objective-C
 - UI/UX
-- CoreAnimation
 crosspost_to_medium: true
 ---
 

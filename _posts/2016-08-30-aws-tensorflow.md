@@ -1,12 +1,11 @@
 ---
 title: Running TensorFlow with Jupyter Notebook on AWS
 tags:
-- IPython
 - Jupyter Notebook
 - TensorFlow
 - AWS
-- Tutorial
 - ML
+- Tutorial
 crosspost_to_medium: true
 ---
 Google's open source TensorFlow is one of the most promising machine learning frameworks nowadays. Even though Google is said to use a slightly different version internally, and the current version of TensorFlow is somewhat behind its competitors performance wise, one can hardly argue that it has a lot of potential.<!--more--> So if you are into data science the chances are that you will at least give it a go sooner or later.

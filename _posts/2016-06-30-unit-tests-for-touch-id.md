@@ -3,7 +3,7 @@ title: Unit tests for Touch ID
 tags:
 - iOS
 - Swift
-- XCTest
+- Unit Tests
 crosspost_to_medium: true
 ---
 Writing unit tests is like having sex in high school: everybody is talking about it, although very few are actually doing it. In the iOS world it had a couple of additional roadblocks for a while due to a lack of solid and stable testing capabilities out of the Xcode's box. However, with the Apple's `XCTest` framework things have improved greatly: you no longer have an excuse of needing 3rd party frameworks to test your code properly. <!--more--> However, there are still things here and there that might not be so straightforward to write unit tests for, and Touch ID is one of them.

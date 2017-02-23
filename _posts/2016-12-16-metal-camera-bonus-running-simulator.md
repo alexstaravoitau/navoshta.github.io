@@ -5,6 +5,7 @@ tags:
 - Swift
 - Metal
 - Unit Tests
+- Tutorial
 crosspost_to_medium: true
 author_profile: false
 sidebar:

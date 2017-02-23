@@ -5,6 +5,7 @@ tags:
 - Swift
 - Camera
 - Metal
+- Tutorial
 crosspost_to_medium: true
 author_profile: false
 sidebar:
