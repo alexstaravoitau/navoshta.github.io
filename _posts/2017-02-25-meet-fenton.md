@@ -75,7 +75,7 @@ As you might be aware, I have been experimenting with [AWS as a remote GPU-enabl
 My idea in a nutshell was to build a machine that would only act as a server, being accessible from anywhere to me, always ready to unleash its computational powers on whichever task I'd be working on. Although this setup did take some time to assess, assemble and configure, it has been working flawlessly ever since, and I am very happy with it.
 
 # Hardware
-Let's start with hardware. This would include the server PC and some basic peripherals: I didn't even bother to buy a monitor or a mouse, as I only intended to use this machine remotely from CLI. My main considerations were performance in machine learning tasks and extensibility in case I decided to upgrade at some point. This is the config I came up with.
+Let's start with hardware. This would include the server PC and some basic peripherals: I didn't even bother to buy a monitor or a mouse, as I only intended to use this machine remotely from CLI. My main considerations were performance in machine learning tasks and extensibility in case I decided to upgrade at some point. This is the [config I came up with](https://uk.pcpartpicker.com/list/tKjTzM).
 
 Type|Item|Price
 :----|:----|:----
