@@ -444,7 +444,7 @@ I have generated two datasets for training my model using augmentation pipeline 
 
 I then use 25% of these augmented datasets for validation while training in 2 stages:
 
-* **Stage 1: Pre-training**. On the first stage I pre-train the model using **extended** training dataset with TensorFlow `AdamOptimizer` and learning rate set to **0.001**. It normally stops improving after ~180 epochs, which takes ~3.5 hours on my machine equipped with Nvidia GTX1080 GPU.
+* **Stage 1: Pre-training**. On the first stage I pre-train the model using **extended** training dataset with TensorFlow `AdamOptimizer` and learning rate set to **0.001**. It normally stops improving after ~180 epochs, which takes ~3.5 hours on [my machine](http://navoshta.com/meet-fenton/) equipped with Nvidia GTX 1080 GPU.
 * **Stage 2: Fine-tuning**. I then train the model using a **balanced** dataset with a decreased learning rate of **0.0001**.
 
 These two training stages could easily get you past 99% accuracy on the test set. You can, however, improve model performance even further by re-generating **balanced** dataset with slightly decreased augmentation intensity and repeating 2nd fine-tuning stage a couple of times.
