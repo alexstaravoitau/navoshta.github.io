@@ -14,7 +14,7 @@ My commercial experience dates back to 2008, I used to work in telecom, banking,
 
 ## About the site
 
-This is a blog about things I happen to work with. Mainly it's developing iOS apps and frameworks, UX and UI design, data mining and machine learning.
+This is a blog about things I happen to work with. Mainly it's developing iOS apps and frameworks, data mining and machine learning.
 
 ## Links
 
