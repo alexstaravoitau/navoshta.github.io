@@ -58,6 +58,15 @@ gallery_assembly:
     image_path: /images/posts/fenton/install-ubuntu-2.jpg
     alt: "Installing Ubuntu"
     title: "Installing Ubuntu"
+gallery_istat:
+  - url: /images/posts/fenton/istat-1.jpg
+    image_path: /images/posts/fenton/istat-1.jpg
+    alt: "iStat for iOS"
+    title: "iStat for iOS"
+  - url: /images/posts/fenton/istat-2.jpg
+    image_path: /images/posts/fenton/istat-2.jpg
+    alt: "iStat for iOS"
+    title: "iStat for iOS"
 ---
 {% include toc title="Contents" icon="none" %}
 
@@ -178,14 +187,9 @@ You can now close the window — Jupyter process will always stay there, whether
 ## Monitoring
 Finally, I suggest installing a monitoring daemon on your remote machine, so that you can periodically check useful stats like CPU load, memory consumption, disk and network activity, etc. Ideally you want to monitor your GPU sensors as well, however I didn't find any daemon-like monitoring software allowing that on Ubuntu — maybe you will have better luck with it.
 
-What I decided to go with was **[iStat](https://bjango.com/ios/istat/)**, which works with a wide range of sensors (Nvidia GPU sensor is not on the list unfortunately) and has a nice companion iOS app. This is what the training process looks like, for instance: CPU is busy with some heavy on-the-go data augmentation, so you can clearly see training epochs spikes in the top graph.
+What I decided to go with was **[iStat](https://bjango.com/ios/istat/)**, which works with a wide range of sensors (Nvidia GPU sensor is not on the list unfortunately) and has a nice companion iOS app. This is what the training process looks like, for instance: CPU is busy with some heavy on-the-go data augmentation, so you can see iStat's CPU load graph exposing training epochs spikes.
 
-<p align="center">
-<img src="{{ base_path }}/images/posts/fenton/istat.jpg" alt="iStat" style="width: 375px;" />
-</p>
-CPU load exposing training epochs spikes in **iStat**
-{: style="text-align: center;"}
-{: .small}
+{% include gallery id="gallery_istat" %}
 
 # Pick a name
 Arguably the most important step is picking your machine's name. I named mine after [this famous dog](https://www.youtube.com/watch?v=3GRSbr0EYYU), probably because when making my first steps in data science, whenever my algorithm failed to learn I felt just as desperate and helpless as Fenton's owner. Fortunately, this happens less and less often these days! 
