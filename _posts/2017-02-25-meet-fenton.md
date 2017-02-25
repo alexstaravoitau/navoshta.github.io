@@ -175,11 +175,23 @@ You can now close the window — Jupyter process will always stay there, whether
 ## PyCharm
 **[PyCharm](https://www.jetbrains.com/pycharm/)** is my favourite Python IDE, **PyCharm Community Edition** is free but doesn't support remote interpreters unfortunately, however **PyCharm Professional** does (and is not too expensive). You need to go through a cumbersome configuration of your project (which is described in depth [here](https://medium.com/@erikhallstrm/work-remotely-with-pycharm-tensorflow-and-ssh-c60564be862d#.7sr7uresx)), but as a result you can work with your source code locally, and run it with a remote interpreter, leaving automatic syncing and deployment to PyCharm.
 
+## Monitoring
+Finally, I suggest installing a monitoring daemon on your remote machine, so that you can periodically check useful stats like CPU load, memory consumption, disk and network activity, etc. Ideally you want to monitor your GPU sensors as well, however I didn't find any daemon-like monitoring software allowing that on Ubuntu — maybe you will have better luck with it.
+
+What I decided to go with was **[iStat](https://bjango.com/ios/istat/)**, which works with a wide range of sensors (Nvidia GPU sensor is not on the list unfortunately) and has a nice companion iOS app. This is what the training process looks like, for instance: CPU is busy with some heavy on-the-go data augmentation, so you can clearly see training epochs spikes in the top graph.
+
+<p align="center">
+<img src="{{ base_path }}/images/posts/fenton/istat.jpg" alt="iStat" style="width: 375px;" />
+</p>
+CPU load exposing training epochs spikes in **iStat**
+{: style="text-align: center;"}
+{: .small}
+
 # Pick a name
 Arguably the most important step is picking your machine's name. I named mine after [this famous dog](https://www.youtube.com/watch?v=3GRSbr0EYYU), probably because when making my first steps in data science, whenever my algorithm failed to learn I felt just as desperate and helpless as Fenton's owner. Fortunately, this happens less and less often these days! 
 
 <p align="center">
-<img src="{{ base_path }}/images/posts/fenton/telegram_bot.jpg" alt="Drawing" style="width: 375px;" />
+<img src="{{ base_path }}/images/posts/fenton/telegram_bot.jpg" alt="Telegram Bot" style="width: 375px;" />
 </p>
 Fenton is a good <strike>bot</strike> boy, sending me messenger notifications when it finishes training
 {: style="text-align: center;"}
