@@ -15,7 +15,7 @@ crosspost_to_medium: true
 ---
 {% include toc title="Contents" icon="none" %}
 
-I'm assuming you already know a fair bit about neural networks and regularization, as I won't go into too much detail about their background and how they work. I am using **TensorFlow** as a ML framework and a couple of dependancies like `numpy`, `matplotlib` and `scikit-image`. In case you are not familiar with TensorFlow, make sure to check out [my recent post](http://navoshta.com/facial-with-tensorflow/){:target="_blank"} about its core concepts. 
+I'm assuming you already know a fair bit about neural networks and regularization, as I won't go into too much detail about their background and how they work. I am using **TensorFlow** as a ML framework and a couple of dependencies like `numpy`, `matplotlib` and `scikit-image`. In case you are not familiar with TensorFlow, make sure to check out [my recent post](http://navoshta.com/facial-with-tensorflow/){:target="_blank"} about its core concepts. 
 
 If you would like to follow along, you may as well need a machine with a CUDA-capable GPU and all dependencies installed. Here is a [Jupyter notebook with the final solution](https://github.com/navoshta/traffic-signs/blob/master/Traffic_Signs_Recognition.ipynb){:target="_blank"} I am describing in this tutorial, presumably if you go through all the cells you should get the same results.
 
@@ -276,7 +276,12 @@ Please note that we use `edge` mode when applying our transformations, to ensure
 
 I decided to use a deep neural network classifier as a model, which was inspired by [Daniel Nouri's tutorial](http://navoshta.com/facial-with-tensorflow/){:target="_blank"} and aforementioned [Pierre Sermanet / Yann LeCun paper](http://yann.lecun.com/exdb/publis/pdf/sermanet-ijcnn-11.pdf){:target="_blank"}. It is fairly simple and has 4 layers: **3 convolutional layers** for feature extraction and **one fully connected layer** as a classifier.
 
-![image-center]({{ base_path }}/images/posts/traffic-signs-classification/traffic-signs-architecture.png){: .align-center}
+<p align="center">
+    <a href="{{ base_path }}/images/posts/traffic-signs-classification/traffic-signs-architecture.png"><img src="{{ base_path }}/images/posts/traffic-signs-classification/traffic-signs-architecture.png"></a>
+</p>
+Model architecture
+{: style="text-align: center;"}
+{: .small}
 
 As opposed to usual strict feed-forward CNNs I use **multi-scale features**, which means that convolutional layers' output is not only forwarded into subsequent layer, but is also branched off and fed into classifier (e.g. fully connected layer). Please mind that these branched off layers undergo additional max-pooling, so that all convolutions are proportionally subsampled before going into classifier.
 
