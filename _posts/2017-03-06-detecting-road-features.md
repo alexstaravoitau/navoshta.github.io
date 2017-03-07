@@ -478,7 +478,7 @@ def detections():
 
 ```
 
-This approach proved iself to work reasonably well, you can check out the [full annotated video here](https://github.com/navoshta/advanced-lane-finding/blob/master/data/video/project_video_annotated_vehicle.mp4). There is the current frame heat map in the top right corner — you may notice quite a few false positives, but most of them are eliminated by merging detections over the last `N` consecutive frames.
+This approach proved iself to work reasonably well on the source video, you can check out the [full annotated video here](https://github.com/navoshta/advanced-lane-finding/blob/master/data/video/project_video_annotated_vehicle.mp4). There is the current frame heat map in the top right corner — you may notice quite a few false positives, but most of them are eliminated by merging detections over the last `N` consecutive frames.
 
 ![image-center]({{ base_path }}/images/posts/detecting-road-features/project_video_sample-2.gif){: .align-center}
 Sample of the annotated project video
@@ -489,7 +489,7 @@ For implementation details check `VehicleTracker` class in [`vehicletracker/trac
 {: .notice}
 
 # Results
-This clearly is a very naive way of detecting and tracking road features, and wouldn't be used in the fiels as it is likely to fail in too many scenarios:
+This clearly is a very naive way of detecting and tracking road features, and wouldn't be used in real world application as-is, since it is likely to fail in too many scenarios:
 
 * Going up or down the hill.
 * Changing weather conditions.
@@ -498,7 +498,7 @@ This clearly is a very naive way of detecting and tracking road features, and wo
 * Vehicles and vehicle positions different from those classifier was trained on.
 * ...
 
-Not to mention it is painfully slow and wouldn't run in real time without substantial optimisations. Nevertheless this project is a good representation of what can be done by simply inspecting pixel values' gradients and color spaces. It shows that even with these limited tools we can extract a lot of useful information from an image, and that this information can potentially be used as a feature input to more sophisticated algorithms.
+Not to mention it is painfully slow and would not run in real time without substantial optimisations. Nevertheless this project is a good representation of what can be done by simply inspecting pixel values' gradients and color spaces. It shows that even with these limited tools we can extract a lot of useful information from an image, and that this information can potentially be used as a feature input to more sophisticated algorithms.
 
 
 <!-- Place this tag where you want the button to render. -->
