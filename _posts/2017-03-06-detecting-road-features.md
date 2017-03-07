@@ -3,7 +3,7 @@ title: Detecting road features
 header:
   overlay_image: images/posts/detecting-road-features/bg.jpg
   overlay_filter: 0.5
-excerpt: "The goal of this project was to try and detect a set of road features in a forward facing vehicle camera data. This is a somewhat naive way as its mainly using computer vision techniques (no relation to naive Bayesian!). Features we are going to detect and track are lane boundaries and surrounding vehicles."
+excerpt: "The goal of this project was to try and detect a set of road features in a forward facing vehicle camera data. This is a somewhat naive way as it is mainly using computer vision techniques (no relation to naive Bayesian!). Features we are going to detect and track are lane boundaries and surrounding vehicles."
 tags:
 - Python
 - Computer vision
