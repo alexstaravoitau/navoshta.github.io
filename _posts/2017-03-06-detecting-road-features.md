@@ -117,7 +117,9 @@ s_channel = hls[:, :, 2]
 
 We apply a combination of all these filters as an edge detection pipeline. Here is an example of its output, where pixels masked by color are blue, and pixels masked by gradient are green.
 
-![image-center]({{ base_path }}/images/posts/detecting-road-features/edges.png){: .align-center}
+<p align="center">
+    <a href="{{ base_path }}/images/posts/detecting-road-features/edges.jpg"><img src="{{ base_path }}/images/posts/detecting-road-features/edges.jpg"></a>
+</p>
 Original vs. highlighted edges
 {: style="text-align: center;"}
 {: .small}
@@ -147,7 +149,9 @@ image = cv2.warpPerspective(image, transform_matrix, (w, h))
 
 This is what it looks like for an arbitrary test image.
 
-![image-center]({{ base_path }}/images/posts/detecting-road-features/perspective.png){: .align-center}
+<p align="center">
+    <a href="{{ base_path }}/images/posts/detecting-road-features/perspective.jpg"><img src="{{ base_path }}/images/posts/detecting-road-features/perspective.jpg"></a>
+</p>
 Original vs. bird's eye view
 {: style="text-align: center;"}
 {: .small}
@@ -160,7 +164,9 @@ We are now going to scan the resulting frame from bottom to top trying to isolat
 
 Here is a debug image representing the process. On the left is the _original_ image after we apply camera calibration and perspective transform. On the right is the same image, but with edges highlighted in **<span style="color: green">green</span>** and **<span style="color: blue">blue</span>**, scanning windows boundaries highlighted in **<span style="color: yellow">yellow</span>**, and a second order polynomial approximation of collected points in **<span style="color: red">red</span>**.
 
-![image-center]({{ base_path }}/images/posts/detecting-road-features/detection.png){: .align-center}
+<p align="center">
+    <a href="{{ base_path }}/images/posts/detecting-road-features/detection.jpg"><img src="{{ base_path }}/images/posts/detecting-road-features/detection.jpg"></a>
+</p>
 Boundary detection pipeline
 {: style="text-align: center;"}
 {: .small}
