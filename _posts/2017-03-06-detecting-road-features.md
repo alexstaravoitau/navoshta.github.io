@@ -22,7 +22,7 @@ We will implement it in two major steps, first we will prepare a pipeline for la
 
 # Source video
 
-I am going to use a short video clip shot from a vehicle front-facing camera while driving on a highway. It was shot in close to perfect conditions: sunny weather, not many vehicles around, road markings clearly visible, etc. — so using just computer vision techinques alone should be sufficient for a quick demonstration. You can check out the full [50 seconds video here](https://github.com/navoshta/advanced-lane-finding/blob/master/data/video/project_video.mp4).
+I am going to use a short video clip shot from a vehicle front-facing camera while driving on a highway. It was shot in close to perfect conditions: sunny weather, not many vehicles around, road markings clearly visible, etc. — so using just computer vision techinques alone should be sufficient for a quick demonstration. You can check out the full [50 seconds video here](https://github.com/navoshta/advanced-lane-finding/blob/master/data/video/project_video.mp4){:target="_blank"}.
 
 ![image-center]({{ base_path }}/images/posts/detecting-road-features/project_source_video_sample.gif){: .align-center}
 Source video
@@ -80,11 +80,11 @@ Original vs. calibrated images
 {: style="text-align: center;"}
 {: .small}
 
-For implementation details check `CameraCalibration` class in [`lanetracker/camera.py`](https://github.com/navoshta/detecting-road-features/blob/master/source/lanetracker/camera.py).
+For implementation details check `CameraCalibration` class in [`lanetracker/camera.py`](https://github.com/navoshta/detecting-road-features/blob/master/source/lanetracker/camera.py){:target="_blank"}.
 {: .notice}
 
 ## Edge detection
-We use a set of gradient and color based thresholds to detect edges in the frame. For gradients we use [Sobel operator](https://en.wikipedia.org/wiki/Sobel_operator), which essentially highlights rapid changes in color over either of two axes by approximating derivatives using a simple convolution kernel. For color we simply convert the frame to [**HLS** color space](https://en.wikipedia.org/wiki/HSL_and_HSV) and apply a threshold on the S channel. The reason we use HLS here is because it proved to perform best in separating light pixels (road markings) from dark pixels (road) using the saturation channel.
+We use a set of gradient and color based thresholds to detect edges in the frame. For gradients we use [Sobel operator](https://en.wikipedia.org/wiki/Sobel_operator){:target="_blank"}, which essentially highlights rapid changes in color over either of two axes by approximating derivatives using a simple convolution kernel. For color we simply convert the frame to [**HLS** color space](https://en.wikipedia.org/wiki/HSL_and_HSV){:target="_blank"} and apply a threshold on the S channel. The reason we use HLS here is because it proved to perform best in separating light pixels (road markings) from dark pixels (road) using the saturation channel.
 
 * **Gradient absolute value**. For absolute gradient value we simply apply a threshold to `cv2.Sobel() output for each axis.
 
@@ -124,7 +124,7 @@ Original vs. highlighted edges
 {: style="text-align: center;"}
 {: .small}
 
-For implementation details check functions in [`lanetracker/gradients.py`](https://github.com/navoshta/detecting-road-features/blob/master/source/lanetracker/gradients.py).
+For implementation details check functions in [`lanetracker/gradients.py`](https://github.com/navoshta/detecting-road-features/blob/master/source/lanetracker/gradients.py){:target="_blank"}.
 {: .notice}
 
 ## Perspective transform
@@ -156,7 +156,7 @@ Original vs. bird's eye view
 {: style="text-align: center;"}
 {: .small}
 
-For implementation details check functions in [`lanetracker/perspective.py`](https://github.com/navoshta/detecting-road-features/blob/master/source/lanetracker/perspective.py).
+For implementation details check functions in [`lanetracker/perspective.py`](https://github.com/navoshta/detecting-road-features/blob/master/source/lanetracker/perspective.py){:target="_blank"}.
 {: .notice}
 
 ## Detect boundaries
@@ -171,7 +171,7 @@ Boundary detection pipeline
 {: style="text-align: center;"}
 {: .small}
 
-For implementation details check `LaneTracker` class in [`lanetracker/tracker.py`](https://github.com/navoshta/detecting-road-features/blob/master/source/lanetracker/perspective.py), `Window` class in [`lanetracker/window.py`](https://github.com/navoshta/detecting-road-features/blob/master/source/lanetracker/perspective.py) and `Line` class in [`lanetracker/line.py`](https://github.com/navoshta/detecting-road-features/blob/master/source/lanetracker/perspective.py).
+For implementation details check `LaneTracker` class in [`lanetracker/tracker.py`](https://github.com/navoshta/detecting-road-features/blob/master/source/lanetracker/perspective.py){:target="_blank"}, `Window` class in [`lanetracker/window.py`](https://github.com/navoshta/detecting-road-features/blob/master/source/lanetracker/perspective.py){:target="_blank"} and `Line` class in [`lanetracker/line.py`](https://github.com/navoshta/detecting-road-features/blob/master/source/lanetracker/perspective.py){:target="_blank"}.
 {: .notice}
 
 ## Approximate properties
@@ -191,7 +191,7 @@ Second order polynomial
 {: style="text-align: center;"}
 {: .small}
 
-As per [this tutorial](http://www.intmath.com/applications-differentiation/8-radius-curvature.php), we can get the radius of curvature in an arbitrary point using the following equation.
+As per [this tutorial](http://www.intmath.com/applications-differentiation/8-radius-curvature.php){:target="_blank"}, we can get the radius of curvature in an arbitrary point using the following equation.
 
 ![image-center]({{ base_path }}/images/posts/detecting-road-features/curve_grad.png){: .align-center height="80px" width="295px"}
 Radius equation
@@ -222,7 +222,7 @@ We can also approximate vehicle position within the lane. This rountine would ca
 distance = np.absolute((w // 2 - x[np.max(y)]) * xm_per_pix)
 ```
 
-For implementation details check `Line` class in [`lanetracker/line.py`](https://github.com/navoshta/detecting-road-features/blob/master/source/lanetracker/perspective.py).
+For implementation details check `Line` class in [`lanetracker/line.py`](https://github.com/navoshta/detecting-road-features/blob/master/source/lanetracker/perspective.py){:target="_blank"}.
 {: .notice}
 
 ## Sequence of frames
@@ -247,19 +247,19 @@ Whenever we want to draw a line, we get an average of polynomial coefficients de
 mean_coefficients = np.array(coefficients).mean(axis=0)
 ```
 
-This approach proved iself to work reasonably well, you can check out the [full annotated video here](https://github.com/navoshta/advanced-lane-finding/blob/master/data/video/project_video_annotated_lane.mp4).
+This approach proved iself to work reasonably well, you can check out the [full annotated video here](https://github.com/navoshta/advanced-lane-finding/blob/master/data/video/project_video_annotated_lane.mp4){:target="_blank"}.
 
 ![image-center]({{ base_path }}/images/posts/detecting-road-features/project_video_sample.gif){: .align-center}
 Sample of the annotated project video
 {: style="text-align: center;"}
 {: .small}
 
-For implementation details check `LaneTracker` class in [`lanetracker/tracker.py`](https://github.com/navoshta/detecting-road-features/blob/master/source/lanetracker/tracker.py).
+For implementation details check `LaneTracker` class in [`lanetracker/tracker.py`](https://github.com/navoshta/detecting-road-features/blob/master/source/lanetracker/tracker.py){:target="_blank"}.
 {: .notice}
 
 # Vehicle Tracking
 
-We are going to use a bit of machine learning to detect vehicle presence in an image by training a classifer that would classify an image as either containing or not containing a vehicle. We will train this classifer using a dataset provided by Udacity which comes in two separate archives: [images containing cars](https://s3.amazonaws.com/udacity-sdc/Vehicle_Tracking/vehicles.zip) and [images not containing cars](https://s3.amazonaws.com/udacity-sdc/Vehicle_Tracking/non-vehicles.zip). The dataset contains **17,760** color RGB images **64×64 px** each, with **8,792** samples labeled as containing **vehicles** and **8,968** samples labeled as **non-vehicles**.
+We are going to use a bit of machine learning to detect vehicle presence in an image by training a classifer that would classify an image as either containing or not containing a vehicle. We will train this classifer using a dataset provided by Udacity which comes in two separate archives: [images containing cars](https://s3.amazonaws.com/udacity-sdc/Vehicle_Tracking/vehicles.zip){:target="_blank"} and [images not containing cars](https://s3.amazonaws.com/udacity-sdc/Vehicle_Tracking/non-vehicles.zip){:target="_blank"}. The dataset contains **17,760** color RGB images **64×64 px** each, with **8,792** samples labeled as containing **vehicles** and **8,968** samples labeled as **non-vehicles**.
 
 ![image-center]({{ base_path }}/images/posts/detecting-road-features/cars.png){: .align-center}
 Random sample labeled as containing cars
@@ -278,7 +278,7 @@ In order to prepare a processing pipeline to identify surrounding vehicles, we a
 * **Merge individual segment detections.** As there will inevitably be multiple detections we merge them together using a heat map, which should also help reducing the number of false positives.
 
 ## Feature extraction
-After experimenting with various features I settled on a combination of **[HOG (Histogram of Oriented Gradients)](https://en.wikipedia.org/wiki/Histogram_of_oriented_gradients)**, **spatial information** and **color channel histograms**, all using [**YCbCr** color space](https://en.wikipedia.org/wiki/YCbCr). Feature extraction is implemented as a context-preserving class (`FeatureExtractor`) to allow some pre-calculations for each frame. As some features take a lot of time to compute (looking at you, HOG), we only do that once for entire image and then return regions of it. 
+After experimenting with various features I settled on a combination of **HOG** ([Histogram of Oriented Gradients](https://en.wikipedia.org/wiki/Histogram_of_oriented_gradients){:target="_blank"}), **spatial information** and **color channel histograms**, all using [**YCbCr** color space](https://en.wikipedia.org/wiki/YCbCr){:target="_blank"}. Feature extraction is implemented as a context-preserving class (`FeatureExtractor`) to allow some pre-calculations for each frame. As some features take a lot of time to compute (looking at you, HOG), we only do that once for entire image and then return regions of it. 
 
 ### Histogram of Oriented Gradients
 {:.no_toc}
@@ -375,13 +375,13 @@ feature_vector = extractor.feature_vector()
 feature_vector = extractor.feature_vector(0, 0, 64)
 ```
 
-For implementation details check `FeatureExtractor` class in [`vehicletracker/features.py`](https://github.com/navoshta/detecting-road-features/blob/master/source/vehicletracker/features.py).
+For implementation details check `FeatureExtractor` class in [`vehicletracker/features.py`](https://github.com/navoshta/detecting-road-features/blob/master/source/vehicletracker/features.py){:target="_blank"}.
 {: .notice}
 
 ## Training a classifier
 I trained a Linear SVC (`sklearn` implementation), using feature extractor described above. Nothing fancy here, I used `sklearn`'s `train_test_split` to split the dataset into training and validation sets, and used `sklearn`'s `StandardScaler` for feature scaling. I didn't bother with a proper test set, assuming that classifier performance on the project video would be a good proxy for it.
 
-For implementation details check [`detecting-road-features.ipynb](https://github.com/navoshta/detecting-road-features/blob/master/source/detecting-road-features.ipynb) notebook.
+For implementation details check [`detecting-road-features.ipynb](https://github.com/navoshta/detecting-road-features/blob/master/source/detecting-road-features.ipynb){:target="_blank"} notebook.
 {: .notice}
 
 ## Frame segmentation
@@ -484,14 +484,14 @@ def detections():
 
 ```
 
-This approach proved iself to work reasonably well on the source video, you can check out the [full annotated video here](https://github.com/navoshta/advanced-lane-finding/blob/master/data/video/project_video_annotated_vehicle.mp4). There is the current frame heat map in the top right corner — you may notice quite a few false positives, but most of them are eliminated by merging detections over the last `N` consecutive frames.
+This approach proved iself to work reasonably well on the source video, you can check out the [full annotated video here](https://github.com/navoshta/advanced-lane-finding/blob/master/data/video/project_video_annotated_vehicle.mp4){:target="_blank"}. There is the current frame heat map in the top right corner — you may notice quite a few false positives, but most of them are eliminated by merging detections over the last `N` consecutive frames.
 
 ![image-center]({{ base_path }}/images/posts/detecting-road-features/project_video_sample-2.gif){: .align-center}
 Sample of the annotated project video
 {: style="text-align: center;"}
 {: .small}
 
-For implementation details check `VehicleTracker` class in [`vehicletracker/tracker.py`](https://github.com/navoshta/detecting-road-features/blob/master/source/vehicletracker/tracker.py).
+For implementation details check `VehicleTracker` class in [`vehicletracker/tracker.py`](https://github.com/navoshta/detecting-road-features/blob/master/source/vehicletracker/tracker.py){:target="_blank"}.
 {: .notice}
 
 # Results
