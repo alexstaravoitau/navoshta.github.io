@@ -20,6 +20,9 @@ We are going to try detecting and tracking some basic road features in a video s
 
 We will implement it in two major steps, first we will prepare a pipeline for lane tracking, and will then learn how to detect surrounding vehicles.
 
+Road features detection is one of the assignments in [**Udacity Self-Driving Car Nanodegree**](http://udacity.com/drive) program, however the concepts described here should be easy to follow even without that context. 
+{: .notice}
+
 # Source video
 
 I am going to use a short video clip shot from a vehicle front-facing camera while driving on a highway. It was shot in close to perfect conditions: sunny weather, not many vehicles around, road markings clearly visible, etc. — so using just computer vision techinques alone should be sufficient for a quick demonstration. You can check out the full [50 seconds video here](https://github.com/navoshta/advanced-lane-finding/blob/master/data/video/project_video.mp4){:target="_blank"}.

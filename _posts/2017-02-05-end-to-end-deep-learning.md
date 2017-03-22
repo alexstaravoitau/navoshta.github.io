@@ -17,7 +17,7 @@ crosspost_to_medium: true
 
 I'm assuming you already know a fair bit about neural networks and regularization, as I won't go into too much detail about their background and how they work. I am using **Keras** with TensorFlow backend as a ML framework and a couple of dependancies like `numpy`, `pandas` and `scikit-image`. You may want to check out [code of the final solution](https://github.com/navoshta/behavioral-cloning){:target="_blank"} I am describing in this tutorial, however keep in mind that if you would like to follow along, you may as well need a machine with a CUDA-capable GPU.
 
-Training a model to drive a car in a simulator is one of the assignments in **Udacity Self-Driving Car Nanodegree** program, however the concepts described here should be easy to follow even without that context. 
+Training a model to drive a car in a simulator is one of the assignments in [**Udacity Self-Driving Car Nanodegree**](http://udacity.com/drive) program, however the concepts described here should be easy to follow even without that context. 
 {: .notice}
 
 ## Dataset
