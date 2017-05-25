@@ -43,7 +43,7 @@ Camera frames look pretty straightforward: you can see a tram track on the right
 
 ## Lidar
 
-The dataset in question contains 114 lidar point cloud frames over duration of 11 seconds. This equals to approximately 10 frames per second, which is a very decent scanning rate, given that we get a 360° field-of-view with each frame containing ~120,000 points — that is a fair amount of data to stream in realtime. Not to clutter the visualizations we will randomly sample 20% of the points for each frame and discard the rest. 
+The dataset in question contains 114 lidar point cloud frames over duration of 11 seconds. This equals to approximately 10 frames per second, which is a very decent scanning rate, given that we get a 360° field-of-view with each frame containing approximately 120,000 points — a fair amount of data to stream in realtime. Not to clutter the visualizations we will randomly sample 20% of the points for each frame and discard the rest. 
 
 We will additionally visualize _tracklets_, e.g. labeled objects like cars, trams, pedestrians and so on. With a bit of math we will grab information from the KITTI tracklets file and work out each object's bounding box for each frame, feel free to check out the [notebook](https://github.com/navoshta/KITTI-Dataset/blob/master/kitti-dataset.ipynb) for more details. There are only 3 types of objects in this particular 11-seconds piece, we will mark them with bounding boxes as follows: cars will be marked in **blue**, trams in **red** and cyclists in **green**. Let's first visualize a sample lidar frame on a 3D plot.
 
