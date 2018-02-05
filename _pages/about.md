@@ -18,9 +18,7 @@ This is a blog about things I happen to work with. Mainly it's developing iOS ap
 
 ## Links
 
-If you are interested in more things that I do, you may want to check out my profiles on other cool websites.
-
-[GitHub](https://github.com/{{ author.github }}){: .btn} [LinkedIn](https://www.linkedin.com/in/{{ author.linkedin }}){: .btn} [StackOverflow](https://www.stackoverflow.com/users/{{ author.stackoverflow }}){: .btn} 
+If you are interested in more things that I do, you may want to check out my [GitHub profile](https://github.com/{{ author.github }}) or my app [Juno](https://juno.sh).
 
 ## Contact
 
