@@ -20,7 +20,7 @@ This is a blog about things I happen to work with. Mainly it's developing iOS ap
 
 If you are interested in more things that I do, you may want to check out my profiles on other cool websites.
 
-[GitHub](https://github.com/{{ author.github }}){: .btn} [LinkedIn](https://www.linkedin.com/in/{{ author.linkedin }}){: .btn} [StackOverflow](https://www.stackoverflow.com/users/{{ author.stackoverflow }}){: .btn} [Kaggle](https://kaggle.com/{{ author.kaggle }}){: .btn} [Behance](https://www.behance.net/{{ author.behance }}){: .btn}
+[GitHub](https://github.com/{{ author.github }}){: .btn} [LinkedIn](https://www.linkedin.com/in/{{ author.linkedin }}){: .btn} [StackOverflow](https://www.stackoverflow.com/users/{{ author.stackoverflow }}){: .btn} 
 
 ## Contact
 
