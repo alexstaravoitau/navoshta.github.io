@@ -24,4 +24,4 @@ If you are interested in more things that I do, you may want to check out my [Gi
 
 If you have any questions — feel free to reach out!
 
-[Message Me](mailto:alex.starr.uk@gmail.com){: .btn .btn--info}
+[Message Me](mailto:alex@mailas.com){: .btn .btn--info}
