@@ -6,7 +6,7 @@ tags:
 - Unit Tests
 crosspost_to_medium: true
 ---
-Writing unit tests is like having sex in high school: everybody is talking about it, although very few are actually doing it. In the iOS world it had a couple of additional roadblocks for a while due to a lack of solid and stable testing capabilities out of the Xcode's box. However, with the Apple's `XCTest` framework things have improved greatly: you no longer have an excuse of needing 3rd party frameworks to test your code properly. <!--more--> However, there are still things here and there that might not be so straightforward to write unit tests for, and Touch ID is one of them.
+Writing unit tests for iOS apps had been challenging for a while, mainly due to a lack of solid and stable testing capabilities out of the Xcode's box. However, with the Apple's `XCTest` framework things have improved greatly: you no longer have an excuse of needing 3rd party frameworks to test your code properly. <!--more--> However, there are still things here and there that might not be so straightforward to write unit tests for, and Touch ID is one of them.
 
 Let's assume you have some kind of a manager class that handles Touch ID authentication, say, `TouchIDManager`. Surely it will be using `LAContext` instance from the `LocalAuthentication` framework, at least those two methods:
 
