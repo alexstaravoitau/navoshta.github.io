@@ -87,7 +87,7 @@ This script:
 * Connects to it via `ssh` adding the IP to known hosts.
 * Launches browser on your local machine with remote Notebook URL.
 
-<script src="https://gist.github.com/navoshta/ea4f6dc8f698b472d32940f456de954d.js"></script>
+<script src="https://gist.github.com/alexstaravoitau/ea4f6dc8f698b472d32940f456de954d.js"></script>
 
 Usage is as follows:
 
@@ -102,7 +102,7 @@ This script:
 * Initiates the process of stopping your AWS instance.
 * Notifies you when the instance actually stops.
 
-<script src="https://gist.github.com/navoshta/17c8639d8a4225268f64d5c1b59a4a50.js"></script>
+<script src="https://gist.github.com/alexstaravoitau/17c8639d8a4225268f64d5c1b59a4a50.js"></script>
 
 Usage is as follows:
 

@@ -10,10 +10,10 @@ locale                   : "en"
 title                    : "Alex Staravoitau's Blog"
 title_separator          : "-"
 name                     : &name "Alex Staravoitau"
-description              : &description "Alex's amazing blog about tech and stuff."
+description              : &description "Alex's tiny little blog about tech and stuff."
 url                      : "//navoshta.com"
 baseurl                  : # the subpath of your site, e.g. "/blog"
-repository                  : "https://github.com/navoshta/navoshta.github.io"
+repository                  : "https://github.com/alexstaravoitau/navoshta.github.io"
 teaser                   : # filename of teaser fallback teaser image placed in /images/, .e.g. "500x300.png"
 # breadcrumbs            : false # true, false (default)
 words_per_minute         : 200
@@ -89,7 +89,7 @@ author:
   flickr           :
   facebook         :
   foursquare       :
-  github           : navoshta
+  github           : alexstaravoitau
   google_plus      :
   keybase          :
   instagram        :

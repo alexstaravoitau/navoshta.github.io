@@ -17,16 +17,16 @@ Without further ado, this is what it looks like. I was pretty pleased with the r
 
 ![image-center]({{ base_path }}/images/posts/jupyter-xcode-theme/jupyter-xcode-screenshot.png){: .align-center}
 
-You can, of course, get this theme [on GitHub](https://github.com/navoshta/Jupyter-Notebook-Theme):
+You can, of course, get this theme [on GitHub](https://github.com/alexstaravoitau/Jupyter-Notebook-Theme):
 
 <!-- Place this tag where you want the button to render. -->
-<a class="github-button" href="https://github.com/navoshta" data-style="mega" data-count-href="/navoshta/followers" data-count-api="/users/navoshta#followers" data-count-aria-label="# followers on GitHub" aria-label="Follow @navoshta on GitHub">Follow @navoshta</a>
+<a class="github-button" href="https://github.com/alexstaravoitau" data-style="mega" data-count-href="/navoshta/followers" data-count-api="/users/navoshta#followers" data-count-aria-label="# followers on GitHub" aria-label="Follow @navoshta on GitHub">Follow @navoshta</a>
 <!-- Place this tag where you want the button to render. -->
-<a class="github-button" href="https://github.com/navoshta/Jupyter-Notebook-Theme" data-icon="octicon-star" data-style="mega" data-count-href="/navoshta/Jupyter-Notebook-Theme/stargazers" data-count-api="/repos/navoshta/Jupyter-Notebook-Theme#stargazers_count" data-count-aria-label="# stargazers on GitHub" aria-label="Star navoshta/Jupyter-Notebook-Theme on GitHub">Star</a>
+<a class="github-button" href="https://github.com/alexstaravoitau/Jupyter-Notebook-Theme" data-icon="octicon-star" data-style="mega" data-count-href="/navoshta/Jupyter-Notebook-Theme/stargazers" data-count-api="/repos/navoshta/Jupyter-Notebook-Theme#stargazers_count" data-count-aria-label="# stargazers on GitHub" aria-label="Star navoshta/Jupyter-Notebook-Theme on GitHub">Star</a>
 <!-- Place this tag where you want the button to render. -->
-<a class="github-button" href="https://github.com/navoshta/Jupyter-Notebook-Theme/fork" data-icon="octicon-repo-forked" data-style="mega" data-count-href="/navoshta/Jupyter-Notebook-Theme/network" data-count-api="/repos/navoshta/Jupyter-Notebook-Theme#forks_count" data-count-aria-label="# forks on GitHub" aria-label="Fork navoshta/Jupyter-Notebook-Theme on GitHub">Fork</a>
+<a class="github-button" href="https://github.com/alexstaravoitau/Jupyter-Notebook-Theme/fork" data-icon="octicon-repo-forked" data-style="mega" data-count-href="/navoshta/Jupyter-Notebook-Theme/network" data-count-api="/repos/navoshta/Jupyter-Notebook-Theme#forks_count" data-count-aria-label="# forks on GitHub" aria-label="Fork navoshta/Jupyter-Notebook-Theme on GitHub">Fork</a>
 <!-- Place this tag where you want the button to render. -->
-<a class="github-button" href="https://github.com/navoshta/Jupyter-Notebook-Theme/archive/master.zip" data-icon="octicon-cloud-download" data-style="mega" aria-label="Download navoshta/Jupyter-Notebook-Theme on GitHub">Download</a>
+<a class="github-button" href="https://github.com/alexstaravoitau/Jupyter-Notebook-Theme/archive/master.zip" data-icon="octicon-cloud-download" data-style="mega" aria-label="Download navoshta/Jupyter-Notebook-Theme on GitHub">Download</a>
 
 <!-- Place this tag in your head or just before your close body tag. -->
 <script async defer src="https://buttons.github.io/buttons.js"></script>

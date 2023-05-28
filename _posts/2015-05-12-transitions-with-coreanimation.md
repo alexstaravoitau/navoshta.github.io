@@ -17,7 +17,7 @@ The one I particularly had in mind was the animation for revealing the user phot
   
 ![image-center]({{ base_path }}/images/posts/transitions-with-coreanimation/1431447305642__img.gif){: .align-center}  
 
-Luckily, I already had an app for that — <a target="_blank" href="https://github.com/navoshta/MyCV">MyCV app</a>, a small project I had developed as a demo of my cv. Long story short, that's what we're trying to achieve here (in slow motion).
+Luckily, I already had an app for that — <a target="_blank" href="https://github.com/alexstaravoitau/MyCV">MyCV app</a>, a small project I had developed as a demo of my cv. Long story short, that's what we're trying to achieve here (in slow motion).
 {: style="text-align: justify;"} 
  
 <img src="{{ base_path }}/images/posts/transitions-with-coreanimation/1431447440480__img.gif" alt="" style="width: 300px;" hspace="10" align="left"> As you see, the animation consists of two parts: drawing the circle outline for the image, and revealing the image itself. Note, that the image is not being resized during this uncovering part, but is rather masked with an expanding... Eh... Mask. Also, to make it look astonishingly cool the exposing part of the animation is not instantiated right away. It's silently waiting for a half of the circle to be drawn, and only then the revealing kicks in. It's like exactly as the user starts wondering what this whole circle ring is about — *BOOM!* — the image pops up, and suddenly it all becomes clear. Minds blown.
@@ -131,5 +131,5 @@ So, this is it, you should get something similar to this.
   
 ![image-center]({{ site.url }}{{ site.baseurl }}/images/posts/transitions-with-coreanimation/1431455709023_fast.gif){: .align-center}  
 
-You can download the completed project from <a target="_blank" href="https://github.com/navoshta/RevealImageDemo">here</a>. I have also used this code in my <a target="_blank" href="https://github.com/navoshta/MyCV">MyCV application</a> alongside with a couple of other animations I found particularly relevant. Thank you for getting through all this swearing and poor jokes, now feel free to comment and share!
+You can download the completed project from <a target="_blank" href="https://github.com/alexstaravoitau/RevealImageDemo">here</a>. I have also used this code in my <a target="_blank" href="https://github.com/alexstaravoitau/MyCV">MyCV application</a> alongside with a couple of other animations I found particularly relevant. Thank you for getting through all this swearing and poor jokes, now feel free to comment and share!
 {: style="text-align: justify;"} 

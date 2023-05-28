@@ -20,11 +20,11 @@ However, Daniel uses Lasagne as a machine learning framework, and I'm currently 
 Let's take a look at them and check out the differences when it comes to TensorFlow. You can get the notebooks here:
 
 <!-- Place this tag where you want the button to render. -->
-<a class="github-button" href="https://github.com/navoshta/kaggle-facial-keypoints-detection" data-icon="octicon-star" data-style="mega" data-count-href="/navoshta/kaggle-facial-keypoints-detection/stargazers" data-count-api="/repos/navoshta/kaggle-facial-keypoints-detection#stargazers_count" data-count-aria-label="# stargazers on GitHub" aria-label="Star navoshta/kaggle-facial-keypoints-detection on GitHub">Star</a>
+<a class="github-button" href="https://github.com/alexstaravoitau/kaggle-facial-keypoints-detection" data-icon="octicon-star" data-style="mega" data-count-href="/navoshta/kaggle-facial-keypoints-detection/stargazers" data-count-api="/repos/navoshta/kaggle-facial-keypoints-detection#stargazers_count" data-count-aria-label="# stargazers on GitHub" aria-label="Star navoshta/kaggle-facial-keypoints-detection on GitHub">Star</a>
 <!-- Place this tag where you want the button to render. -->
-<a class="github-button" href="https://github.com/navoshta/kaggle-facial-keypoints-detection/fork" data-icon="octicon-repo-forked" data-style="mega" data-count-href="/navoshta/kaggle-facial-keypoints-detection/network" data-count-api="/repos/navoshta/kaggle-facial-keypoints-detection#forks_count" data-count-aria-label="# forks on GitHub" aria-label="Fork navoshta/kaggle-facial-keypoints-detection on GitHub">Fork</a>
+<a class="github-button" href="https://github.com/alexstaravoitau/kaggle-facial-keypoints-detection/fork" data-icon="octicon-repo-forked" data-style="mega" data-count-href="/navoshta/kaggle-facial-keypoints-detection/network" data-count-api="/repos/navoshta/kaggle-facial-keypoints-detection#forks_count" data-count-aria-label="# forks on GitHub" aria-label="Fork navoshta/kaggle-facial-keypoints-detection on GitHub">Fork</a>
 <!-- Place this tag where you want the button to render. -->
-<a class="github-button" href="https://github.com/navoshta/kaggle-facial-keypoints-detection/archive/master.zip" data-icon="octicon-cloud-download" data-style="mega" aria-label="Download navoshta/kaggle-facial-keypoints-detection on GitHub">Download</a>
+<a class="github-button" href="https://github.com/alexstaravoitau/kaggle-facial-keypoints-detection/archive/master.zip" data-icon="octicon-cloud-download" data-style="mega" aria-label="Download navoshta/kaggle-facial-keypoints-detection on GitHub">Download</a>
 
 <!-- Place this tag in your head or just before your close body tag. -->
 <script async defer src="https://buttons.github.io/buttons.js"></script>
@@ -431,13 +431,13 @@ And `.../out/weights` and `.../out/biases` are gone, since they had `/out/` in t
 You can now plot learning curves for each of the speclialists, and, as Daniel suggests, explore ways of improving your model even further. As he points out, some specialists overfit more than the others, so there might be sense in using different dropout values for each of them. One might want to also experiment with additional regularisation techniques, like L2 loss, and probably take some further steps with data augmentation.
 
 <!-- Place this tag where you want the button to render. -->
-<a class="github-button" href="https://github.com/navoshta" data-style="mega" data-count-href="/navoshta/followers" data-count-api="/users/navoshta#followers" data-count-aria-label="# followers on GitHub" aria-label="Follow @navoshta on GitHub">Follow @navoshta</a>
+<a class="github-button" href="https://github.com/alexstaravoitau" data-style="mega" data-count-href="/navoshta/followers" data-count-api="/users/navoshta#followers" data-count-aria-label="# followers on GitHub" aria-label="Follow @navoshta on GitHub">Follow @navoshta</a>
 <!-- Place this tag where you want the button to render. -->
-<a class="github-button" href="https://github.com/navoshta/kaggle-facial-keypoints-detection" data-icon="octicon-star" data-style="mega" data-count-href="/navoshta/kaggle-facial-keypoints-detection/stargazers" data-count-api="/repos/navoshta/kaggle-facial-keypoints-detection#stargazers_count" data-count-aria-label="# stargazers on GitHub" aria-label="Star navoshta/kaggle-facial-keypoints-detection on GitHub">Star</a>
+<a class="github-button" href="https://github.com/alexstaravoitau/kaggle-facial-keypoints-detection" data-icon="octicon-star" data-style="mega" data-count-href="/navoshta/kaggle-facial-keypoints-detection/stargazers" data-count-api="/repos/navoshta/kaggle-facial-keypoints-detection#stargazers_count" data-count-aria-label="# stargazers on GitHub" aria-label="Star navoshta/kaggle-facial-keypoints-detection on GitHub">Star</a>
 <!-- Place this tag where you want the button to render. -->
-<a class="github-button" href="https://github.com/navoshta/kaggle-facial-keypoints-detection/fork" data-icon="octicon-repo-forked" data-style="mega" data-count-href="/navoshta/kaggle-facial-keypoints-detection/network" data-count-api="/repos/navoshta/kaggle-facial-keypoints-detection#forks_count" data-count-aria-label="# forks on GitHub" aria-label="Fork navoshta/kaggle-facial-keypoints-detection on GitHub">Fork</a>
+<a class="github-button" href="https://github.com/alexstaravoitau/kaggle-facial-keypoints-detection/fork" data-icon="octicon-repo-forked" data-style="mega" data-count-href="/navoshta/kaggle-facial-keypoints-detection/network" data-count-api="/repos/navoshta/kaggle-facial-keypoints-detection#forks_count" data-count-aria-label="# forks on GitHub" aria-label="Fork navoshta/kaggle-facial-keypoints-detection on GitHub">Fork</a>
 <!-- Place this tag where you want the button to render. -->
-<a class="github-button" href="https://github.com/navoshta/kaggle-facial-keypoints-detection/archive/master.zip" data-icon="octicon-cloud-download" data-style="mega" aria-label="Download navoshta/kaggle-facial-keypoints-detection on GitHub">Download</a>
+<a class="github-button" href="https://github.com/alexstaravoitau/kaggle-facial-keypoints-detection/archive/master.zip" data-icon="octicon-cloud-download" data-style="mega" aria-label="Download navoshta/kaggle-facial-keypoints-detection on GitHub">Download</a>
 
 <!-- Place this tag in your head or just before your close body tag. -->
 <script async defer src="https://buttons.github.io/buttons.js"></script>

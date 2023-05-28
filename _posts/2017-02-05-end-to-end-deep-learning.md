@@ -15,7 +15,7 @@ crosspost_to_medium: true
 ---
 {% include toc title="Contents" icon="none" %}
 
-I'm assuming you already know a fair bit about neural networks and regularization, as I won't go into too much detail about their background and how they work. I am using **Keras** with TensorFlow backend as a ML framework and a couple of dependancies like `numpy`, `pandas` and `scikit-image`. You may want to check out [code of the final solution](https://github.com/navoshta/behavioral-cloning){:target="_blank"} I am describing in this tutorial, however keep in mind that if you would like to follow along, you may as well need a machine with a CUDA-capable GPU.
+I'm assuming you already know a fair bit about neural networks and regularization, as I won't go into too much detail about their background and how they work. I am using **Keras** with TensorFlow backend as a ML framework and a couple of dependancies like `numpy`, `pandas` and `scikit-image`. You may want to check out [code of the final solution](https://github.com/alexstaravoitau/behavioral-cloning){:target="_blank"} I am describing in this tutorial, however keep in mind that if you would like to follow along, you may as well need a machine with a CUDA-capable GPU.
 
 Training a model to drive a car in a simulator is one of the assignments in [**Udacity Self-Driving Car Nanodegree**](http://udacity.com/drive) program, however the concepts described here should be easy to follow even without that context. 
 {: .notice}
@@ -119,7 +119,7 @@ Augmented and preprocessed frames
 {: style="text-align: center;"}
 {: .small}
 
-Augmentation pipeline is applied in [`data.py`](https://github.com/navoshta/behavioral-cloning/blob/master/data.py){:target="_blank"} using a Keras generator, which lets us do it in real-time on CPU while GPU is busy backpropagating!
+Augmentation pipeline is applied in [`data.py`](https://github.com/alexstaravoitau/behavioral-cloning/blob/master/data.py){:target="_blank"} using a Keras generator, which lets us do it in real-time on CPU while GPU is busy backpropagating!
 
 ## Model 
 
@@ -152,7 +152,7 @@ model.add(core.Dense(20, activation='relu'))
 model.add(core.Dense(1))
 ``` 
 
-I added dropout on 2 out of 3 dense layers to prevent overfitting, and the model proved to generalise quite well. The model was trained using **Adam optimiser** with a **learning rate = `1e-04`** and **mean squared error** as a loss function. I used 20% of the training data for validation (which means that we only used **6,158 out of 7,698 examples** for training), and the model seems to perform quite well after training for **~20 epochs** — you can find the code related to training in [`model.py`](https://github.com/navoshta/behavioral-cloning/blob/master/model.py){:target="_blank"}.
+I added dropout on 2 out of 3 dense layers to prevent overfitting, and the model proved to generalise quite well. The model was trained using **Adam optimiser** with a **learning rate = `1e-04`** and **mean squared error** as a loss function. I used 20% of the training data for validation (which means that we only used **6,158 out of 7,698 examples** for training), and the model seems to perform quite well after training for **~20 epochs** — you can find the code related to training in [`model.py`](https://github.com/alexstaravoitau/behavioral-cloning/blob/master/model.py){:target="_blank"}.
 
 ## Results
 
@@ -168,13 +168,13 @@ You can check out a longer [highlights compilation video](https://www.youtube.co
 Clearly this is a very basic example of end-to-end learning for self-driving cars, nevertheless it should give a rough idea of what these models are capable of, even considering all limitations of training and validating solely on a virtual driving simulator.
 
 <!-- Place this tag where you want the button to render. -->
-<a class="github-button" href="https://github.com/navoshta" data-style="mega" data-count-href="/navoshta/followers" data-count-api="/users/navoshta#followers" data-count-aria-label="# followers on GitHub" aria-label="Follow @navoshta on GitHub">Follow @navoshta</a>
+<a class="github-button" href="https://github.com/alexstaravoitau" data-style="mega" data-count-href="/navoshta/followers" data-count-api="/users/navoshta#followers" data-count-aria-label="# followers on GitHub" aria-label="Follow @navoshta on GitHub">Follow @navoshta</a>
 <!-- Place this tag where you want the button to render. -->
-<a class="github-button" href="https://github.com/navoshta/behavioral-cloning" data-icon="octicon-star" data-style="mega" data-count-href="/navoshta/behavioral-cloning/stargazers" data-count-api="/repos/navoshta/behavioral-cloning#stargazers_count" data-count-aria-label="# stargazers on GitHub" aria-label="Star navoshta/behavioral-cloning on GitHub">Star</a>
+<a class="github-button" href="https://github.com/alexstaravoitau/behavioral-cloning" data-icon="octicon-star" data-style="mega" data-count-href="/navoshta/behavioral-cloning/stargazers" data-count-api="/repos/navoshta/behavioral-cloning#stargazers_count" data-count-aria-label="# stargazers on GitHub" aria-label="Star navoshta/behavioral-cloning on GitHub">Star</a>
 <!-- Place this tag where you want the button to render. -->
-<a class="github-button" href="https://github.com/navoshta/behavioral-cloning/fork" data-icon="octicon-repo-forked" data-style="mega" data-count-href="/navoshta/behavioral-cloning/network" data-count-api="/repos/navoshta/behavioral-cloning#forks_count" data-count-aria-label="# forks on GitHub" aria-label="Fork navoshta/behavioral-cloning on GitHub">Fork</a>
+<a class="github-button" href="https://github.com/alexstaravoitau/behavioral-cloning/fork" data-icon="octicon-repo-forked" data-style="mega" data-count-href="/navoshta/behavioral-cloning/network" data-count-api="/repos/navoshta/behavioral-cloning#forks_count" data-count-aria-label="# forks on GitHub" aria-label="Fork navoshta/behavioral-cloning on GitHub">Fork</a>
 <!-- Place this tag where you want the button to render. -->
-<a class="github-button" href="https://github.com/navoshta/behavioral-cloning/archive/master.zip" data-icon="octicon-cloud-download" data-style="mega" aria-label="Download navoshta/behavioral-cloning on GitHub">Download</a>
+<a class="github-button" href="https://github.com/alexstaravoitau/behavioral-cloning/archive/master.zip" data-icon="octicon-cloud-download" data-style="mega" aria-label="Download navoshta/behavioral-cloning on GitHub">Download</a>
 
 <!-- Place this tag in your head or just before your close body tag. -->
 <script async defer src="https://buttons.github.io/buttons.js"></script>

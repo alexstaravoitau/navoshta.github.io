@@ -25,7 +25,7 @@ Road features detection is one of the assignments in [**Udacity Self-Driving Car
 
 # Source video
 
-I am going to use a short video clip shot from a vehicle front-facing camera while driving on a highway. It was shot in close to perfect conditions: sunny weather, not many vehicles around, road markings clearly visible, etc. — so using just computer vision techinques alone should be sufficient for a quick demonstration. You can check out the full [50 seconds video here](https://github.com/navoshta/advanced-lane-finding/blob/master/data/video/project_video.mp4){:target="_blank"}.
+I am going to use a short video clip shot from a vehicle front-facing camera while driving on a highway. It was shot in close to perfect conditions: sunny weather, not many vehicles around, road markings clearly visible, etc. — so using just computer vision techinques alone should be sufficient for a quick demonstration. You can check out the full [50 seconds video here](https://github.com/alexstaravoitau/advanced-lane-finding/blob/master/data/video/project_video.mp4){:target="_blank"}.
 
 ![image-center]({{ base_path }}/images/posts/detecting-road-features/project_source_video_sample.gif){: .align-center}
 Source video
@@ -83,7 +83,7 @@ Original vs. calibrated images
 {: style="text-align: center;"}
 {: .small}
 
-For implementation details check `CameraCalibration` class in [`lanetracker/camera.py`](https://github.com/navoshta/detecting-road-features/blob/master/source/lanetracker/camera.py){:target="_blank"}.
+For implementation details check `CameraCalibration` class in [`lanetracker/camera.py`](https://github.com/alexstaravoitau/detecting-road-features/blob/master/source/lanetracker/camera.py){:target="_blank"}.
 {: .notice}
 
 ## Edge detection
@@ -127,7 +127,7 @@ Original vs. highlighted edges
 {: style="text-align: center;"}
 {: .small}
 
-For implementation details check functions in [`lanetracker/gradients.py`](https://github.com/navoshta/detecting-road-features/blob/master/source/lanetracker/gradients.py){:target="_blank"}.
+For implementation details check functions in [`lanetracker/gradients.py`](https://github.com/alexstaravoitau/detecting-road-features/blob/master/source/lanetracker/gradients.py){:target="_blank"}.
 {: .notice}
 
 ## Perspective transform
@@ -159,7 +159,7 @@ Original vs. bird's eye view
 {: style="text-align: center;"}
 {: .small}
 
-For implementation details check functions in [`lanetracker/perspective.py`](https://github.com/navoshta/detecting-road-features/blob/master/source/lanetracker/perspective.py){:target="_blank"}.
+For implementation details check functions in [`lanetracker/perspective.py`](https://github.com/alexstaravoitau/detecting-road-features/blob/master/source/lanetracker/perspective.py){:target="_blank"}.
 {: .notice}
 
 ## Detect boundaries
@@ -174,7 +174,7 @@ Boundary detection pipeline
 {: style="text-align: center;"}
 {: .small}
 
-For implementation details check `LaneTracker` class in [`lanetracker/tracker.py`](https://github.com/navoshta/detecting-road-features/blob/master/source/lanetracker/perspective.py){:target="_blank"}, `Window` class in [`lanetracker/window.py`](https://github.com/navoshta/detecting-road-features/blob/master/source/lanetracker/perspective.py){:target="_blank"} and `Line` class in [`lanetracker/line.py`](https://github.com/navoshta/detecting-road-features/blob/master/source/lanetracker/perspective.py){:target="_blank"}.
+For implementation details check `LaneTracker` class in [`lanetracker/tracker.py`](https://github.com/alexstaravoitau/detecting-road-features/blob/master/source/lanetracker/perspective.py){:target="_blank"}, `Window` class in [`lanetracker/window.py`](https://github.com/alexstaravoitau/detecting-road-features/blob/master/source/lanetracker/perspective.py){:target="_blank"} and `Line` class in [`lanetracker/line.py`](https://github.com/alexstaravoitau/detecting-road-features/blob/master/source/lanetracker/perspective.py){:target="_blank"}.
 {: .notice}
 
 ## Approximate properties
@@ -225,7 +225,7 @@ We can also approximate vehicle position within the lane. This rountine would ca
 distance = np.absolute((w // 2 - x[np.max(y)]) * xm_per_pix)
 ```
 
-For implementation details check `Line` class in [`lanetracker/line.py`](https://github.com/navoshta/detecting-road-features/blob/master/source/lanetracker/perspective.py){:target="_blank"}.
+For implementation details check `Line` class in [`lanetracker/line.py`](https://github.com/alexstaravoitau/detecting-road-features/blob/master/source/lanetracker/perspective.py){:target="_blank"}.
 {: .notice}
 
 ## Sequence of frames
@@ -250,14 +250,14 @@ Whenever we want to draw a line, we get an average of polynomial coefficients de
 mean_coefficients = np.array(coefficients).mean(axis=0)
 ```
 
-This approach proved iself to work reasonably well, you can check out the [full annotated video here](https://github.com/navoshta/advanced-lane-finding/blob/master/data/video/project_video_annotated_lane.mp4){:target="_blank"}.
+This approach proved iself to work reasonably well, you can check out the [full annotated video here](https://github.com/alexstaravoitau/advanced-lane-finding/blob/master/data/video/project_video_annotated_lane.mp4){:target="_blank"}.
 
 ![image-center]({{ base_path }}/images/posts/detecting-road-features/project_video_sample.gif){: .align-center}
 Sample of the annotated project video
 {: style="text-align: center;"}
 {: .small}
 
-For implementation details check `LaneTracker` class in [`lanetracker/tracker.py`](https://github.com/navoshta/detecting-road-features/blob/master/source/lanetracker/tracker.py){:target="_blank"}.
+For implementation details check `LaneTracker` class in [`lanetracker/tracker.py`](https://github.com/alexstaravoitau/detecting-road-features/blob/master/source/lanetracker/tracker.py){:target="_blank"}.
 {: .notice}
 
 # Vehicle Tracking
@@ -378,13 +378,13 @@ feature_vector = extractor.feature_vector()
 feature_vector = extractor.feature_vector(0, 0, 64)
 ```
 
-For implementation details check `FeatureExtractor` class in [`vehicletracker/features.py`](https://github.com/navoshta/detecting-road-features/blob/master/source/vehicletracker/features.py){:target="_blank"}.
+For implementation details check `FeatureExtractor` class in [`vehicletracker/features.py`](https://github.com/alexstaravoitau/detecting-road-features/blob/master/source/vehicletracker/features.py){:target="_blank"}.
 {: .notice}
 
 ## Training a classifier
 I trained a Linear SVC (`sklearn` implementation), using feature extractor described above. Nothing fancy here, I used `sklearn`'s `train_test_split` to split the dataset into training and validation sets, and used `sklearn`'s `StandardScaler` for feature scaling. I didn't bother with a proper test set, assuming that classifier performance on the project video would be a good proxy for it.
 
-For implementation details check [`detecting-road-features.ipynb](https://github.com/navoshta/detecting-road-features/blob/master/source/detecting-road-features.ipynb){:target="_blank"} notebook.
+For implementation details check [`detecting-road-features.ipynb](https://github.com/alexstaravoitau/detecting-road-features/blob/master/source/detecting-road-features.ipynb){:target="_blank"} notebook.
 {: .notice}
 
 ## Frame segmentation
@@ -487,14 +487,14 @@ def detections():
 
 ```
 
-This approach proved iself to work reasonably well on the source video, you can check out the [full annotated video here](https://github.com/navoshta/advanced-lane-finding/blob/master/data/video/project_video_annotated_vehicle.mp4){:target="_blank"}. There is the current frame heat map in the top right corner — you may notice quite a few false positives, but most of them are eliminated by merging detections over the last `N` consecutive frames.
+This approach proved iself to work reasonably well on the source video, you can check out the [full annotated video here](https://github.com/alexstaravoitau/advanced-lane-finding/blob/master/data/video/project_video_annotated_vehicle.mp4){:target="_blank"}. There is the current frame heat map in the top right corner — you may notice quite a few false positives, but most of them are eliminated by merging detections over the last `N` consecutive frames.
 
 ![image-center]({{ base_path }}/images/posts/detecting-road-features/project_video_sample-2.gif){: .align-center}
 Sample of the annotated project video
 {: style="text-align: center;"}
 {: .small}
 
-For implementation details check `VehicleTracker` class in [`vehicletracker/tracker.py`](https://github.com/navoshta/detecting-road-features/blob/master/source/vehicletracker/tracker.py){:target="_blank"}.
+For implementation details check `VehicleTracker` class in [`vehicletracker/tracker.py`](https://github.com/alexstaravoitau/detecting-road-features/blob/master/source/vehicletracker/tracker.py){:target="_blank"}.
 {: .notice}
 
 # Results
@@ -511,13 +511,13 @@ Not to mention it is painfully slow and would not run in real time without subst
 
 
 <!-- Place this tag where you want the button to render. -->
-<a class="github-button" href="https://github.com/navoshta" data-style="mega" data-count-href="/navoshta/followers" data-count-api="/users/navoshta#followers" data-count-aria-label="# followers on GitHub" aria-label="Follow @navoshta on GitHub">Follow @navoshta</a>
+<a class="github-button" href="https://github.com/alexstaravoitau" data-style="mega" data-count-href="/navoshta/followers" data-count-api="/users/navoshta#followers" data-count-aria-label="# followers on GitHub" aria-label="Follow @navoshta on GitHub">Follow @navoshta</a>
 <!-- Place this tag where you want the button to render. -->
-<a class="github-button" href="https://github.com/navoshta/detecting-road-features" data-icon="octicon-star" data-style="mega" data-count-href="/navoshta/detecting-road-features/stargazers" data-count-api="/repos/navoshta/detecting-road-features#stargazers_count" data-count-aria-label="# stargazers on GitHub" aria-label="Star navoshta/detecting-road-features on GitHub">Star</a>
+<a class="github-button" href="https://github.com/alexstaravoitau/detecting-road-features" data-icon="octicon-star" data-style="mega" data-count-href="/navoshta/detecting-road-features/stargazers" data-count-api="/repos/navoshta/detecting-road-features#stargazers_count" data-count-aria-label="# stargazers on GitHub" aria-label="Star navoshta/detecting-road-features on GitHub">Star</a>
 <!-- Place this tag where you want the button to render. -->
-<a class="github-button" href="https://github.com/navoshta/detecting-road-features/fork" data-icon="octicon-repo-forked" data-style="mega" data-count-href="/navoshta/detecting-road-features/network" data-count-api="/repos/navoshta/detecting-road-features#forks_count" data-count-aria-label="# forks on GitHub" aria-label="Fork navoshta/detecting-road-features on GitHub">Fork</a>
+<a class="github-button" href="https://github.com/alexstaravoitau/detecting-road-features/fork" data-icon="octicon-repo-forked" data-style="mega" data-count-href="/navoshta/detecting-road-features/network" data-count-api="/repos/navoshta/detecting-road-features#forks_count" data-count-aria-label="# forks on GitHub" aria-label="Fork navoshta/detecting-road-features on GitHub">Fork</a>
 <!-- Place this tag where you want the button to render. -->
-<a class="github-button" href="https://github.com/navoshta/detecting-road-features/archive/master.zip" data-icon="octicon-cloud-download" data-style="mega" aria-label="Download navoshta/detecting-road-features on GitHub">Download</a>
+<a class="github-button" href="https://github.com/alexstaravoitau/detecting-road-features/archive/master.zip" data-icon="octicon-cloud-download" data-style="mega" aria-label="Download navoshta/detecting-road-features on GitHub">Download</a>
 
 <!-- Place this tag in your head or just before your close body tag. -->
 <script async defer src="https://buttons.github.io/buttons.js"></script>

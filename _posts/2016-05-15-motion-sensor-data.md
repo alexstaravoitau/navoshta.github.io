@@ -41,7 +41,7 @@ I've created a simple app that demonstrates the live data we receive from the de
 
 ![image-center]({{ base_path }}/images/posts/device-sensors/device-sensors-storyboard.png){: .align-center}    
 
-You can check out the app demonstrating device motion sensors <a target="_blank" href="https://github.com/navoshta/MotionSensorData">on GitHub</a>. Additionally it highlights each cell's background, indicating delta updates of the sensor values in real time. Feel free to play with it and let me know what you think!
+You can check out the app demonstrating device motion sensors <a target="_blank" href="https://github.com/alexstaravoitau/MotionSensorData">on GitHub</a>. Additionally it highlights each cell's background, indicating delta updates of the sensor values in real time. Feel free to play with it and let me know what you think!
 
 
 

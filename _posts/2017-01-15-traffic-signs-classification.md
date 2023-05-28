@@ -17,7 +17,7 @@ crosspost_to_medium: true
 
 I'm assuming you already know a fair bit about neural networks and regularization, as I won't go into too much detail about their background and how they work. I am using **TensorFlow** as a ML framework and a couple of dependencies like `numpy`, `matplotlib` and `scikit-image`. In case you are not familiar with TensorFlow, make sure to check out [my recent post](http://navoshta.com/facial-with-tensorflow/){:target="_blank"} about its core concepts. 
 
-If you would like to follow along, you may as well need a machine with a CUDA-capable GPU and all dependencies installed. Here is a [Jupyter notebook with the final solution](https://github.com/navoshta/traffic-signs/blob/master/Traffic_Signs_Recognition.ipynb){:target="_blank"} I am describing in this tutorial, presumably if you go through all the cells you should get the same results.
+If you would like to follow along, you may as well need a machine with a CUDA-capable GPU and all dependencies installed. Here is a [Jupyter notebook with the final solution](https://github.com/alexstaravoitau/traffic-signs/blob/master/Traffic_Signs_Recognition.ipynb){:target="_blank"} I am describing in this tutorial, presumably if you go through all the cells you should get the same results.
 
 ## Dataset
 
@@ -502,13 +502,13 @@ To clarify, this **Elderly crossing** sign was not among those 43 classes this m
 In conclusion, according to different sources human performance on a similar task varies from 98.3% to 98.8%, therefore this model seems to outperform an average human. Which, I believe, is the ultimate goal of machine learning!
 
 <!-- Place this tag where you want the button to render. -->
-<a class="github-button" href="https://github.com/navoshta" data-style="mega" data-count-href="/navoshta/followers" data-count-api="/users/navoshta#followers" data-count-aria-label="# followers on GitHub" aria-label="Follow @navoshta on GitHub">Follow @navoshta</a>
+<a class="github-button" href="https://github.com/alexstaravoitau" data-style="mega" data-count-href="/navoshta/followers" data-count-api="/users/navoshta#followers" data-count-aria-label="# followers on GitHub" aria-label="Follow @navoshta on GitHub">Follow @navoshta</a>
 <!-- Place this tag where you want the button to render. -->
-<a class="github-button" href="https://github.com/navoshta/traffic-signs" data-icon="octicon-star" data-style="mega" data-count-href="/navoshta/traffic-signs/stargazers" data-count-api="/repos/navoshta/traffic-signs#stargazers_count" data-count-aria-label="# stargazers on GitHub" aria-label="Star navoshta/traffic-signs on GitHub">Star</a>
+<a class="github-button" href="https://github.com/alexstaravoitau/traffic-signs" data-icon="octicon-star" data-style="mega" data-count-href="/navoshta/traffic-signs/stargazers" data-count-api="/repos/navoshta/traffic-signs#stargazers_count" data-count-aria-label="# stargazers on GitHub" aria-label="Star navoshta/traffic-signs on GitHub">Star</a>
 <!-- Place this tag where you want the button to render. -->
-<a class="github-button" href="https://github.com/navoshta/traffic-signs/fork" data-icon="octicon-repo-forked" data-style="mega" data-count-href="/navoshta/traffic-signs/network" data-count-api="/repos/navoshta/traffic-signs#forks_count" data-count-aria-label="# forks on GitHub" aria-label="Fork navoshta/traffic-signs on GitHub">Fork</a>
+<a class="github-button" href="https://github.com/alexstaravoitau/traffic-signs/fork" data-icon="octicon-repo-forked" data-style="mega" data-count-href="/navoshta/traffic-signs/network" data-count-api="/repos/navoshta/traffic-signs#forks_count" data-count-aria-label="# forks on GitHub" aria-label="Fork navoshta/traffic-signs on GitHub">Fork</a>
 <!-- Place this tag where you want the button to render. -->
-<a class="github-button" href="https://github.com/navoshta/traffic-signs/archive/master.zip" data-icon="octicon-cloud-download" data-style="mega" aria-label="Download navoshta/traffic-signs on GitHub">Download</a>
+<a class="github-button" href="https://github.com/alexstaravoitau/traffic-signs/archive/master.zip" data-icon="octicon-cloud-download" data-style="mega" aria-label="Download navoshta/traffic-signs on GitHub">Download</a>
 
 <!-- Place this tag in your head or just before your close body tag. -->
 <script async defer src="https://buttons.github.io/buttons.js"></script>

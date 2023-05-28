@@ -203,7 +203,7 @@ Fenton is a good <strike>bot</strike> boy, sending me messenger notifications wh
 
 I also wrote a tiny shell script to make connecting to a remote machine easier. It allows to SSH into it, mount its file system, or attach to a _tmux_ session.
 
-<script src="https://gist.github.com/navoshta/e7860838e769dfed835418b38d8e069c.js"></script>
+<script src="https://gist.github.com/alexstaravoitau/e7860838e769dfed835418b38d8e069c.js"></script>
 
 Update user/server/path settings, put this file to `/usr/local/bin` and make it executable. 
 

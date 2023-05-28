@@ -45,7 +45,7 @@ Camera frames look pretty straightforward: you can see a tram track on the right
 
 The dataset in question contains 114 lidar point cloud frames over duration of 11 seconds. This equals to approximately 10 frames per second, which is a very decent scanning rate, given that we get a 360° field-of-view with each frame containing approximately 120,000 points — a fair amount of data to stream in realtime. Not to clutter the visualizations we will randomly sample 20% of the points for each frame and discard the rest. 
 
-We will additionally visualize _tracklets_, e.g. labeled objects like cars, trams, pedestrians and so on. With a bit of math we will grab information from the KITTI tracklets file and work out each object's bounding box for each frame, feel free to check out the [notebook](https://github.com/navoshta/KITTI-Dataset/blob/master/kitti-dataset.ipynb) for more details. There are only 3 types of objects in this particular 11-seconds piece, we will mark them with bounding boxes as follows: cars will be marked in **blue**, trams in **red** and cyclists in **green**. Let's first visualize a sample lidar frame on a 3D plot.
+We will additionally visualize _tracklets_, e.g. labeled objects like cars, trams, pedestrians and so on. With a bit of math we will grab information from the KITTI tracklets file and work out each object's bounding box for each frame, feel free to check out the [notebook](https://github.com/alexstaravoitau/KITTI-Dataset/blob/master/kitti-dataset.ipynb) for more details. There are only 3 types of objects in this particular 11-seconds piece, we will mark them with bounding boxes as follows: cars will be marked in **blue**, trams in **red** and cyclists in **green**. Let's first visualize a sample lidar frame on a 3D plot.
 
 ![image-center]({{ base_path }}/images/posts/kitti-lidar/lidar_frame.png){: .align-center}
 Sample lidar frame
@@ -73,13 +73,13 @@ Lidar data plotted over time
 This should give a much better idea of what lidar data looks like. You can clearly see silhouettes of trees and parked cars that our vehicle is passing by — now _that_ would be much easier for an algorithm to interpret. And although lidar is usually used in conjunction with a bunch of other sensors and data sources, it plays a significant role in vehicle [simultaneous localization and mapping](https://en.wikipedia.org/wiki/Simultaneous_localization_and_mapping).
 
 <!-- Place this tag where you want the button to render. -->
-<a class="github-button" href="https://github.com/navoshta" data-style="mega" data-count-href="/navoshta/followers" data-count-api="/users/navoshta#followers" data-count-aria-label="# followers on GitHub" aria-label="Follow @navoshta on GitHub">Follow @navoshta</a>
+<a class="github-button" href="https://github.com/alexstaravoitau" data-style="mega" data-count-href="/navoshta/followers" data-count-api="/users/navoshta#followers" data-count-aria-label="# followers on GitHub" aria-label="Follow @navoshta on GitHub">Follow @navoshta</a>
 <!-- Place this tag where you want the button to render. -->
-<a class="github-button" href="https://github.com/navoshta/KITTI-Dataset" data-icon="octicon-star" data-style="mega" data-count-href="/navoshta/KITTI-Dataset/stargazers" data-count-api="/repos/navoshta/KITTI-Dataset#stargazers_count" data-count-aria-label="# stargazers on GitHub" aria-label="Star navoshta/KITTI-Dataset on GitHub">Star</a>
+<a class="github-button" href="https://github.com/alexstaravoitau/KITTI-Dataset" data-icon="octicon-star" data-style="mega" data-count-href="/navoshta/KITTI-Dataset/stargazers" data-count-api="/repos/navoshta/KITTI-Dataset#stargazers_count" data-count-aria-label="# stargazers on GitHub" aria-label="Star navoshta/KITTI-Dataset on GitHub">Star</a>
 <!-- Place this tag where you want the button to render. -->
-<a class="github-button" href="https://github.com/navoshta/KITTI-Dataset/fork" data-icon="octicon-repo-forked" data-style="mega" data-count-href="/navoshta/KITTI-Dataset/network" data-count-api="/repos/navoshta/KITTI-Dataset#forks_count" data-count-aria-label="# forks on GitHub" aria-label="Fork navoshta/KITTI-Dataset on GitHub">Fork</a>
+<a class="github-button" href="https://github.com/alexstaravoitau/KITTI-Dataset/fork" data-icon="octicon-repo-forked" data-style="mega" data-count-href="/navoshta/KITTI-Dataset/network" data-count-api="/repos/navoshta/KITTI-Dataset#forks_count" data-count-aria-label="# forks on GitHub" aria-label="Fork navoshta/KITTI-Dataset on GitHub">Fork</a>
 <!-- Place this tag where you want the button to render. -->
-<a class="github-button" href="https://github.com/navoshta/KITTI-Dataset/archive/master.zip" data-icon="octicon-cloud-download" data-style="mega" aria-label="Download navoshta/KITTI-Dataset on GitHub">Download</a>
+<a class="github-button" href="https://github.com/alexstaravoitau/KITTI-Dataset/archive/master.zip" data-icon="octicon-cloud-download" data-style="mega" aria-label="Download navoshta/KITTI-Dataset on GitHub">Download</a>
 
 <!-- Place this tag in your head or just before your close body tag. -->
 <script async defer src="https://buttons.github.io/buttons.js"></script>
