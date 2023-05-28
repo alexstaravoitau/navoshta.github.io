@@ -84,7 +84,7 @@ This was the bonus part of **Metal Camera Tutorial** series, where we explore wa
 You can check out the <a target="_blank" href="https://github.com/alexstaravoitau/MetalRenderCamera">final project</a> from this **Metal Camera Tutorial** on GitHub.
 
 <!-- Place this tag where you want the button to render. -->
-<a class="github-button" href="https://github.com/alexstaravoitau" data-style="mega" data-count-href="/navoshta/followers" data-count-api="/users/navoshta#followers" data-count-aria-label="# followers on GitHub" aria-label="Follow @navoshta on GitHub">Follow @navoshta</a>
+<a class="github-button" href="https://github.com/alexstaravoitau" data-style="mega" data-count-href="/navoshta/followers" data-count-api="/users/navoshta#followers" data-count-aria-label="# followers on GitHub" aria-label="Follow @alexstaravoitau on GitHub">Follow @alexstaravoitau</a>
 <!-- Place this tag where you want the button to render. -->
 <a class="github-button" href="https://github.com/alexstaravoitau/MetalRenderCamera" data-icon="octicon-star" data-style="mega" data-count-href="/navoshta/MetalRenderCamera/stargazers" data-count-api="/repos/navoshta/MetalRenderCamera#stargazers_count" data-count-aria-label="# stargazers on GitHub" aria-label="Star navoshta/MetalRenderCamera on GitHub">Star</a>
 <!-- Place this tag where you want the button to render. -->

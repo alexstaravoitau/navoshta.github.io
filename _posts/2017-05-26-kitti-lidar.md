@@ -73,7 +73,7 @@ Lidar data plotted over time
 This should give a much better idea of what lidar data looks like. You can clearly see silhouettes of trees and parked cars that our vehicle is passing by — now _that_ would be much easier for an algorithm to interpret. And although lidar is usually used in conjunction with a bunch of other sensors and data sources, it plays a significant role in vehicle [simultaneous localization and mapping](https://en.wikipedia.org/wiki/Simultaneous_localization_and_mapping).
 
 <!-- Place this tag where you want the button to render. -->
-<a class="github-button" href="https://github.com/alexstaravoitau" data-style="mega" data-count-href="/navoshta/followers" data-count-api="/users/navoshta#followers" data-count-aria-label="# followers on GitHub" aria-label="Follow @navoshta on GitHub">Follow @navoshta</a>
+<a class="github-button" href="https://github.com/alexstaravoitau" data-style="mega" data-count-href="/navoshta/followers" data-count-api="/users/navoshta#followers" data-count-aria-label="# followers on GitHub" aria-label="Follow @alexstaravoitau on GitHub">Follow @alexstaravoitau</a>
 <!-- Place this tag where you want the button to render. -->
 <a class="github-button" href="https://github.com/alexstaravoitau/KITTI-Dataset" data-icon="octicon-star" data-style="mega" data-count-href="/navoshta/KITTI-Dataset/stargazers" data-count-api="/repos/navoshta/KITTI-Dataset#stargazers_count" data-count-aria-label="# stargazers on GitHub" aria-label="Star navoshta/KITTI-Dataset on GitHub">Star</a>
 <!-- Place this tag where you want the button to render. -->

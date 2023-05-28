@@ -20,7 +20,7 @@ Without further ado, this is what it looks like. I was pretty pleased with the r
 You can, of course, get this theme [on GitHub](https://github.com/alexstaravoitau/Jupyter-Notebook-Theme):
 
 <!-- Place this tag where you want the button to render. -->
-<a class="github-button" href="https://github.com/alexstaravoitau" data-style="mega" data-count-href="/navoshta/followers" data-count-api="/users/navoshta#followers" data-count-aria-label="# followers on GitHub" aria-label="Follow @navoshta on GitHub">Follow @navoshta</a>
+<a class="github-button" href="https://github.com/alexstaravoitau" data-style="mega" data-count-href="/navoshta/followers" data-count-api="/users/navoshta#followers" data-count-aria-label="# followers on GitHub" aria-label="Follow @alexstaravoitau on GitHub">Follow @alexstaravoitau</a>
 <!-- Place this tag where you want the button to render. -->
 <a class="github-button" href="https://github.com/alexstaravoitau/Jupyter-Notebook-Theme" data-icon="octicon-star" data-style="mega" data-count-href="/navoshta/Jupyter-Notebook-Theme/stargazers" data-count-api="/repos/navoshta/Jupyter-Notebook-Theme#stargazers_count" data-count-aria-label="# stargazers on GitHub" aria-label="Star navoshta/Jupyter-Notebook-Theme on GitHub">Star</a>
 <!-- Place this tag where you want the button to render. -->

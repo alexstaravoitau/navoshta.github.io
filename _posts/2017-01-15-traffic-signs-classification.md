@@ -502,7 +502,7 @@ To clarify, this **Elderly crossing** sign was not among those 43 classes this m
 In conclusion, according to different sources human performance on a similar task varies from 98.3% to 98.8%, therefore this model seems to outperform an average human. Which, I believe, is the ultimate goal of machine learning!
 
 <!-- Place this tag where you want the button to render. -->
-<a class="github-button" href="https://github.com/alexstaravoitau" data-style="mega" data-count-href="/navoshta/followers" data-count-api="/users/navoshta#followers" data-count-aria-label="# followers on GitHub" aria-label="Follow @navoshta on GitHub">Follow @navoshta</a>
+<a class="github-button" href="https://github.com/alexstaravoitau" data-style="mega" data-count-href="/navoshta/followers" data-count-api="/users/navoshta#followers" data-count-aria-label="# followers on GitHub" aria-label="Follow @alexstaravoitau on GitHub">Follow @alexstaravoitau</a>
 <!-- Place this tag where you want the button to render. -->
 <a class="github-button" href="https://github.com/alexstaravoitau/traffic-signs" data-icon="octicon-star" data-style="mega" data-count-href="/navoshta/traffic-signs/stargazers" data-count-api="/repos/navoshta/traffic-signs#stargazers_count" data-count-aria-label="# stargazers on GitHub" aria-label="Star navoshta/traffic-signs on GitHub">Star</a>
 <!-- Place this tag where you want the button to render. -->

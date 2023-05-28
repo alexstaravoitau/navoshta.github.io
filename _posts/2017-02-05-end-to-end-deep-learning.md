@@ -168,7 +168,7 @@ You can check out a longer [highlights compilation video](https://www.youtube.co
 Clearly this is a very basic example of end-to-end learning for self-driving cars, nevertheless it should give a rough idea of what these models are capable of, even considering all limitations of training and validating solely on a virtual driving simulator.
 
 <!-- Place this tag where you want the button to render. -->
-<a class="github-button" href="https://github.com/alexstaravoitau" data-style="mega" data-count-href="/navoshta/followers" data-count-api="/users/navoshta#followers" data-count-aria-label="# followers on GitHub" aria-label="Follow @navoshta on GitHub">Follow @navoshta</a>
+<a class="github-button" href="https://github.com/alexstaravoitau" data-style="mega" data-count-href="/navoshta/followers" data-count-api="/users/navoshta#followers" data-count-aria-label="# followers on GitHub" aria-label="Follow @alexstaravoitau on GitHub">Follow @alexstaravoitau</a>
 <!-- Place this tag where you want the button to render. -->
 <a class="github-button" href="https://github.com/alexstaravoitau/behavioral-cloning" data-icon="octicon-star" data-style="mega" data-count-href="/navoshta/behavioral-cloning/stargazers" data-count-api="/repos/navoshta/behavioral-cloning#stargazers_count" data-count-aria-label="# stargazers on GitHub" aria-label="Star navoshta/behavioral-cloning on GitHub">Star</a>
 <!-- Place this tag where you want the button to render. -->
