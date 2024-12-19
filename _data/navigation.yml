@@ -4,8 +4,6 @@ main:
     url: /ml/
   - title: "iOS Development"
     url: /ios/
-  - title: "About"
-    url: /about/
 
 metal-camera-tutorial:
   - title: "Metal Camera Tutorial"

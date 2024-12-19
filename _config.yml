@@ -7,7 +7,7 @@
 
 # Site Settings
 locale                   : "en"
-title                    : "Alex Staravoitau's Blog"
+title                    : "Rational Matter"
 title_separator          : "-"
 name                     : &name "Alex Staravoitau"
 description              : &description "iOS & ML"
